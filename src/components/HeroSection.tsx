@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight, Play, Sparkles } from 'lucide-react'
 import type { Theme } from '../types'
 import AudioWaveBackground from './AudioWaveBackground'
-import MusicCarousel from './MusicCarousel'
+import MicrophoneScene from './MicrophoneScene'
 
 interface HeroSectionProps {
   theme: Theme
@@ -18,33 +18,33 @@ export default function HeroSection({
   const isDark = theme === 'dark'
 
   return (
-    <section className="relative w-full min-h-[calc(100vh-80px)] flex items-center justify-center px-4 sm:px-8 py-8 lg:py-12 overflow-hidden">
-      {/* Decorative Cinematic Audio Wave Ribbon at bottom */}
+    <section className="relative w-full min-h-[calc(100vh-84px)] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-6 lg:py-10 overflow-hidden">
+      {/* Decorative flowing audio waves in lower scene background */}
       <AudioWaveBackground theme={theme} />
 
-      <div className="relative z-10 w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-        {/* Left Column: Headline, Copy, Action Buttons */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        {/* Left Column: Brand Messaging, Editorial Headline & Actions */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-          className="lg:col-span-6 flex flex-col items-start text-left"
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="lg:col-span-5 xl:col-span-6 flex flex-col items-start text-left"
         >
-          {/* Eyebrow Label */}
+          {/* Eyebrow badge */}
           <div
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium tracking-wider uppercase mb-6 border transition-colors shadow-2xs"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium tracking-wider uppercase mb-6 border transition-colors shadow-2xs backdrop-blur-xs"
             style={{
-              backgroundColor: isDark ? 'rgba(57, 30, 16, 0.7)' : 'rgba(226, 206, 177, 0.45)',
-              borderColor: isDark ? 'rgba(199, 160, 122, 0.35)' : 'rgba(115, 65, 40, 0.25)',
+              backgroundColor: isDark ? 'rgba(57, 30, 16, 0.7)' : 'rgba(253, 252, 232, 0.75)',
+              borderColor: isDark ? 'rgba(199, 160, 122, 0.38)' : 'rgba(115, 65, 40, 0.28)',
               color: isDark ? '#E2CEB1' : '#734128',
             }}
           >
             <Sparkles className="w-3.5 h-3.5 text-lion" />
-            <span>AI-Powered Lyrics Teleprompter</span>
+            <span>AI-POWERED LYRICS TELEPROMPTER</span>
           </div>
 
-          {/* Main Headline */}
-          <h1 className="font-editorial text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.12] mb-6">
+          {/* Main Editorial Headline: 64-82px responsive typography */}
+          <h1 className="font-editorial text-4xl sm:text-6xl lg:text-6xl xl:text-[74px] font-semibold tracking-tight leading-[1.08] mb-6">
             <span
               className="block"
               style={{ color: isDark ? '#FDFCE8' : '#391E10' }}
@@ -67,19 +67,19 @@ export default function HeroSection({
 
           {/* Supporting Description */}
           <p
-            className="text-base sm:text-lg leading-relaxed mb-8 max-w-lg font-normal"
+            className="text-base sm:text-lg lg:text-xl leading-relaxed mb-8 max-w-xl font-normal"
             style={{ color: isDark ? '#E2CEB1' : '#734128' }}
           >
             Upload your song, get the lyrics automatically, and watch them highlight as you sing — in real time.
           </p>
 
-          {/* Action Buttons */}
+          {/* Primary and Secondary CTA Buttons */}
           <div className="flex flex-wrap items-center gap-3.5 sm:gap-4 w-full sm:w-auto">
-            {/* Primary Action: Get Started */}
+            {/* Primary Button */}
             <button
               type="button"
               onClick={onGetStarted}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl text-sm font-semibold transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-md cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 cursor-pointer shadow-md"
               style={{
                 backgroundColor: '#734128',
                 color: '#FDFCE8',
@@ -89,13 +89,13 @@ export default function HeroSection({
               <ArrowRight className="w-4 h-4 text-lion" />
             </button>
 
-            {/* Secondary Action: See How It Works */}
+            {/* Secondary Button */}
             <button
               type="button"
               onClick={onOpenHowItWorks}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-sm font-medium border transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-medium border backdrop-blur-xs transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm active:translate-y-0 cursor-pointer"
               style={{
-                backgroundColor: 'transparent',
+                backgroundColor: isDark ? 'rgba(57, 30, 16, 0.4)' : 'rgba(253, 252, 232, 0.6)',
                 borderColor: isDark ? 'rgba(199, 160, 122, 0.45)' : 'rgba(115, 65, 40, 0.35)',
                 color: isDark ? '#FDFCE8' : '#391E10',
               }}
@@ -104,7 +104,7 @@ export default function HeroSection({
                 className="w-5 h-5 rounded-full flex items-center justify-center border"
                 style={{
                   borderColor: isDark ? 'rgba(199, 160, 122, 0.5)' : 'rgba(115, 65, 40, 0.35)',
-                  backgroundColor: isDark ? 'rgba(199, 160, 122, 0.15)' : 'rgba(115, 65, 40, 0.1)',
+                  backgroundColor: isDark ? 'rgba(199, 160, 122, 0.2)' : 'rgba(115, 65, 40, 0.12)',
                 }}
               >
                 <Play className="w-2.5 h-2.5 text-lion fill-lion ml-0.5" />
@@ -115,28 +115,28 @@ export default function HeroSection({
 
           {/* Micro trust indicators */}
           <div
-            className="mt-8 flex items-center gap-4 text-xs font-mono tracking-tight"
-            style={{ color: isDark ? 'rgba(226, 206, 177, 0.7)' : 'rgba(115, 65, 40, 0.75)' }}
+            className="mt-8 flex flex-wrap items-center gap-4 text-xs font-mono tracking-tight"
+            style={{ color: isDark ? 'rgba(226, 206, 177, 0.75)' : 'rgba(115, 65, 40, 0.8)' }}
           >
             <span className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-lion" />
+              <span className="w-2 h-2 rounded-full bg-lion animate-pulse" />
               100% Local AI Model
             </span>
             <span className="opacity-40">•</span>
             <span>Zero Cloud Uploads</span>
             <span className="opacity-40">•</span>
-            <span>Sub-second Sync</span>
+            <span>Real-Time Millisecond Sync</span>
           </div>
         </motion.div>
 
-        {/* Right Column: Interactive Music Carousel */}
+        {/* Right Column: Cinematic Animated Microphone Scene */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          className="lg:col-span-6 flex items-center justify-center"
+          transition={{ duration: 0.8, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+          className="lg:col-span-7 xl:col-span-6 flex items-center justify-center"
         >
-          <MusicCarousel theme={theme} />
+          <MicrophoneScene theme={theme} />
         </motion.div>
       </div>
     </section>

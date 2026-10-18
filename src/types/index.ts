@@ -10,3 +10,13 @@ export interface CarouselSlideData {
   category: string
   badge: string
 }
+
+export interface AudioMetadata {
+  file: File
+  name: string
+  size: number
+  formattedSize: string
+  format: string
+  duration: number
+  objectUrl: string
+}

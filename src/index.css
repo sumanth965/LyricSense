@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bistre: #391e10;
+  --color-kobicha: #734128;
+  --color-lion: #c7a07a;
+  --color-dun: #e2ceb1;
+  --color-ivory: #fdfce8;
+
+  --font-serif: -apple-system-ui-serif, "New York", "Charter", "Playfair Display", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+:root {
+  /* Five Official Color Tokens */
+  --color-bistre: #391e10;
+  --color-kobicha: #734128;
+  --color-lion: #c7a07a;
+  --color-dun: #e2ceb1;
+  --color-ivory: #fdfce8;
+
+  /* Default Cinematic Dark Theme */
+  --bg-page: var(--color-bistre);
+  --text-page: var(--color-ivory);
+  --text-muted: var(--color-dun);
+  --surface-card: rgba(45, 23, 12, 0.75);
+  --surface-card-solid: #2d170c;
+  --border-card: rgba(199, 160, 122, 0.22);
+  --border-card-hover: rgba(199, 160, 122, 0.5);
+  --glow-lion: rgba(199, 160, 122, 0.15);
+  --btn-primary-bg: var(--color-kobicha);
+  --btn-primary-text: var(--color-ivory);
+  --nav-bg: rgba(57, 30, 16, 0.82);
+  --nav-border: rgba(199, 160, 122, 0.2);
+
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Light Theme Variables */
+[data-theme="light"],
+.light {
+  --bg-page: var(--color-ivory);
+  --text-page: var(--color-bistre);
+  --text-muted: #734128;
+  --surface-card: rgba(226, 206, 177, 0.45);
+  --surface-card-solid: #f4ecdf;
+  --border-card: rgba(115, 65, 40, 0.22);
+  --border-card-hover: rgba(115, 65, 40, 0.45);
+  --glow-lion: rgba(199, 160, 122, 0.2);
+  --btn-primary-bg: var(--color-kobicha);
+  --btn-primary-text: var(--color-ivory);
+  --nav-bg: rgba(253, 252, 232, 0.88);
+  --nav-border: rgba(115, 65, 40, 0.2);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background-color: var(--bg-page);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-page);
+  color: var(--text-page);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+/* Typography Helpers */
+.font-editorial {
+  font-family: -apple-system-ui-serif, "New York", "Charter", "Playfair Display", Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+/* Form & button typography consistency */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+/* Clear, accessible keyboard focus treatment */
+:focus-visible {
+  outline: 2px solid var(--color-lion);
+  outline-offset: 2px;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

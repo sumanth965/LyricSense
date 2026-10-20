@@ -10,9 +10,9 @@ export default function App() {
   const [theme, setTheme] = useState<Theme>(() => {
     try {
       const saved = localStorage.getItem('lyricsense-theme')
-      return saved === 'light' ? 'light' : 'dark'
+      return saved === 'dark' ? 'dark' : 'light'
     } catch {
-      return 'dark'
+      return 'light'
     }
   })
 
@@ -46,7 +46,7 @@ export default function App() {
     <div
       className="min-h-screen relative flex flex-col transition-colors duration-300"
       style={{
-        backgroundColor: theme === 'dark' ? '#391E10' : '#FDFCE8',
+        backgroundColor: theme === 'dark' ? '#391E10' : '#FAF6EE',
         color: theme === 'dark' ? '#FDFCE8' : '#391E10',
       }}
     >
@@ -77,17 +77,6 @@ export default function App() {
                 onOpenHowItWorks={() => setHowItWorksOpen(true)}
               />
             </main>
-
-            {/* How It Works Accessible Modal */}
-            <HowItWorksDialog
-              isOpen={howItWorksOpen}
-              onClose={() => setHowItWorksOpen(false)}
-              onGetStarted={() => {
-                setHowItWorksOpen(false)
-                setCurrentView('workspace')
-              }}
-              theme={theme}
-            />
           </motion.div>
         ) : (
           <motion.div
@@ -98,15 +87,27 @@ export default function App() {
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             className="min-h-screen"
           >
-            {/* Functional Audio Upload and Playback Workspace */}
+            {/* Recreated Audio Workspace Reference View */}
             <AudioWorkspace
               onBackToHome={() => setCurrentView('home')}
               theme={theme}
               onToggleTheme={toggleTheme}
+              onOpenHowItWorks={() => setHowItWorksOpen(true)}
             />
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Accessible How It Works Modal (Available from both Home and Workspace) */}
+      <HowItWorksDialog
+        isOpen={howItWorksOpen}
+        onClose={() => setHowItWorksOpen(false)}
+        onGetStarted={() => {
+          setHowItWorksOpen(false)
+          setCurrentView('workspace')
+        }}
+        theme={theme}
+      />
     </div>
   )
 }

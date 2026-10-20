@@ -22,3 +22,34 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Environment Variables
+.env
+*.env
+!.env.example
+
+# Python & Backend
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+backend/.venv/
+.venv/
+env/
+venv/
+ENV/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Audio & Models
+*.wav
+*.mp3
+*.m4a
+*.flac
+*.ogg
+!backend/tests/fixtures/*.wav
+models/
+.cache/
+

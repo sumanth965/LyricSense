@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import type { AudioMetadata } from '../types'
 
-const MAX_FILE_SIZE = 100 * 1024 * 1024 // 100 MB
+const MAX_FILE_SIZE = 500 * 1024 * 1024 // 500 MB
 
 export function formatFileSize(bytes: number): string {
   if (bytes < 1024) return `${bytes} B`
@@ -54,6 +54,10 @@ export function useAudioPlayer() {
       setCurrentTime(audio.currentTime)
     }
 
+    const onSeekEvent = () => {
+      setCurrentTime(audio.currentTime)
+    }
+
     const onLoadedMetadata = () => {
       if (isFinite(audio.duration) && audio.duration > 0) {
         setDuration(audio.duration)
@@ -63,7 +67,10 @@ export function useAudioPlayer() {
 
     const onEnded = () => {
       setIsPlaying(false)
-      setCurrentTime(0)
+      // Preserve currentTime so the final words remain synchronized and highlighted at song end
+      if (audio.duration && isFinite(audio.duration)) {
+        setCurrentTime(audio.duration)
+      }
     }
 
     const onError = () => {
@@ -73,6 +80,8 @@ export function useAudioPlayer() {
     }
 
     audio.addEventListener('timeupdate', onTimeUpdate)
+    audio.addEventListener('seeking', onSeekEvent)
+    audio.addEventListener('seeked', onSeekEvent)
     audio.addEventListener('loadedmetadata', onLoadedMetadata)
     audio.addEventListener('ended', onEnded)
     audio.addEventListener('error', onError)
@@ -80,6 +89,8 @@ export function useAudioPlayer() {
     return () => {
       audio.pause()
       audio.removeEventListener('timeupdate', onTimeUpdate)
+      audio.removeEventListener('seeking', onSeekEvent)
+      audio.removeEventListener('seeked', onSeekEvent)
       audio.removeEventListener('loadedmetadata', onLoadedMetadata)
       audio.removeEventListener('ended', onEnded)
       audio.removeEventListener('error', onError)
@@ -124,7 +135,7 @@ export function useAudioPlayer() {
       // 1. File size validation
       if (file.size > MAX_FILE_SIZE) {
         setError(
-          `File size exceeds 100 MB limit (${formatFileSize(file.size)}). Please choose a smaller track.`,
+          `File size exceeds 500 MB limit (${formatFileSize(file.size)}). Please choose a smaller track.`,
         )
         setIsLoading(false)
         return false
@@ -211,6 +222,14 @@ export function useAudioPlayer() {
   const play = useCallback(async () => {
     if (!audioRef.current || !metadata) return
     try {
+      // If playback ended or is at the end, restart from beginning
+      if (
+        audioRef.current.ended ||
+        (duration > 0 && audioRef.current.currentTime >= duration - 0.1)
+      ) {
+        audioRef.current.currentTime = 0
+        setCurrentTime(0)
+      }
       await audioRef.current.play()
       setIsPlaying(true)
       setError(null)
@@ -219,7 +238,7 @@ export function useAudioPlayer() {
       setIsPlaying(false)
       setError('Playback failed or was blocked by browser permissions.')
     }
-  }, [metadata])
+  }, [metadata, duration])
 
   const pause = useCallback(() => {
     if (!audioRef.current) return

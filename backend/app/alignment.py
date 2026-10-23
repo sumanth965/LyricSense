@@ -7,28 +7,46 @@ from .schemas import SegmentItem, WordItem
 logger = logging.getLogger(__name__)
 
 
-def validate_and_clean_words(raw_words: List[WordItem]) -> List[WordItem]:
+def validate_and_clean_words(
+    raw_words: List[WordItem],
+    max_duration: Optional[float] = None,
+) -> List[WordItem]:
     """
     Validates word timestamps:
     - start <= end
     - non-negative numbers
+    - start within audio duration bounds
+    - detects temporal inversions without fabricating timestamps
     - preserves word text and attached punctuation
-    - does not fabricate timestamps
+    - never evenly distributes or fabricates timestamps
     """
     cleaned: List[WordItem] = []
+    prev_valid_start: Optional[float] = None
+
     for w in raw_words:
-        text = w.word.strip()
+        if isinstance(w, dict):
+            text = str(w.get("word", "")).strip()
+            start = w.get("start")
+            end = w.get("end")
+            prob = w.get("probability")
+        else:
+            text = w.word.strip()
+            start = w.start
+            end = w.end
+            prob = w.probability
+
         if not text:
             continue
-
-        start = w.start
-        end = w.end
 
         # Ensure start and end are valid numbers and end > start
         if start is not None and end is not None:
             if start < 0:
                 start = 0.0
-            if end <= start:
+            if max_duration is not None and start > max_duration + 1.0:
+                # Timestamp exceeds audio duration bound
+                start = None
+                end = None
+            elif end <= start:
                 # Discard invalid inverted or zero-duration timestamps rather than fabricating
                 start = None
                 end = None
@@ -44,7 +62,7 @@ def validate_and_clean_words(raw_words: List[WordItem]) -> List[WordItem]:
                 word=text,
                 start=start,
                 end=end,
-                probability=round(w.probability, 3) if w.probability is not None else None,
+                probability=round(prob, 3) if prob is not None else None,
             )
         )
     return cleaned
@@ -138,12 +156,15 @@ def is_hallucinated_segment(text: str) -> bool:
 def process_segments_and_alignment(
     raw_segments: list,
     detected_language: Optional[str] = None,
-) -> Tuple[List[SegmentItem], str, List[str]]:
+    audio_duration: Optional[float] = None,
+    total_duration: Optional[float] = None,
+) -> Tuple[List[SegmentItem], str, List[str], int, int]:
     """
     Transforms faster-whisper segments into structured SegmentItems with validated word timestamps.
     Filters out instrumental hallucination loops and known phantom phrases.
-    Returns (segments, alignment_status, warnings).
+    Returns (segments, alignment_status, warnings, aligned_words_count, total_words_count).
     """
+    max_dur = audio_duration if audio_duration is not None else total_duration
     segments: List[SegmentItem] = []
     warnings: List[str] = []
     total_words = 0
@@ -151,9 +172,20 @@ def process_segments_and_alignment(
     filtered_hallucinations_count = 0
 
     for seg in raw_segments:
-        seg_start = round(max(0.0, float(seg.start)), 3)
-        seg_end = round(max(seg_start, float(seg.end)), 3)
-        seg_text = seg.text.strip()
+        if isinstance(seg, dict):
+            raw_start = seg.get("start", 0.0)
+            raw_end = seg.get("end", 0.0)
+            raw_text = seg.get("text", "")
+            raw_words_list = seg.get("words", [])
+        else:
+            raw_start = getattr(seg, "start", 0.0)
+            raw_end = getattr(seg, "end", 0.0)
+            raw_text = getattr(seg, "text", "")
+            raw_words_list = getattr(seg, "words", []) or []
+
+        seg_start = round(max(0.0, float(raw_start)), 3)
+        seg_end = round(max(seg_start, float(raw_end)), 3)
+        seg_text = raw_text.strip()
 
         # Filter out hallucinated loops and known instrumental phantom text
         if is_hallucinated_segment(seg_text):
@@ -161,22 +193,29 @@ def process_segments_and_alignment(
             continue
 
         words_list: List[WordItem] = []
-        if hasattr(seg, "words") and seg.words:
-            for w in seg.words:
+        if raw_words_list:
+            for w in raw_words_list:
                 total_words += 1
-                w_start = float(w.start) if w.start is not None else None
-                w_end = float(w.end) if w.end is not None else None
-                w_prob = float(w.probability) if hasattr(w, "probability") and w.probability is not None else None
+                if isinstance(w, dict):
+                    w_start = float(w["start"]) if w.get("start") is not None else None
+                    w_end = float(w["end"]) if w.get("end") is not None else None
+                    w_prob = float(w["probability"]) if w.get("probability") is not None else None
+                    w_word = str(w.get("word", ""))
+                else:
+                    w_start = float(w.start) if w.start is not None else None
+                    w_end = float(w.end) if w.end is not None else None
+                    w_prob = float(w.probability) if hasattr(w, "probability") and w.probability is not None else None
+                    w_word = w.word
 
                 raw_word = WordItem(
-                    word=w.word,
+                    word=w_word,
                     start=w_start,
                     end=w_end,
                     probability=w_prob,
                 )
                 words_list.append(raw_word)
 
-        cleaned_words = validate_and_clean_words(words_list)
+        cleaned_words = validate_and_clean_words(words_list, max_duration=max_dur)
         for cw in cleaned_words:
             if cw.start is not None and cw.end is not None:
                 words_with_timestamps += 1
@@ -193,22 +232,23 @@ def process_segments_and_alignment(
     if filtered_hallucinations_count > 0:
         logger.info(f"Cleaned {filtered_hallucinations_count} hallucinated/loop segments from output.")
 
-    # Determine alignment status
+    # Determine alignment status honestly
     if total_words > 0 and words_with_timestamps == total_words:
         alignment_status = "completed"
     elif total_words > 0 and words_with_timestamps > 0:
-        alignment_status = "completed"
+        alignment_status = "partial"
+        unaligned = total_words - words_with_timestamps
         warnings.append(
-            f"Partial word alignment: {words_with_timestamps} of {total_words} words have timing. "
-            "Some words in musical or unclear sections lack timestamps."
+            f"Partial word synchronization: {words_with_timestamps} of {total_words} words have exact alignment. "
+            f"{unaligned} word(s) in musical transitions or quiet singing lack exact timestamps."
         )
     elif total_words > 0 and words_with_timestamps == 0:
         alignment_status = "failed"
         warnings.append(
-            "Word-level alignment could not determine word timestamps. Segment timestamps are preserved."
+            "Word-level alignment could not establish timings. Segment boundaries are preserved."
         )
     else:
         alignment_status = "unavailable"
         warnings.append("No word-level timestamps were generated by the model.")
 
-    return segments, alignment_status, warnings
+    return segments, alignment_status, warnings, words_with_timestamps, total_words

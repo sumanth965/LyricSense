@@ -194,7 +194,7 @@ def test_missing_alignment_handling():
         words=[],
     )
 
-    segments, alignment_status, warnings = process_segments_and_alignment([mock_segment], detected_language="en")
+    segments, alignment_status, warnings, aligned_words, total_words = process_segments_and_alignment([mock_segment], detected_language="en")
     assert alignment_status == "unavailable"
     assert len(warnings) > 0
     assert segments[0].text == "Acoustic intro without clear words"
@@ -251,7 +251,7 @@ def test_duration_calculation_fallback():
     raw_seg1 = MagicMock(start=0.0, end=4.5, text="First verse line", words=[])
     raw_seg2 = MagicMock(start=5.0, end=12.8, text="Second verse line", words=[])
 
-    segments, alignment_status, warnings = process_segments_and_alignment([raw_seg1, raw_seg2])
+    segments, alignment_status, warnings, aligned_words, total_words = process_segments_and_alignment([raw_seg1, raw_seg2])
     assert len(segments) == 2
     max_duration = round(max(s.end for s in segments), 2)
     assert max_duration == 12.8
@@ -326,7 +326,7 @@ def test_multi_segment_transcription_preserved():
         ),
     ]
 
-    segments, alignment_status, warnings = process_segments_and_alignment(mock_segments, detected_language="en")
+    segments, alignment_status, warnings, aligned_words, total_words = process_segments_and_alignment(mock_segments, detected_language="en")
 
     # All 3 segments must be preserved
     assert len(segments) == 3

@@ -40,11 +40,17 @@ export async function transcribeAudioFile(
   file: File,
   language?: string,
   signal?: AbortSignal,
+  enableVocalSeparation?: boolean,
+  enableCloud: boolean = true,
 ): Promise<TranscriptionResponse> {
   const formData = new FormData()
   formData.append('file', file)
   if (language && language !== 'auto') {
     formData.append('language', language)
+  }
+  formData.append('enable_cloud', enableCloud ? 'true' : 'false')
+  if (enableVocalSeparation) {
+    formData.append('enable_vocal_separation', 'true')
   }
 
   try {

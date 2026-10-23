@@ -190,20 +190,22 @@ export default function AudioWorkspace({
                     isPlaying={isPlaying}
                     audioDuration={duration}
                     trackName={metadata?.name}
-                    onAnalyze={(lang?: string) => {
+                    onAnalyze={(lang?: string, sep?: boolean, cloud?: boolean) => {
                       if (metadata?.file) {
-                        transcribe(metadata.file, lang)
+                        transcribe(metadata.file, lang, sep, cloud)
                       }
                     }}
                     onCancel={cancelTranscription}
-                    onRetry={(lang?: string) => {
+                    onRetry={(lang?: string, sep?: boolean, cloud?: boolean) => {
                       if (metadata?.file) {
-                        transcribe(metadata.file, lang)
+                        transcribe(metadata.file, lang, sep, cloud)
                       }
                     }}
                     onSeek={seek}
                     theme={theme}
                     backendAvailable={backendHealth !== null}
+                    vocalSeparationAvailable={backendHealth?.vocal_separation_available ?? false}
+                    groqAvailable={backendHealth?.groq_available ?? false}
                   />
                 </motion.div>
               )}

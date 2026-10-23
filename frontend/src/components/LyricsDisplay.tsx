@@ -11,6 +11,7 @@ import {
   Sparkles,
   Timer,
   X,
+  Zap,
 } from 'lucide-react'
 import type { ProcessingStage, Theme, TranscriptionResponse } from '../types'
 
@@ -21,12 +22,14 @@ interface LyricsDisplayProps {
   isTranscribing: boolean
   currentTime: number
   isPlaying: boolean
-  onAnalyze: (language?: string) => void
+  onAnalyze: (language?: string, enableVocalSeparation?: boolean, enableCloud?: boolean) => void
   onCancel: () => void
-  onRetry: (language?: string) => void
+  onRetry: (language?: string, enableVocalSeparation?: boolean, enableCloud?: boolean) => void
   onSeek?: (time: number) => void
   theme: Theme
   backendAvailable?: boolean
+  vocalSeparationAvailable?: boolean
+  groqAvailable?: boolean
   audioDuration?: number
   trackName?: string
 }
@@ -60,6 +63,8 @@ export default function LyricsDisplay({
   onSeek,
   theme,
   backendAvailable = true,
+  vocalSeparationAvailable = false,
+  groqAvailable = false,
   audioDuration,
   trackName,
 }: LyricsDisplayProps) {
@@ -69,6 +74,9 @@ export default function LyricsDisplay({
   const activeSegmentRef = useRef<HTMLDivElement | null>(null)
 
   const [selectedLanguage, setSelectedLanguage] = useState<string>('auto')
+  const [enableCloud, setEnableCloud] = useState<boolean>(true)
+  const [enableVocalSeparation, setEnableVocalSeparation] = useState<boolean>(false)
+  const [showWarnings, setShowWarnings] = useState<boolean>(false)
   const [elapsedSeconds, setElapsedSeconds] = useState<number>(0)
 
   // Live timer counting up while transcription is active
@@ -142,6 +150,18 @@ export default function LyricsDisplay({
           break
         }
       }
+
+      // Handle the end of the song without resetting the highlight unexpectedly
+      if (!foundWord && flatWords.length > 0) {
+        const lastWord = flatWords[flatWords.length - 1]
+        const isSongNearEnd =
+          audioDuration && audioDuration > 0
+            ? currentTime >= audioDuration - 1.2 && currentTime >= lastWord.start
+            : currentTime >= lastWord.end && currentTime <= lastWord.end + 2.0
+        if (isSongNearEnd) {
+          foundWord = lastWord
+        }
+      }
     }
 
     const nextWordId = foundWord ? foundWord.id : null
@@ -154,6 +174,17 @@ export default function LyricsDisplay({
       nextSegIdx = transcription.segments.findIndex(
         (seg) => currentTime >= seg.start && currentTime <= seg.end,
       )
+      // Retain last segment if at end of song
+      if (nextSegIdx === -1 && transcription.segments.length > 0) {
+        const lastSeg = transcription.segments[transcription.segments.length - 1]
+        if (
+          audioDuration &&
+          currentTime >= audioDuration - 1.2 &&
+          currentTime >= lastSeg.start
+        ) {
+          nextSegIdx = transcription.segments.length - 1
+        }
+      }
     }
 
     if (nextWordId !== activeWordId) {
@@ -162,7 +193,7 @@ export default function LyricsDisplay({
     if (nextSegIdx !== activeSegmentIndex) {
       setActiveSegmentIndex(nextSegIdx)
     }
-  }, [currentTime, flatWords, transcription, activeWordId, activeSegmentIndex])
+  }, [currentTime, flatWords, transcription, activeWordId, activeSegmentIndex, audioDuration])
 
   // 3. Smooth auto-scroll active word or active segment into view centered in the lyrics container
   useEffect(() => {
@@ -239,7 +270,7 @@ export default function LyricsDisplay({
         </div>
 
         {/* Audio Language Selection Selector */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mb-5">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mb-4">
           <label
             htmlFor="lyrics-lang-select"
             className="text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5"
@@ -274,10 +305,82 @@ export default function LyricsDisplay({
           </select>
         </div>
 
+        {/* Processing Engine & Vocal Separation Preferences */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-5">
+          {/* Cloud Acceleration (Groq API) with Automatic Local Fallback */}
+          <label
+            className={`inline-flex items-center gap-2 text-xs font-medium px-3.5 py-1.5 rounded-xl border transition-colors select-none ${
+              groqAvailable
+                ? 'cursor-pointer hover:border-lion/60'
+                : 'opacity-60 cursor-not-allowed'
+            }`}
+            style={{
+              backgroundColor: isDark ? 'rgba(57, 30, 16, 0.4)' : 'rgba(226, 206, 177, 0.3)',
+              borderColor: isDark ? 'rgba(199, 160, 122, 0.25)' : 'rgba(115, 65, 40, 0.2)',
+              color: isDark ? '#E2CEB1' : '#734128',
+            }}
+            title={
+              groqAvailable
+                ? 'Accelerates transcription using Groq Cloud API with automatic local Whisper fallback. Uncheck for 100% offline local processing.'
+                : 'Groq API is not configured. Local faster-whisper will be used.'
+            }
+          >
+            <input
+              type="checkbox"
+              checked={enableCloud && groqAvailable}
+              onChange={(e) => setEnableCloud(e.target.checked)}
+              disabled={!groqAvailable}
+              className="w-3.5 h-3.5 accent-[#C7A07A] rounded cursor-pointer"
+            />
+            <span className="flex items-center gap-1.5">
+              <Zap className="w-3.5 h-3.5 text-amber-500" />
+              <span>Cloud Acceleration (Groq)</span>
+            </span>
+            {!groqAvailable && (
+              <span className="text-[10px] text-amber-500 font-mono font-normal">
+                (offline only)
+              </span>
+            )}
+          </label>
+
+          {/* Optional Local Vocal Separation Toggle (Demucs) */}
+          <label
+            className={`inline-flex items-center gap-2 text-xs font-medium px-3.5 py-1.5 rounded-xl border transition-colors select-none ${
+              vocalSeparationAvailable
+                ? 'cursor-pointer hover:border-lion/60'
+                : 'opacity-60 cursor-not-allowed'
+            }`}
+            style={{
+              backgroundColor: isDark ? 'rgba(57, 30, 16, 0.4)' : 'rgba(226, 206, 177, 0.3)',
+              borderColor: isDark ? 'rgba(199, 160, 122, 0.25)' : 'rgba(115, 65, 40, 0.2)',
+              color: isDark ? '#E2CEB1' : '#734128',
+            }}
+            title={
+              vocalSeparationAvailable
+                ? 'Isolates singing vocals locally using Demucs before transcribing, then compares both results'
+                : 'Local Demucs engine is not installed in the Python environment'
+            }
+          >
+            <input
+              type="checkbox"
+              checked={enableVocalSeparation}
+              onChange={(e) => setEnableVocalSeparation(e.target.checked)}
+              disabled={!vocalSeparationAvailable}
+              className="w-3.5 h-3.5 accent-[#C7A07A] rounded cursor-pointer"
+            />
+            <span>Vocal Separation (Demucs)</span>
+            {!vocalSeparationAvailable && (
+              <span className="text-[10px] text-amber-500 font-mono font-normal">
+                (not installed)
+              </span>
+            )}
+          </label>
+        </div>
+
         {/* Primary Analyze Audio Action Button */}
         <button
           type="button"
-          onClick={() => onAnalyze(selectedLanguage)}
+          onClick={() => onAnalyze(selectedLanguage, enableVocalSeparation, enableCloud)}
           className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 hover:scale-102 active:scale-98 shadow-md cursor-pointer mb-4"
           style={{
             backgroundColor: '#734128',
@@ -455,7 +558,7 @@ export default function LyricsDisplay({
         </p>
         <button
           type="button"
-          onClick={() => onRetry(selectedLanguage)}
+          onClick={() => onRetry(selectedLanguage, enableVocalSeparation, enableCloud)}
           className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold shadow-sm transition-transform hover:scale-102 active:scale-98 cursor-pointer"
           style={{
             backgroundColor: '#734128',
@@ -482,7 +585,7 @@ export default function LyricsDisplay({
         borderColor: isDark ? 'rgba(199, 160, 122, 0.32)' : 'rgba(216, 194, 167, 0.9)',
       }}
     >
-      {/* 1. Header Toolbar: Title, Font Controls, Auto-Scroll, Copy */}
+      {/* 1. Header Toolbar: Title, Badges, Font Controls, Auto-Scroll, Copy */}
       <div className="flex flex-wrap items-center justify-between gap-3 pb-4 mb-4 border-b border-lion/20">
         <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
           <div className="w-8 h-8 rounded-lg bg-lion/15 border border-lion/30 flex items-center justify-center text-lion">
@@ -494,6 +597,8 @@ export default function LyricsDisplay({
           >
             Synchronized Lyrics
           </h3>
+
+          {/* Transliteration badge */}
           <span
             className="text-[11px] font-mono px-2.5 py-0.5 rounded-full border border-lion/30 text-lion bg-lion/10 flex items-center gap-1"
             title="Lyrics are displayed using English/Roman alphabet transliteration"
@@ -501,6 +606,8 @@ export default function LyricsDisplay({
             <Sparkles className="w-3 h-3 text-lion" />
             <span>English Alphabet</span>
           </span>
+
+          {/* Detected Language badge */}
           {transcription.detected_language_name && (
             <span
               className="text-[11px] font-mono px-2.5 py-0.5 rounded-full border border-lion/20 opacity-80"
@@ -508,6 +615,108 @@ export default function LyricsDisplay({
             >
               Language: {transcription.detected_language_name}
             </span>
+          )}
+
+          {/* Engine Provider Badge */}
+          {transcription.engine_used === 'groq' && (
+            <span
+              className="text-[11px] font-mono px-2.5 py-0.5 rounded-full border border-amber-500/40 text-amber-400 bg-amber-500/10 flex items-center gap-1"
+              title="Transcribed via Groq Cloud API (whisper-large-v3)"
+            >
+              <Zap className="w-3 h-3 text-amber-400" />
+              <span>Groq Cloud</span>
+            </span>
+          )}
+
+          {transcription.engine_used === 'local_whisper' && (
+            <span
+              className="text-[11px] font-mono px-2.5 py-0.5 rounded-full border border-lion/30 text-lion bg-lion/10 flex items-center gap-1"
+              title={
+                transcription.fallback_used
+                  ? `Fell back to local Whisper: ${transcription.fallback_reason}`
+                  : 'Transcribed locally with faster-whisper'
+              }
+            >
+              <Cpu className="w-3 h-3 text-lion" />
+              <span>{transcription.fallback_used ? 'Local Fallback' : 'Local Whisper'}</span>
+            </span>
+          )}
+
+          {/* Automatic Fallback Notice Badge */}
+          {transcription.fallback_used && (
+            <span
+              className="text-[11px] font-mono px-2.5 py-0.5 rounded-full border border-amber-500/40 text-amber-300 bg-amber-500/10 flex items-center gap-1"
+              title={`Cloud transcription failed; automatic fallback was triggered: ${transcription.fallback_reason}`}
+            >
+              <RefreshCw className="w-3 h-3 text-amber-300" />
+              <span>Fallback Triggered</span>
+            </span>
+          )}
+
+          {/* Honest Word Alignment Status Badge */}
+          {transcription.alignment_status === 'completed' && (
+            <span
+              className="text-[11px] font-mono px-2.5 py-0.5 rounded-full border border-emerald-500/40 text-emerald-400 bg-emerald-500/10 flex items-center gap-1"
+              title={`Word-level alignment verified: ${transcription.aligned_words_count ?? flatWords.length} of ${transcription.total_words_count ?? flatWords.length} words`}
+            >
+              <CheckCircle2 className="w-3 h-3 text-emerald-400" />
+              <span>
+                Aligned ({transcription.aligned_words_count ?? flatWords.length}/
+                {transcription.total_words_count ?? flatWords.length} words)
+              </span>
+            </span>
+          )}
+
+          {transcription.alignment_status === 'partial' && (
+            <span
+              className="text-[11px] font-mono px-2.5 py-0.5 rounded-full border border-amber-500/40 text-amber-400 bg-amber-500/10 flex items-center gap-1"
+              title={`Partial word-level alignment: ${transcription.aligned_words_count ?? 0} of ${transcription.total_words_count ?? 0} words`}
+            >
+              <AlertCircle className="w-3 h-3 text-amber-400" />
+              <span>
+                Partial Sync ({transcription.aligned_words_count ?? 0}/
+                {transcription.total_words_count ?? 0} words)
+              </span>
+            </span>
+          )}
+
+          {(transcription.alignment_status === 'unavailable' ||
+            transcription.alignment_status === 'failed' ||
+            transcription.alignment_status === 'unsupported') && (
+            <span
+              className="text-[11px] font-mono px-2.5 py-0.5 rounded-full border border-lion/30 text-lion/80 bg-lion/10 flex items-center gap-1"
+              title="Word-level alignment unavailable. Lyrics synchronized at line/segment level."
+            >
+              <Timer className="w-3 h-3 text-lion" />
+              <span>Segment Sync</span>
+            </span>
+          )}
+
+          {/* Vocal Separation Status Badge */}
+          {transcription.vocal_separation_used && (
+            <span
+              className="text-[11px] font-mono px-2.5 py-0.5 rounded-full border border-purple-500/40 text-purple-300 bg-purple-500/10 flex items-center gap-1"
+              title={`Vocal separation result: ${transcription.separation_status}`}
+            >
+              <Sparkles className="w-3 h-3 text-purple-300" />
+              <span>Vocals Isolated ({transcription.separation_status})</span>
+            </span>
+          )}
+
+          {/* Notices / Warnings Drawer Toggle */}
+          {transcription.warnings && transcription.warnings.length > 0 && (
+            <button
+              type="button"
+              onClick={() => setShowWarnings((prev) => !prev)}
+              className="text-[11px] font-mono px-2.5 py-0.5 rounded-full border border-amber-500/40 text-amber-300 bg-amber-500/10 hover:bg-amber-500/20 transition-colors cursor-pointer flex items-center gap-1"
+              title="Click to view alignment and audio analysis notices"
+            >
+              <AlertCircle className="w-3 h-3 text-amber-400" />
+              <span>
+                {transcription.warnings.length} Notice
+                {transcription.warnings.length > 1 ? 's' : ''}
+              </span>
+            </button>
           )}
         </div>
 
@@ -528,7 +737,9 @@ export default function LyricsDisplay({
                 onClick={() => setFontSize(size)}
                 aria-label={`Set font size to ${size}`}
                 className={`px-2 py-1 rounded-lg capitalize transition-colors cursor-pointer ${
-                  fontSize === size ? 'bg-lion text-bistre font-bold shadow-2xs' : 'opacity-70 hover:opacity-100'
+                  fontSize === size
+                    ? 'bg-lion text-bistre font-bold shadow-2xs'
+                    : 'opacity-70 hover:opacity-100'
                 }`}
               >
                 {size}
@@ -566,6 +777,37 @@ export default function LyricsDisplay({
           </button>
         </div>
       </div>
+
+      {/* 2. Collapsible Alignment & Audio Inspection Notices (Separate from lyric text) */}
+      {showWarnings && transcription.warnings && transcription.warnings.length > 0 && (
+        <div
+          className="mb-4 p-3.5 rounded-2xl border text-xs font-mono space-y-1.5 transition-all text-left"
+          style={{
+            backgroundColor: isDark ? 'rgba(115, 65, 40, 0.25)' : 'rgba(226, 206, 177, 0.45)',
+            borderColor: isDark ? 'rgba(199, 160, 122, 0.35)' : 'rgba(115, 65, 40, 0.3)',
+            color: isDark ? '#E2CEB1' : '#734128',
+          }}
+        >
+          <div className="font-semibold text-lion flex items-center justify-between pb-1 border-b border-lion/20">
+            <span className="flex items-center gap-1.5">
+              <AlertCircle className="w-3.5 h-3.5" />
+              <span>Inspection & Alignment Notices ({transcription.warnings.length})</span>
+            </span>
+            <button
+              type="button"
+              onClick={() => setShowWarnings(false)}
+              className="text-[10px] opacity-75 hover:opacity-100 cursor-pointer"
+            >
+              Dismiss
+            </button>
+          </div>
+          {transcription.warnings.map((w, idx) => (
+            <div key={idx} className="text-[11px] leading-relaxed opacity-90">
+              • {w}
+            </div>
+          ))}
+        </div>
+      )}
 
       {/* 2. Spacious Detected Lyrics Display */}
       <div

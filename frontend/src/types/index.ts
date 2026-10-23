@@ -37,7 +37,7 @@ export interface SegmentItem {
   words: WordItem[]
 }
 
-export type AlignmentStatus = 'completed' | 'failed' | 'unsupported' | 'unavailable'
+export type AlignmentStatus = 'completed' | 'partial' | 'failed' | 'unsupported' | 'unavailable'
 
 export interface TranscriptionResponse {
   status: 'completed' | 'failed'
@@ -50,6 +50,13 @@ export interface TranscriptionResponse {
   transliterated?: boolean
   segments: SegmentItem[]
   alignment_status: AlignmentStatus
+  aligned_words_count?: number | null
+  total_words_count?: number | null
+  vocal_separation_used?: boolean
+  separation_status?: 'completed' | 'failed' | 'unavailable' | 'skipped'
+  engine_used?: 'groq' | 'local_whisper' | 'local'
+  fallback_used?: boolean
+  fallback_reason?: string | null
   warnings?: string[]
 }
 
@@ -61,6 +68,10 @@ export interface BackendHealth {
   model_loaded: boolean
   ffmpeg_available: boolean
   alignment_available: boolean
+  vocal_separation_available?: boolean
+  groq_available?: boolean
+  cloud_transcription_enabled?: boolean
+  groq_model?: string
 }
 
 export type ProcessingStage =

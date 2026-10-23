@@ -50,7 +50,12 @@ export function useLyricsTranscription() {
 
   // Transcribe uploaded audio file
   const transcribe = useCallback(
-    async (file: File, language?: string) => {
+    async (
+      file: File,
+      language?: string,
+      enableVocalSeparation?: boolean,
+      enableCloud: boolean = true,
+    ) => {
       // Abort previous in-flight request
       if (abortControllerRef.current) {
         abortControllerRef.current.abort()
@@ -74,7 +79,13 @@ export function useLyricsTranscription() {
           }
         }, 600)
 
-        const response = await transcribeAudioFile(file, language, controller.signal)
+        const response = await transcribeAudioFile(
+          file,
+          language,
+          controller.signal,
+          enableVocalSeparation,
+          enableCloud,
+        )
         clearTimeout(transcribingTimer)
 
         // Ignore stale results if another request started or was cleared

@@ -13,6 +13,8 @@ from fastapi.responses import JSONResponse
 from .config import settings
 from .schemas import HealthResponse, TranscriptionResponse
 from .transcription import check_ffmpeg, get_model, is_model_loaded, transcribe_audio_file
+from .separation import is_vocal_separation_available
+from .groq_service import is_groq_available
 
 # Configure logging
 logging.basicConfig(
@@ -71,7 +73,7 @@ app.add_middleware(
 @app.get("/api/health", response_model=HealthResponse)
 async def health_check() -> HealthResponse:
     """
-    Health check endpoint reporting backend and model status.
+    Health check endpoint reporting backend, local model, and cloud engine status.
     """
     ffmpeg_available = check_ffmpeg()
     model_ready = is_model_loaded()
@@ -86,6 +88,10 @@ async def health_check() -> HealthResponse:
         model_loaded=model_ready,
         ffmpeg_available=ffmpeg_available,
         alignment_available=True,
+        vocal_separation_available=is_vocal_separation_available(),
+        groq_available=is_groq_available(),
+        cloud_transcription_enabled=settings.groq_enabled,
+        groq_model=settings.groq_model,
     )
 
 
@@ -93,6 +99,8 @@ async def health_check() -> HealthResponse:
 async def transcribe_audio(
     file: UploadFile = File(..., description="Audio file to transcribe"),
     language: Optional[str] = Form(None, description="Optional target language code (e.g. 'hi', 'en', 'es')"),
+    enable_cloud: bool = Form(True, description="Enable cloud transcription with automatic local fallback"),
+    enable_vocal_separation: bool = Form(False, description="Optional local Demucs vocal separation"),
 ) -> TranscriptionResponse:
     """
     Transcribes an uploaded audio file locally using faster-whisper.
@@ -156,12 +164,14 @@ async def transcribe_audio(
                 detail="Unable to decode audio. The file may be corrupted or in an unsupported codec.",
             ) from e
 
-        # 4. Perform local faster-whisper transcription & word alignment
+        # 4. Perform hybrid or local transcription & word alignment
         try:
             result = transcribe_audio_file(
                 temp_path,
                 original_filename=safe_basename,
                 language=language,
+                enable_cloud=enable_cloud,
+                enable_vocal_separation=enable_vocal_separation,
             )
             return result
         except Exception as e:

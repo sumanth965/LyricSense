@@ -28,7 +28,14 @@ class TranscriptionResponse(BaseModel):
     original_transcript: Optional[str] = None
     transliterated: bool = False
     segments: List[SegmentItem]
-    alignment_status: Literal["completed", "failed", "unsupported", "unavailable"]
+    alignment_status: Literal["completed", "partial", "failed", "unsupported", "unavailable"]
+    aligned_words_count: Optional[int] = None
+    total_words_count: Optional[int] = None
+    vocal_separation_used: bool = False
+    separation_status: Optional[Literal["completed", "failed", "unavailable", "skipped"]] = "skipped"
+    engine_used: Literal["groq", "local_whisper"] = "local_whisper"
+    fallback_used: bool = False
+    fallback_reason: Optional[str] = None
     warnings: List[str] = Field(default_factory=list)
 
 
@@ -40,3 +47,7 @@ class HealthResponse(BaseModel):
     model_loaded: bool
     ffmpeg_available: bool
     alignment_available: bool
+    vocal_separation_available: bool = False
+    groq_available: bool = False
+    cloud_transcription_enabled: bool = True
+    groq_model: str = "whisper-large-v3"

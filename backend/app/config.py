@@ -23,6 +23,13 @@ class Settings(BaseSettings):
     # Alignment configuration
     alignment_method: str = "faster_whisper"  # faster_whisper or whisperx
 
+    # Groq Cloud API configuration
+    groq_api_key: Optional[str] = None
+    groq_enabled: bool = True
+    groq_model: str = "whisper-large-v3"
+    groq_timeout_seconds: float = 30.0
+    groq_max_file_size_bytes: int = 25 * 1024 * 1024  # 25 MB limit for Groq audio endpoint
+
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",

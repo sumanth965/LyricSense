@@ -58,6 +58,28 @@ export default function AudioTeleprompter({
   const [showLyricsEditor, setShowLyricsEditor] = useState<boolean>(false)
   const [customLyricsText, setCustomLyricsText] = useState<string>('')
   const [isDraggingFile, setIsDraggingFile] = useState<boolean>(false)
+  const [editingWord, setEditingWord] = useState<{
+    lineId: number
+    wordIdx: number
+    text: string
+  } | null>(null)
+
+  const handleUpdateWord = (lineId: number, wordIdx: number, newText: string) => {
+    setLyrics((prev) =>
+      prev.map((line) => {
+        if (line.id !== lineId) return line
+        const updatedWords = line.words.map((w, idx) =>
+          idx === wordIdx ? { ...w, word: newText, low_confidence: false } : w,
+        )
+        const updatedText = updatedWords.map((w) => w.word).join(' ')
+        return {
+          ...line,
+          text: updatedText,
+          words: updatedWords,
+        }
+      }),
+    )
+  }
 
   // Initialize synthesized demo audio on mount
   useEffect(() => {
@@ -483,14 +505,67 @@ export default function AudioTeleprompter({
                   <span className="inline-flex flex-wrap items-center justify-center gap-x-2.5 sm:gap-x-3.5 gap-y-1.5">
                     {line.words.map((w, wIdx) => {
                       const isWordActive = wIdx === activeWordIndex
+                      const isLowConfidence = Boolean(w.low_confidence)
+                      const isEditingThisWord =
+                        editingWord?.lineId === line.id && editingWord?.wordIdx === wIdx
+
+                      if (isEditingThisWord) {
+                        return (
+                          <input
+                            key={wIdx}
+                            type="text"
+                            autoFocus
+                            value={editingWord.text}
+                            onChange={(e) =>
+                              setEditingWord({ ...editingWord, text: e.target.value })
+                            }
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter') {
+                                handleUpdateWord(line.id, wIdx, editingWord.text)
+                                setEditingWord(null)
+                              } else if (e.key === 'Escape') {
+                                setEditingWord(null)
+                              }
+                            }}
+                            onBlur={() => {
+                              if (editingWord.text !== w.word) {
+                                handleUpdateWord(line.id, wIdx, editingWord.text)
+                              }
+                              setEditingWord(null)
+                            }}
+                            className="inline-block text-center font-editorial font-bold px-2 py-0.5 rounded border border-[#C7A07A] bg-dun/40 text-lion focus:outline-none focus:ring-2 focus:ring-[#C7A07A]"
+                            style={{
+                              width: `${Math.max(w.word.length, editingWord.text.length, 2) + 2}ch`,
+                            }}
+                            onClick={(e) => e.stopPropagation()}
+                          />
+                        )
+                      }
+
                       return (
                         <span
                           key={wIdx}
                           onClick={(e) => {
-                            e.stopPropagation()
-                            handleSeek(w.start)
+                            if (isLowConfidence) {
+                              e.stopPropagation()
+                              setEditingWord({ lineId: line.id, wordIdx: wIdx, text: w.word })
+                            } else {
+                              e.stopPropagation()
+                              handleSeek(w.start)
+                            }
                           }}
+                          onDoubleClick={(e) => {
+                            e.stopPropagation()
+                            setEditingWord({ lineId: line.id, wordIdx: wIdx, text: w.word })
+                          }}
+                          title={
+                            isLowConfidence
+                              ? `Low confidence word (${Math.round((w.probability ?? 0) * 100)}%). Click to edit.`
+                              : `Click to jump to ${formatTime(w.start)} (Double-click to edit)`
+                          }
                           className={`relative inline-block transition-all duration-200 px-2 py-0.5 rounded-lg ${
+                            isLowConfidence ? 'border-b border-dotted border-[#C7A07A]' : ''
+                          } ${
                             isWordActive
                               ? 'shadow-md border scale-110'
                               : 'hover:opacity-80'

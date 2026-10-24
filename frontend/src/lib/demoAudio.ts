@@ -5,6 +5,8 @@ export interface SyncedWord {
   word: string
   start: number // in seconds
   end: number
+  probability?: number
+  low_confidence?: boolean
 }
 
 export interface SyncedLine {
@@ -55,7 +57,7 @@ export const DEMO_LYRICS: SyncedLine[] = [
     text: 'Golden soundwaves rising through the air',
     words: [
       { word: 'Golden', start: 9.8, end: 10.6 },
-      { word: 'soundwaves', start: 10.65, end: 11.7 },
+      { word: 'soundwaves', start: 10.65, end: 11.7, low_confidence: true, probability: 0.32 },
       { word: 'rising', start: 11.75, end: 12.6 },
       { word: 'through', start: 12.65, end: 13.2 },
       { word: 'the', start: 13.25, end: 13.5 },

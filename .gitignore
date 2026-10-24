@@ -26,6 +26,8 @@ dist-ssr
 # Environment Variables
 .env
 *.env
+backend/.env
+frontend/.env
 !.env.example
 
 # Python & Backend
@@ -52,4 +54,13 @@ htmlcov/
 !backend/tests/fixtures/*.wav
 models/
 .cache/
+
+# Benchmark Results & Test Datasets
+backend/benchmark/results/
+benchmark/results/
+dataset/
+datasets/
+backend/benchmark/dataset*/
+backend/dataset*/
+
 

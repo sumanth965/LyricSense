@@ -26,6 +26,7 @@ export interface WordItem {
   start: number | null
   end: number | null
   probability?: number | null
+  low_confidence?: boolean | null
   original_word?: string | null
 }
 
@@ -37,7 +38,7 @@ export interface SegmentItem {
   words: WordItem[]
 }
 
-export type AlignmentStatus = 'completed' | 'partial' | 'failed' | 'unsupported' | 'unavailable'
+export type AlignmentStatus = 'completed' | 'partial' | 'failed' | 'unsupported' | 'unavailable' | 'native'
 
 export interface TranscriptionResponse {
   status: 'completed' | 'failed'
@@ -58,6 +59,8 @@ export interface TranscriptionResponse {
   fallback_used?: boolean
   fallback_reason?: string | null
   warnings?: string[]
+  music_detected?: boolean | null
+  known_lyrics_used?: boolean
 }
 
 export interface BackendHealth {
@@ -78,6 +81,7 @@ export type ProcessingStage =
   | 'idle'
   | 'uploading'
   | 'preparing'
+  | 'separating_vocals'
   | 'transcribing'
   | 'aligning'
   | 'rendering'

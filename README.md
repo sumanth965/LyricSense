@@ -1,8 +1,8 @@
 # LyricSense — AI-Powered Lyrics Teleprompter & Word Alignment
 
 <p align="center">
-  <strong>A privacy-first, 100% local AI-powered audio teleprompter and synchronized lyrics application.</strong><br>
-  Accurate word-level timestamp alignment, real-time karaoke tracking, interactive seek-to-word playback, and zero external cloud dependencies.
+  <strong>A privacy-focused AI-powered audio teleprompter and synchronized lyrics application.</strong><br>
+  Word-level timestamp alignment, real-time karaoke tracking, interactive seek-to-word playback, running locally by default with optional cloud acceleration.
 </p>
 
 ---
@@ -11,48 +11,68 @@
 
 1. [Overview](#overview)
 2. [Key Features](#key-features)
-3. [Brand & Design System](#brand--design-system)
-4. [Architecture & Project Layout](#architecture--project-layout)
-5. [Prerequisites](#prerequisites)
-6. [Step-by-Step Setup Guide](#step-by-step-setup-guide)
+3. [Recommended Settings](#recommended-settings)
+4. [Brand & Design System](#brand--design-system)
+5. [Architecture & Project Layout](#architecture--project-layout)
+6. [Prerequisites](#prerequisites)
+7. [Step-by-Step Setup Guide](#step-by-step-setup-guide)
    - [Backend Setup (FastAPI + faster-whisper)](#backend-setup-fastapi--faster-whisper)
    - [Frontend Setup (React + Vite + TypeScript)](#frontend-setup-react--vite--typescript)
    - [Root Monorepo Commands](#root-monorepo-commands)
-7. [Environment Variables Reference](#environment-variables-reference)
-8. [Whisper Model Sizes & Hardware Guide](#whisper-model-sizes--hardware-guide)
-9. [API Specification](#api-specification)
-10. [Testing & Quality Assurance](#testing--quality-assurance)
-11. [Troubleshooting & FAQs](#troubleshooting--faqs)
-12. [License](#license)
+8. [Environment Variables Reference](#environment-variables-reference)
+9. [Whisper Model Sizes & Hardware Guide](#whisper-model-sizes--hardware-guide)
+10. [Accuracy Benchmark Suite](#accuracy-benchmark-suite)
+11. [API Specification](#api-specification)
+12. [Testing & Quality Assurance](#testing--quality-assurance)
+13. [Troubleshooting & FAQs](#troubleshooting--faqs)
+14. [License](#license)
 
 ---
 
 ## Overview
 
-**LyricSense** combines modern audio playback with local speech recognition to generate synchronized lyrics for songs, podcasts, and speech recordings. 
+**LyricSense** combines modern audio playback with speech and vocal recognition to generate synchronized lyrics for songs, podcasts, and speech recordings.
 
-Unlike traditional transcription platforms that upload sensitive audio files to paid third-party cloud APIs, LyricSense processes **everything 100% locally** on your machine using [`faster-whisper`](https://github.com/SYSTRAN/faster-whisper) (CTranslate2). It achieves high-accuracy word-level timestamps without telemetry, recurring API costs, or data privacy concerns.
+Accuracy depends on the model, the audio, and the language. Run the benchmark on your own songs (see [Accuracy Benchmark Suite](#accuracy-benchmark-suite)).
+
+LyricSense is built around an advanced multi-stage processing pipeline:
+1. **Vocal Separation (Demucs)**: Automatically detects music vs. speech using an acoustic pause-energy heuristic and isolates vocal tracks via `htdemucs --two-stems=vocals`.
+2. **Transcription Engine**: Transcribes audio locally using [`faster-whisper`](https://github.com/SYSTRAN/faster-whisper) (`small` default for Mac/CPU, `large-v3` for GPU or speed-insensitive workflows), or optionally via Groq Cloud API (`whisper-large-v3`) when `GROQ_API_KEY` is configured.
+3. **Phonetic Forced Alignment (WhisperX)**: Aligns words against vocal audio using wav2vec2 models with language-specific model caching. Note that phonetic alignment models are not available for every language; when unavailable or if alignment fails, the pipeline seamlessly falls back to native Whisper word timestamps (`alignment_status: "native"` or `"partial"`).
+4. **Per-Word Confidence & Editing**: Flags words with confidence below `0.4` (`low_confidence: true`) with subtle dotted underlines and interactive inline editing.
+5. **Known-Lyrics Sync**: Allows users to paste ground-truth lyrics to skip acoustic recognition and run pure forced alignment. *Caveat*: Known-lyrics mode aligns the supplied text as-is, so mismatched lyrics, missing words, or repeated choruses that differ from the recording can still misalign.
 
 ---
 
 ## Key Features
 
 ### 🎙️ Audio Playback & Interactive Teleprompter
-- **Drag-and-Drop Uploader**: Supports `MP3`, `WAV`, `OGG`, `AAC`, `M4A`, `FLAC`, and `WEBM` audio files up to 100 MB.
+- **Drag-and-Drop Uploader**: Supports `MP3`, `WAV`, `OGG`, `AAC`, `M4A`, `FLAC`, and `WEBM` audio files up to 500 MB.
 - **Waveform Timeline & Seek Controls**: Smooth audio scrubbing, playback speed adjustments (`0.75x`, `1.0x`, `1.25x`, `1.5x`), loop playback, and volume controls.
 - **Word-Level Teleprompter**: Highlights active words and lines in real-time as music or speech plays, powered by binary interval search for low-overhead rendering.
-- **Interactive Click-to-Seek**: Click on any transcribed word or lyric line to jump the audio player directly to that exact millisecond.
+- **Interactive Click-to-Seek**: Click on any transcribed word or lyric line to jump the audio player directly to that exact timestamp.
 - **Display Customization**: Toggle between font sizes (`Normal`, `Large`, `Huge / Stage`), smooth auto-scroll to keep active lyrics centered, and **Mirror Mode** for hardware teleprompter glass reflection.
 - **Manual Lyrics Fallback**: Built-in editor to paste or customize lyrics if automatic transcription is not needed.
 - **Built-in Synthesized Audio Demo**: Test full teleprompter playback instantly on fresh clones without uploading a single file.
 
-### 🧠 Local AI Speech Recognition & Alignment
-- **Zero Cloud Dependencies**: 100% local inference using `faster-whisper` and CTranslate2 with quantized `int8` CPU execution or `float16` CUDA GPU acceleration.
-- **Millisecond Timestamp Precision**: Produces start and end timestamps for every word and sentence segment.
+### 🧠 Speech Recognition & Alignment
+- **Local-First with Optional Cloud Acceleration**: Default local inference runs 100% on your machine using `faster-whisper` (CTranslate2) with `int8` CPU quantization or `float16` CUDA GPU acceleration.
+- **Privacy & Groq Cloud Mode**: Cloud mode is strictly optional. If enabled (`enable_cloud=true` with `GROQ_API_KEY`), preprocessed audio in FLAC format is sent over HTTPS to Groq's Cloud API for transcription; Demucs vocal separation and WhisperX forced alignment always run locally on your machine. No audio ever leaves your computer unless Groq is explicitly configured.
+- **Per-Word Timestamps**: Produces start and end timestamps for every recognized word and sentence segment.
 - **Automatic Language Detection**: Identifies speech and singing language automatically across dozens of supported languages.
-- **English Alphabet Transliteration**: Automatically converts lyrics from any script (Hindi, Kannada, Japanese, Korean, Tamil, Telugu, Russian, Arabic, etc.) into the Roman/English alphabet, preserving accurate word-level timestamps and original pronunciations without translating.
+- **English Alphabet Transliteration**: Automatically converts lyrics from non-Latin scripts (Hindi, Kannada, Japanese, Korean, Tamil, Telugu, Russian, Arabic, etc.) into the Roman/English alphabet, preserving accurate word-level timestamps and original pronunciations without translating.
 - **Multi-Stage Progress Tracking**: Live frontend pipeline feedback (`Preparing` ➔ `Transcribing` ➔ `Aligning` ➔ `Rendering` ➔ `Completed`).
 - **Resilient Fallback Handling**: Gracefully handles non-speech interludes, acoustic echoes, and instrumental intros without crashing or fabricating timestamps.
+
+---
+
+## Recommended Settings
+
+| Hardware Profile | Recommended `MODEL_SIZE` | `DEVICE` | `COMPUTE_TYPE` | Expected Speed & Trade-Offs |
+|---|---|---|---|---|
+| **Mac / CPU (No GPU)** | `small` | `cpu` | `int8` | **Recommended default**: Fast turnaround (~4–6x real-time), modest RAM (~2.5 GB), solid lyric accuracy across most genres. |
+| **Dedicated NVIDIA GPU (CUDA)** | `large-v3` | `cuda` | `float16` | **Maximum accuracy**: Studio-fidelity lyric recognition running ultra-fast (~10–15x real-time on modern GPUs). |
+| **Mac / CPU (Speed Insensitive)** | `large-v3` | `cpu` | `int8` | Highest transcription accuracy on CPU, but noticeably slow (~0.8–1.2x real-time; a 3-minute song takes ~3 minutes to process). |
 
 ### 🎨 Visual Polish & Micro-Interactions
 - Custom warm ivory and bronze color palette inspired by studio acoustics.
@@ -261,10 +281,15 @@ For convenience, you can run all project tasks directly from the repository root
 
 | Variable | Default | Description |
 |---|---|---|
-| `MODEL_SIZE` | `tiny` | Whisper model: `tiny`, `base`, `small`, `medium`, or `large-v3`. |
+| `MODEL_SIZE` | `large-v3` | Default Whisper model (`large-v3` with int8 on CPU or float16 on CUDA). Supports `tiny`, `base`, `small`, `medium`. |
 | `DEVICE` | `cpu` | Inference hardware: `cpu` or `cuda`. Falls back to `cpu` automatically if GPU unavailable. |
 | `COMPUTE_TYPE` | `int8` | Precision: `int8` for fast CPU; `float16` for NVIDIA CUDA. |
-| `MAX_UPLOAD_SIZE_MB` | `100` | Maximum audio upload file size allowed in megabytes. |
+| `VAD_FILTER` | `false` | Voice Activity Detection filter. Kept `false` by default to avoid clipping sustained singing notes. |
+| `SEPARATE_VOCALS_DEFAULT` | `auto` | Default Demucs vocal separation strategy: `auto` (acoustic pause energy heuristic), `on`, or `off`. |
+| `LOW_CONFIDENCE_THRESHOLD` | `0.4` | Confidence probability cutoff below which words are marked `low_confidence: true`. |
+| `ALIGNMENT_METHOD` | `whisperx` | Forced alignment engine: `whisperx` (phoneme alignment with native fallback). |
+| `GROQ_API_KEY` | `""` | Optional Groq Cloud API key for ultra-fast cloud transcription fallback/acceleration. |
+| `MAX_UPLOAD_SIZE_MB` | `500` | Maximum audio upload file size allowed in megabytes. |
 | `ALLOWED_ORIGINS` | `http://localhost:5173,http://127.0.0.1:5173` | Comma-delimited list of permitted CORS frontend origins. |
 | `HOST` | `0.0.0.0` | Bind host address. |
 | `PORT` | `8000` | Bind port number. |
@@ -284,13 +309,11 @@ When `faster-whisper` runs for the first time with a chosen model, it downloads 
 
 | Model | Download Size | RAM Needed | Speed (CPU) | Best For |
 |---|---|---|---|---|
-| **`tiny`** | ~75 MB | 1 GB | ~32x real-time | Rapid development, testing, lightweight machines |
-| **`base`** | ~145 MB | 1.5 GB | ~16x real-time | Excellent balance of speed and clarity for singing |
-| **`small`** | ~480 MB | 2.5 GB | ~6x real-time | Enhanced lyric recognition across diverse accents |
-| **`medium`** | ~1.5 GB | 5 GB | ~2x real-time | High-fidelity recognition for complex multi-instrument audio |
-| **`large-v3`** | ~3.1 GB | 10 GB | ~1x real-time | Studio-grade accuracy (recommended with NVIDIA CUDA) |
-
-> **Tip**: To switch to higher accuracy, edit `backend/.env` and set `MODEL_SIZE=base` or `MODEL_SIZE=small`, then restart the backend server.
+| **`tiny`** | ~75 MB | 1 GB | ~32x real-time | Rapid development, unit tests, lightweight CI |
+| **`base`** | ~145 MB | 1.5 GB | ~16x real-time | Fast local speech verification |
+| **`small`** | ~480 MB | 2.5 GB | ~6x real-time | Good balance of speed and singing lyric accuracy |
+| **`medium`** | ~1.5 GB | 5 GB | ~2x real-time | Multi-instrumental and accented speech |
+| **`large-v3`** | ~3.1 GB | 10 GB | ~1x real-time | **Default**: Studio-grade transcription and lyrics fidelity |
 
 ---
 
@@ -303,12 +326,14 @@ When `faster-whisper` runs for the first time with a chosen model, it downloads 
 ```json
 {
   "status": "healthy",
-  "model_size": "tiny",
+  "model_size": "large-v3",
   "device": "cpu",
   "compute_type": "int8",
   "model_loaded": true,
   "ffmpeg_available": true,
-  "alignment_available": true
+  "alignment_available": true,
+  "demucs_available": true,
+  "groq_available": false
 }
 ```
 
@@ -318,7 +343,11 @@ When `faster-whisper` runs for the first time with a chosen model, it downloads 
 - **Content-Type**: `multipart/form-data`
 - **Parameters**:
   - `file`: Audio file (`.mp3`, `.wav`, `.ogg`, `.aac`, `.m4a`, `.flac`, `.webm`).
-  - `language` *(optional)*: 2-letter ISO language code (e.g., `en`, `es`, `fr`). Leave blank for auto-detection.
+  - `language` *(optional)*: 2-letter ISO language code (e.g., `en`, `hi`, `kn`, `ja`). Leave blank for auto-detection.
+  - `separate_vocals` *(optional)*: Vocal separation mode: `"auto"`, `"on"`, or `"off"` (default: `"auto"`).
+  - `lyrics` *(optional)*: Plain text lyrics for known-lyrics forced alignment mode (skips recognition and directly aligns words).
+  - `enable_vocal_separation` *(optional, backward-compatible)*: Boolean flag.
+  - `enable_cloud` *(optional)*: Enable Groq cloud acceleration if API key is present.
 - **Success Response (200 OK)**:
 ```json
 {
@@ -333,15 +362,70 @@ When `faster-whisper` runs for the first time with a chosen model, it downloads 
       "end": 2.18,
       "text": "Hello world",
       "words": [
-        { "word": "Hello", "start": 0.52, "end": 1.10, "probability": 0.98 },
-        { "word": "world", "start": 1.15, "end": 2.18, "probability": 0.95 }
+        {
+          "word": "Hello",
+          "start": 0.52,
+          "end": 1.10,
+          "probability": 0.98,
+          "low_confidence": false
+        },
+        {
+          "word": "world",
+          "start": 1.15,
+          "end": 2.18,
+          "probability": 0.35,
+          "low_confidence": true
+        }
       ]
     }
   ],
   "alignment_status": "completed",
+  "music_detected": true,
+  "vocal_separation_used": true,
+  "separation_status": "completed",
+  "known_lyrics_used": false,
   "warnings": []
 }
 ```
+
+---
+
+## Accuracy Benchmark Suite
+
+Accuracy depends on the model, the audio, and the language. Run the benchmark on your own songs. See the [Benchmark Guide](backend/benchmark/README.md) for full instructions, dataset formatting, and comparison workflows.
+
+A benchmark runner is provided in `backend/benchmark/run_benchmark.py` to evaluate transcription accuracy (Word Error Rate via [jiwer](https://github.com/jitsi/jiwer)) and speed (Real-Time Factor, RTFx) across reference audio datasets with `.txt` lyrics.
+
+### Running Benchmarks
+
+```bash
+# Run benchmark on sample fixtures
+python backend/benchmark/run_benchmark.py \
+  --audio-dir backend/tests/fixtures \
+  --lyrics-dir backend/benchmark/fixtures \
+  --model tiny
+
+# Compare options: toggle vocal separation, VAD filter, or Whisper model
+python backend/benchmark/run_benchmark.py \
+  --audio-dir /path/to/songs \
+  --lyrics-dir /path/to/transcripts \
+  --separate on \
+  --vad off \
+  --model large-v3
+
+# View all CLI options
+python backend/benchmark/run_benchmark.py --help
+```
+
+### Benchmark Metrics Output
+
+The script outputs a formatted table comparing:
+- **Audio File**: Name of the test track.
+- **Reference Words**: Word count in reference ground-truth text.
+- **Hypothesis Words**: Word count produced by the pipeline.
+- **WER (Word Error Rate)**: Normalized word-level transcription error ($S + D + I) / N$.
+- **Elapsed Time**: Total pipeline runtime including preprocessing, separation, and alignment.
+- **RTFx (Real-Time Factor)**: Audio duration / processing time (>1.0 indicates faster than real-time playback).
 
 ---
 

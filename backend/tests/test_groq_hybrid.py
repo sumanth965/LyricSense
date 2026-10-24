@@ -130,7 +130,8 @@ def test_groq_transcription_success(client):
 
     with patch("app.groq_service.Groq", return_value=mock_client), \
          patch("app.groq_service.is_groq_available", return_value=True), \
-         patch.object(settings, "groq_api_key", "gsk_test_key"):
+         patch.object(settings, "groq_api_key", "gsk_test_key"), \
+         patch("app.transcription.align_segments_with_whisperx", side_effect=lambda segs, *args, **kwargs: (segs, "completed", [], sum(len(s.words) for s in segs), sum(len(s.words) for s in segs))):
 
         response = client.post(
             "/api/transcribe",

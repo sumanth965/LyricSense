@@ -42,6 +42,8 @@ export async function transcribeAudioFile(
   signal?: AbortSignal,
   enableVocalSeparation?: boolean,
   enableCloud: boolean = true,
+  separateVocals: 'auto' | 'on' | 'off' = 'off',
+  lyrics?: string,
 ): Promise<TranscriptionResponse> {
   const formData = new FormData()
   formData.append('file', file)
@@ -49,8 +51,12 @@ export async function transcribeAudioFile(
     formData.append('language', language)
   }
   formData.append('enable_cloud', enableCloud ? 'true' : 'false')
-  if (enableVocalSeparation) {
-    formData.append('enable_vocal_separation', 'true')
+  formData.append('separate_vocals', separateVocals)
+  if (enableVocalSeparation !== undefined) {
+    formData.append('enable_vocal_separation', enableVocalSeparation ? 'true' : 'false')
+  }
+  if (lyrics && lyrics.trim()) {
+    formData.append('lyrics', lyrics.trim())
   }
 
   try {

@@ -55,6 +55,8 @@ export function useLyricsTranscription() {
       language?: string,
       enableVocalSeparation?: boolean,
       enableCloud: boolean = true,
+      separateVocals: 'auto' | 'on' | 'off' = 'off',
+      lyrics?: string,
     ) => {
       // Abort previous in-flight request
       if (abortControllerRef.current) {
@@ -71,13 +73,32 @@ export function useLyricsTranscription() {
       setResult(null)
       setStage('uploading')
 
+      const timers: ReturnType<typeof setTimeout>[] = []
+
       try {
-        // Switch to transcribing after upload dispatch
-        const transcribingTimer = setTimeout(() => {
-          if (requestId === currentRequestIdRef.current) {
-            setStage('transcribing')
-          }
-        }, 600)
+        timers.push(
+          setTimeout(() => {
+            if (requestId === currentRequestIdRef.current) {
+              setStage('preparing')
+            }
+          }, 300),
+        )
+
+        timers.push(
+          setTimeout(() => {
+            if (requestId === currentRequestIdRef.current) {
+              setStage('separating_vocals')
+            }
+          }, 800),
+        )
+
+        timers.push(
+          setTimeout(() => {
+            if (requestId === currentRequestIdRef.current) {
+              setStage('transcribing')
+            }
+          }, 1800),
+        )
 
         const response = await transcribeAudioFile(
           file,
@@ -85,8 +106,10 @@ export function useLyricsTranscription() {
           controller.signal,
           enableVocalSeparation,
           enableCloud,
+          separateVocals,
+          lyrics,
         )
-        clearTimeout(transcribingTimer)
+        timers.forEach(clearTimeout)
 
         // Ignore stale results if another request started or was cleared
         if (requestId !== currentRequestIdRef.current) {
@@ -112,6 +135,7 @@ export function useLyricsTranscription() {
           setStage('completed')
         }
       } catch (err: unknown) {
+        timers.forEach(clearTimeout)
         if (err instanceof DOMException && err.name === 'AbortError') {
           // Request was deliberately cancelled
           return
@@ -134,6 +158,39 @@ export function useLyricsTranscription() {
     [],
   )
 
+  // In-line word correction callback that keeps word timestamps intact
+  const updateWord = useCallback(
+    (segmentIndex: number, wordIndex: number, newWordText: string) => {
+      setResult((prev) => {
+        if (!prev) return prev
+        const updatedSegments = prev.segments.map((seg, sIdx) => {
+          if (sIdx !== segmentIndex) return seg
+          const updatedWords = seg.words.map((w, wIdx) => {
+            if (wIdx !== wordIndex) return w
+            return {
+              ...w,
+              word: newWordText,
+              low_confidence: false,
+            }
+          })
+          const updatedSegText = updatedWords.map((w) => w.word).join(' ')
+          return {
+            ...seg,
+            text: updatedSegText,
+            words: updatedWords,
+          }
+        })
+        const updatedTranscript = updatedSegments.map((s) => s.text).join(' ')
+        return {
+          ...prev,
+          transcript: updatedTranscript,
+          segments: updatedSegments,
+        }
+      })
+    },
+    [],
+  )
+
   return {
     stage,
     result,
@@ -142,6 +199,7 @@ export function useLyricsTranscription() {
     backendHealth,
     isCheckingBackend,
     transcribe,
+    updateWord,
     cancel,
     clear,
     probeHealth,

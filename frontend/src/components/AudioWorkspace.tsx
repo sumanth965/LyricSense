@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import type { Theme } from '../types'
 import { useAudioPlayer } from '../hooks/useAudioPlayer'
@@ -25,6 +25,7 @@ export default function AudioWorkspace({
 }: AudioWorkspaceProps) {
   const isDark = theme === 'dark'
   const fileInputRef = useRef<HTMLInputElement | null>(null)
+  const [knownLyrics, setKnownLyrics] = useState<string | null>(null)
 
   const {
     metadata,
@@ -51,12 +52,14 @@ export default function AudioWorkspace({
     isTranscribing,
     backendHealth,
     transcribe,
+    updateWord,
     cancel: cancelTranscription,
     clear: clearTranscription,
   } = useLyricsTranscription()
 
-  const handleFileSelected = (file: File) => {
+  const handleFileSelected = (file: File, lyrics?: string) => {
     clearTranscription()
+    setKnownLyrics(lyrics || null)
     loadAudio(file)
   }
 
@@ -190,18 +193,20 @@ export default function AudioWorkspace({
                     isPlaying={isPlaying}
                     audioDuration={duration}
                     trackName={metadata?.name}
-                    onAnalyze={(lang?: string, sep?: boolean, cloud?: boolean) => {
+                    initialLyrics={knownLyrics || undefined}
+                    onAnalyze={(lang?: string, sep?: boolean, cloud?: boolean, sepMode?: 'auto' | 'on' | 'off', lyrics?: string) => {
                       if (metadata?.file) {
-                        transcribe(metadata.file, lang, sep, cloud)
+                        transcribe(metadata.file, lang, sep, cloud, sepMode || 'off', lyrics || knownLyrics || undefined)
                       }
                     }}
                     onCancel={cancelTranscription}
-                    onRetry={(lang?: string, sep?: boolean, cloud?: boolean) => {
+                    onRetry={(lang?: string, sep?: boolean, cloud?: boolean, sepMode?: 'auto' | 'on' | 'off', lyrics?: string) => {
                       if (metadata?.file) {
-                        transcribe(metadata.file, lang, sep, cloud)
+                        transcribe(metadata.file, lang, sep, cloud, sepMode || 'off', lyrics || knownLyrics || undefined)
                       }
                     }}
                     onSeek={seek}
+                    onUpdateWord={updateWord}
                     theme={theme}
                     backendAvailable={backendHealth !== null}
                     vocalSeparationAvailable={backendHealth?.vocal_separation_available ?? false}

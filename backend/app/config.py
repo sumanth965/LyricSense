@@ -3,13 +3,20 @@ from pathlib import Path
 from typing import List, Optional
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+# Prevent OpenMP thread deadlocks between CTranslate2 and PyTorch/libiomp5 on macOS
+os.environ.setdefault("KMP_DUPLICATE_LIB_OK", "TRUE")
+os.environ.setdefault("OMP_NUM_THREADS", "1")
+
 
 class Settings(BaseSettings):
     # Model configuration
-    model_size: str = "base"
+    model_size: str = "large-v3"
     device: str = "cpu"
     compute_type: str = "int8"
     model_cache_dir: Optional[str] = None
+    vad_filter: bool = False
+    separate_vocals_default: str = "off"
+    low_confidence_threshold: float = 0.4
 
     # Server configuration
     host: str = "0.0.0.0"
@@ -21,7 +28,7 @@ class Settings(BaseSettings):
     temp_dir: Optional[str] = None
 
     # Alignment configuration
-    alignment_method: str = "faster_whisper"  # faster_whisper or whisperx
+    alignment_method: str = "whisperx"  # whisperx or faster_whisper
 
     # Groq Cloud API configuration
     groq_api_key: Optional[str] = None

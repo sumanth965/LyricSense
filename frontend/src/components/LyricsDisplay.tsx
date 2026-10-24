@@ -7,6 +7,7 @@ import {
   FileText,
   Globe,
   Loader2,
+  Music2,
   RefreshCw,
   Sparkles,
   Timer,
@@ -22,16 +23,30 @@ interface LyricsDisplayProps {
   isTranscribing: boolean
   currentTime: number
   isPlaying: boolean
-  onAnalyze: (language?: string, enableVocalSeparation?: boolean, enableCloud?: boolean) => void
+  onAnalyze: (
+    language?: string,
+    enableVocalSeparation?: boolean,
+    enableCloud?: boolean,
+    separateVocals?: 'auto' | 'on' | 'off',
+    lyrics?: string,
+  ) => void
   onCancel: () => void
-  onRetry: (language?: string, enableVocalSeparation?: boolean, enableCloud?: boolean) => void
+  onRetry: (
+    language?: string,
+    enableVocalSeparation?: boolean,
+    enableCloud?: boolean,
+    separateVocals?: 'auto' | 'on' | 'off',
+    lyrics?: string,
+  ) => void
   onSeek?: (time: number) => void
+  onUpdateWord?: (segmentIndex: number, wordIndex: number, newWord: string) => void
   theme: Theme
   backendAvailable?: boolean
   vocalSeparationAvailable?: boolean
   groqAvailable?: boolean
   audioDuration?: number
   trackName?: string
+  initialLyrics?: string
 }
 
 interface FlatWordItem {
@@ -61,12 +76,14 @@ export default function LyricsDisplay({
   onCancel,
   onRetry,
   onSeek,
+  onUpdateWord,
   theme,
   backendAvailable = true,
   vocalSeparationAvailable = false,
   groqAvailable = false,
   audioDuration,
   trackName,
+  initialLyrics,
 }: LyricsDisplayProps) {
   const isDark = theme === 'dark'
   const containerRef = useRef<HTMLDivElement | null>(null)
@@ -76,6 +93,10 @@ export default function LyricsDisplay({
   const [selectedLanguage, setSelectedLanguage] = useState<string>('auto')
   const [enableCloud, setEnableCloud] = useState<boolean>(true)
   const [enableVocalSeparation, setEnableVocalSeparation] = useState<boolean>(false)
+  const [separateVocalsMode, setSeparateVocalsMode] = useState<'auto' | 'on' | 'off'>('off')
+  const [lyricsInput, setLyricsInput] = useState<string>(initialLyrics || '')
+  const [showLyricsInput, setShowLyricsInput] = useState<boolean>(Boolean(initialLyrics))
+  const [editingWord, setEditingWord] = useState<{ sIdx: number; wIdx: number; text: string } | null>(null)
   const [showWarnings, setShowWarnings] = useState<boolean>(false)
   const [elapsedSeconds, setElapsedSeconds] = useState<number>(0)
 
@@ -306,7 +327,7 @@ export default function LyricsDisplay({
         </div>
 
         {/* Processing Engine & Vocal Separation Preferences */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-5">
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-4">
           {/* Cloud Acceleration (Groq API) with Automatic Local Fallback */}
           <label
             className={`inline-flex items-center gap-2 text-xs font-medium px-3.5 py-1.5 rounded-xl border transition-colors select-none ${
@@ -343,13 +364,9 @@ export default function LyricsDisplay({
             )}
           </label>
 
-          {/* Optional Local Vocal Separation Toggle (Demucs) */}
-          <label
-            className={`inline-flex items-center gap-2 text-xs font-medium px-3.5 py-1.5 rounded-xl border transition-colors select-none ${
-              vocalSeparationAvailable
-                ? 'cursor-pointer hover:border-lion/60'
-                : 'opacity-60 cursor-not-allowed'
-            }`}
+          {/* Demucs Vocal Separation Mode Selector */}
+          <div
+            className="inline-flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-xl border"
             style={{
               backgroundColor: isDark ? 'rgba(57, 30, 16, 0.4)' : 'rgba(226, 206, 177, 0.3)',
               borderColor: isDark ? 'rgba(199, 160, 122, 0.25)' : 'rgba(115, 65, 40, 0.2)',
@@ -357,30 +374,76 @@ export default function LyricsDisplay({
             }}
             title={
               vocalSeparationAvailable
-                ? 'Isolates singing vocals locally using Demucs before transcribing, then compares both results'
-                : 'Local Demucs engine is not installed in the Python environment'
+                ? 'Runs Demucs htdemucs vocal isolation on music tracks before alignment'
+                : 'Demucs vocal separation is ready'
             }
           >
-            <input
-              type="checkbox"
-              checked={enableVocalSeparation}
-              onChange={(e) => setEnableVocalSeparation(e.target.checked)}
-              disabled={!vocalSeparationAvailable}
-              className="w-3.5 h-3.5 accent-[#C7A07A] rounded cursor-pointer"
+            <Sparkles className="w-3.5 h-3.5 text-lion" />
+            <label htmlFor="vocals-sep-select" className="text-xs font-semibold">
+              Vocal Separation:
+            </label>
+            <select
+              id="vocals-sep-select"
+              value={separateVocalsMode}
+              onChange={(e) => {
+                const val = e.target.value as 'auto' | 'on' | 'off'
+                setSeparateVocalsMode(val)
+                setEnableVocalSeparation(val !== 'off')
+              }}
+              className="bg-transparent font-mono text-xs focus:outline-none cursor-pointer"
+              style={{ color: isDark ? '#FDFCE8' : '#391E10' }}
+            >
+              <option value="off" style={{ backgroundColor: isDark ? '#391E10' : '#FFFFFF' }}>
+                Off (Fast / Default)
+              </option>
+              <option value="auto" style={{ backgroundColor: isDark ? '#391E10' : '#FFFFFF' }}>
+                Auto (Music vs Speech)
+              </option>
+              <option value="on" style={{ backgroundColor: isDark ? '#391E10' : '#FFFFFF' }}>
+                On (Force Demucs)
+              </option>
+            </select>
+          </div>
+        </div>
+
+        {/* Optional Known Lyrics Toggle & Input */}
+        <div className="w-full max-w-md mb-5">
+          <button
+            type="button"
+            onClick={() => setShowLyricsInput(!showLyricsInput)}
+            className="text-xs font-mono text-lion hover:underline inline-flex items-center gap-1.5 mb-2 cursor-pointer"
+          >
+            <FileText className="w-3.5 h-3.5" />
+            <span>{showLyricsInput ? 'Hide Reference Lyrics' : 'Paste Lyrics for Exact Sync (Known-lyrics mode)'}</span>
+          </button>
+          {showLyricsInput && (
+            <textarea
+              value={lyricsInput}
+              onChange={(e) => setLyricsInput(e.target.value)}
+              placeholder="Paste plain text lyrics here to skip recognition and force-align timestamps directly..."
+              rows={4}
+              className="w-full text-xs font-mono p-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-lion transition-colors resize-y text-left"
+              style={{
+                backgroundColor: isDark ? 'rgba(30, 15, 8, 0.8)' : '#FFFFFF',
+                borderColor: isDark ? 'rgba(199, 160, 122, 0.35)' : 'rgba(199, 160, 122, 0.6)',
+                color: isDark ? '#FDFCE8' : '#391E10',
+              }}
             />
-            <span>Vocal Separation (Demucs)</span>
-            {!vocalSeparationAvailable && (
-              <span className="text-[10px] text-amber-500 font-mono font-normal">
-                (not installed)
-              </span>
-            )}
-          </label>
+          )}
         </div>
 
         {/* Primary Analyze Audio Action Button */}
         <button
           type="button"
-          onClick={() => onAnalyze(selectedLanguage, enableVocalSeparation, enableCloud)}
+          onClick={() =>
+            onAnalyze(
+              selectedLanguage,
+              enableVocalSeparation,
+              enableCloud,
+              separateVocalsMode,
+              lyricsInput.trim() || undefined,
+            )
+          }
           className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 hover:scale-102 active:scale-98 shadow-md cursor-pointer mb-4"
           style={{
             backgroundColor: '#734128',
@@ -388,7 +451,7 @@ export default function LyricsDisplay({
           }}
         >
           <Cpu className="w-4 h-4 text-lion" />
-          <span>Analyze Audio</span>
+          <span>{lyricsInput.trim() ? 'Align Known Lyrics' : 'Analyze Audio'}</span>
         </button>
 
         {/* Local Processing & Privacy Badge */}
@@ -397,7 +460,7 @@ export default function LyricsDisplay({
           style={{ color: isDark ? 'rgba(226, 206, 177, 0.8)' : 'rgba(115, 65, 40, 0.85)' }}
         >
           <span className="inline-flex items-center gap-1.5 text-lion">
-            <Sparkles className="w-3.5 h-3.5" /> 100% Local Processing • Zero External APIs
+            <Sparkles className="w-3.5 h-3.5" /> Demucs • faster-whisper large-v3 • WhisperX Forced Alignment
           </span>
           {!backendAvailable && (
             <span className="text-amber-500 font-sans ml-1">• Backend connecting...</span>
@@ -413,8 +476,9 @@ export default function LyricsDisplay({
       idle: 'Preparing audio...',
       uploading: 'Uploading audio to local transcription engine...',
       preparing: 'Preparing audio recording for processing...',
-      transcribing: 'Transcribing full audio recording with faster-whisper...',
-      aligning: 'Aligning word-level timestamps...',
+      separating_vocals: 'Separating vocals with Demucs (htdemucs)...',
+      transcribing: 'Transcribing audio recording with faster-whisper...',
+      aligning: 'Aligning word-level timestamps with WhisperX...',
       rendering: 'Building synchronized lyric teleprompter...',
       completed: 'Completed',
       completed_with_warnings: 'Completed with warnings',
@@ -423,13 +487,14 @@ export default function LyricsDisplay({
 
     const stagesList = [
       { key: 'uploading', label: '1. Uploading' },
-      { key: 'transcribing', label: '2. Transcribing' },
-      { key: 'aligning', label: '3. Aligning Words' },
-      { key: 'rendering', label: '4. Complete' },
+      { key: 'separating_vocals', label: '2. Separating Vocals' },
+      { key: 'transcribing', label: '3. Transcribing' },
+      { key: 'aligning', label: '4. Aligning Words' },
+      { key: 'rendering', label: '5. Complete' },
     ]
 
     const getStageState = (sKey: string) => {
-      const order = ['uploading', 'transcribing', 'aligning', 'rendering', 'completed']
+      const order = ['uploading', 'separating_vocals', 'transcribing', 'aligning', 'rendering', 'completed']
       const currentIndex = order.indexOf(stage === 'preparing' ? 'uploading' : stage)
       const targetIndex = order.indexOf(sKey)
       if (targetIndex < currentIndex) return 'done'
@@ -692,6 +757,42 @@ export default function LyricsDisplay({
             </span>
           )}
 
+          {transcription.alignment_status === 'native' && (
+            <span
+              className="text-[11px] font-mono px-2.5 py-0.5 rounded-full border border-blue-500/40 text-blue-300 bg-blue-500/10 flex items-center gap-1"
+              title="Whisper native word timestamps used (no phonetic WhisperX model available for this language)"
+            >
+              <Timer className="w-3 h-3 text-blue-300" />
+              <span>Native Timestamps</span>
+            </span>
+          )}
+
+          {/* Music / Speech Detection Badge */}
+          {transcription.music_detected !== undefined && transcription.music_detected !== null && (
+            <span
+              className="text-[11px] font-mono px-2.5 py-0.5 rounded-full border border-lion/30 text-lion bg-lion/10 flex items-center gap-1"
+              title={
+                transcription.music_detected
+                  ? 'Acoustic pause analysis detected music energy'
+                  : 'Acoustic pause analysis detected speech energy'
+              }
+            >
+              <Music2 className="w-3 h-3 text-lion" />
+              <span>{transcription.music_detected ? 'Music Detected' : 'Speech Detected'}</span>
+            </span>
+          )}
+
+          {/* Known Lyrics Mode Badge */}
+          {transcription.known_lyrics_used && (
+            <span
+              className="text-[11px] font-mono px-2.5 py-0.5 rounded-full border border-emerald-500/40 text-emerald-300 bg-emerald-500/10 flex items-center gap-1"
+              title="Forced alignment performed directly against user-provided reference lyrics"
+            >
+              <FileText className="w-3 h-3 text-emerald-300" />
+              <span>Known Lyrics Mode</span>
+            </span>
+          )}
+
           {/* Vocal Separation Status Badge */}
           {transcription.vocal_separation_used && (
             <span
@@ -835,23 +936,72 @@ export default function LyricsDisplay({
                     const wordId = `word-${sIdx}-${wIdx}`
                     const isWordActive = wordId === activeWordId
                     const hasTiming = w.start !== null && w.end !== null
+                    const isLowConfidence = Boolean(w.low_confidence)
+                    const isEditingThisWord =
+                      editingWord?.sIdx === sIdx && editingWord?.wIdx === wIdx
+
+                    if (isEditingThisWord) {
+                      return (
+                        <input
+                          key={wordId}
+                          type="text"
+                          autoFocus
+                          value={editingWord.text}
+                          onChange={(e) =>
+                            setEditingWord({ ...editingWord, text: e.target.value })
+                          }
+                          onKeyDown={(e) => {
+                            if (e.key === 'Enter') {
+                              if (onUpdateWord) {
+                                onUpdateWord(sIdx, wIdx, editingWord.text)
+                              }
+                              setEditingWord(null)
+                            } else if (e.key === 'Escape') {
+                              setEditingWord(null)
+                            }
+                          }}
+                          onBlur={() => {
+                            if (onUpdateWord && editingWord.text !== w.word) {
+                              onUpdateWord(sIdx, wIdx, editingWord.text)
+                            }
+                            setEditingWord(null)
+                          }}
+                          className="inline-block mx-1 my-0.5 px-2 py-0.5 rounded border border-lion bg-dun/30 text-lion font-bold text-center focus:outline-none focus:ring-1 focus:ring-lion shadow-2xs"
+                          style={{
+                            width: `${Math.max(w.word.length, editingWord.text.length, 2) + 2}ch`,
+                          }}
+                          onClick={(e) => e.stopPropagation()}
+                        />
+                      )
+                    }
 
                     return (
                       <span
                         key={wordId}
                         ref={isWordActive ? activeWordRef : undefined}
-                        onClick={() => {
-                          if (hasTiming && onSeek && w.start !== null) {
+                        onClick={(e) => {
+                          if (isLowConfidence) {
+                            e.stopPropagation()
+                            setEditingWord({ sIdx, wIdx, text: w.word })
+                          } else if (hasTiming && onSeek && w.start !== null) {
                             onSeek(w.start)
                           }
                         }}
+                        onDoubleClick={(e) => {
+                          e.stopPropagation()
+                          setEditingWord({ sIdx, wIdx, text: w.word })
+                        }}
                         title={
-                          w.original_word && w.original_word !== w.word
-                            ? `Original script: ${w.original_word}`
-                            : undefined
+                          isLowConfidence
+                            ? `Low confidence word (${Math.round((w.probability ?? 0) * 100)}%). Click to correct text.`
+                            : w.original_word && w.original_word !== w.word
+                              ? `Original script: ${w.original_word} (Double-click to edit)`
+                              : 'Double-click to edit text'
                         }
                         className={`inline-block mx-1 my-0.5 px-1.5 py-0.5 rounded-lg transition-all duration-150 ${
                           hasTiming ? 'cursor-pointer' : ''
+                        } ${
+                          isLowConfidence ? 'border-b border-dotted border-[#C7A07A]' : ''
                         } ${
                           isWordActive
                             ? 'bg-[#C7A07A] text-[#391E10] font-bold scale-[1.06] shadow-sm ring-2 ring-[#734128]/20'

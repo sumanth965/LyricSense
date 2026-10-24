@@ -3,6 +3,9 @@ import os
 import shutil
 import tempfile
 from typing import Any, Optional, Tuple
+import av
+import numpy as np
+
 from .schemas import TranscriptionResponse
 
 logger = logging.getLogger(__name__)
@@ -21,14 +24,133 @@ def is_vocal_separation_available() -> bool:
     return DEMUCS_AVAILABLE
 
 
-def separate_vocals_locally(
+# Alias for clarity
+is_demucs_available = is_vocal_separation_available
+
+
+def _get_demucs_device() -> str:
+    """
+    Selects the optimal acceleration device for Demucs.
+    On Apple Silicon, selects 'mps' if available; otherwise 'cuda' if available; defaults to 'cpu'.
+    """
+    try:
+        import torch
+        if hasattr(torch.backends, "mps") and torch.backends.mps.is_available() and torch.backends.mps.is_built():
+            return "mps"
+        if torch.cuda.is_available():
+            return "cuda"
+    except Exception:
+        pass
+    return "cpu"
+
+
+def detect_is_music(audio_path: str) -> Tuple[bool, float, str]:
+    """
+    Determines whether an audio track is likely music (backing instruments/percussion)
+    or speech (spoken word/podcast) for the 'separate_vocals=auto' pipeline decision.
+
+    ACOUSTIC HEURISTIC:
+    1. Non-speech / Pause energy ratio:
+       Spoken human speech naturally contains frequent pause intervals between words,
+       phrases, and breath intervals (typically 25% - 50% low-energy silence/pause frames).
+       In contrast, musical recordings feature continuous background energy (drums, bass,
+       pads, guitars, reverberation tails) that persists even when the singer is silent,
+       resulting in a very low pause/silence ratio (typically < 15%).
+    2. Dynamic energy continuity:
+       We inspect 50ms audio frames across up to 30 seconds of the track using PyAV.
+       We compute the short-time Root Mean Square (RMS) energy per frame.
+       We measure the fraction of frames where RMS energy drops below 15% of the 90th
+       percentile energy ('pause_ratio').
+    3. Decision Boundary:
+       - If pause_ratio < 0.20 (less than 20% silence/pauses):
+         The track has continuous background acoustic presence consistent with music.
+         Returns (True, pause_ratio, "Continuous musical backing detected (pause ratio < 20%)")
+       - Otherwise (pause_ratio >= 0.20):
+         The track has distinct speech-pause cadence consistent with speech.
+         Returns (False, pause_ratio, "Intermittent speech-pause cadence detected (pause ratio >= 20%)")
+    """
+    if not os.path.isfile(audio_path):
+        return True, 0.0, "File not found; defaulted to music"
+
+    try:
+        samples_list = []
+        max_duration_seconds = 30.0
+        total_duration = 0.0
+
+        with av.open(audio_path) as container:
+            audio_streams = [s for s in container.streams if s.type == "audio"]
+            if not audio_streams:
+                return True, 0.0, "No audio stream; defaulted to music"
+
+            stream = audio_streams[0]
+            sr = stream.rate or 16000
+
+            for frame in container.decode(stream):
+                # Convert frame to 1D float32 array
+                arr = frame.to_ndarray()
+                if arr.ndim > 1:
+                    arr = np.mean(arr, axis=0)  # Mix to mono
+                if arr.dtype != np.float32:
+                    arr = arr.astype(np.float32) / (np.iinfo(arr.dtype).max if np.issubdtype(arr.dtype, np.integer) else 1.0)
+
+                samples_list.append(arr)
+                total_duration += len(arr) / sr
+                if total_duration >= max_duration_seconds:
+                    break
+
+        if not samples_list:
+            return True, 0.0, "No audio frames decoded; defaulted to music"
+
+        full_samples = np.concatenate(samples_list)
+        if len(full_samples) == 0:
+            return True, 0.0, "Empty audio buffer; defaulted to music"
+
+        # Divide into 50ms windows
+        window_size = int(sr * 0.05)  # 50ms
+        if window_size <= 0:
+            window_size = 800
+
+        num_windows = len(full_samples) // window_size
+        if num_windows < 5:
+            # Short audio: calculate simple RMS
+            rms = np.sqrt(np.mean(full_samples**2))
+            return (True, 0.0, "Short clip with sustained energy") if rms > 0.01 else (False, 1.0, "Silent/quiet clip")
+
+        # Compute RMS per window
+        reshaped = full_samples[: num_windows * window_size].reshape(num_windows, window_size)
+        rms_values = np.sqrt(np.mean(reshaped**2, axis=1))
+
+        peak_energy = float(np.percentile(rms_values, 90))
+        if peak_energy < 1e-4:
+            # Virtually completely silent audio
+            return False, 1.0, "Silent audio track (pause ratio 100%)"
+
+        threshold = 0.15 * peak_energy
+        pause_frames = int(np.sum(rms_values < threshold))
+        pause_ratio = round(pause_frames / num_windows, 3)
+
+        if pause_ratio < 0.20:
+            note = f"Continuous musical backing detected (pause ratio {pause_ratio * 100:.1f}% < 20%)"
+            return True, pause_ratio, note
+        else:
+            note = f"Intermittent speech-pause cadence detected (pause ratio {pause_ratio * 100:.1f}% >= 20%)"
+            return False, pause_ratio, note
+
+    except Exception as e:
+        logger.warning(f"Error during acoustic music/speech detection: {e}. Defaulting to music.")
+        return True, 0.0, f"Analysis error ({e}); defaulted to music"
+
+
+def separate_vocals_demucs(
     audio_path: str,
     output_dir: Optional[str] = None,
 ) -> Tuple[Optional[str], str]:
     """
-    Separates vocal stem from background instruments using local Demucs model.
-    Runs 100% on-device without sending any audio to external services.
+    Separates vocal stem from background instruments using local Demucs htdemucs model.
+    Runs with --two-stems=vocals to isolate the vocal track.
     
+    Guarantees cleanup of temporary directories on both success and failure.
+
     Returns:
         (vocals_wav_path, status)
         where status is one of "completed", "failed", "unavailable".
@@ -41,26 +163,37 @@ def separate_vocals_locally(
         logger.error(f"Cannot separate vocals: Audio file '{audio_path}' not found.")
         return None, "failed"
 
+    created_temp_dir = (output_dir is None)
     target_dir = output_dir or tempfile.mkdtemp(prefix="lyricsense_demucs_")
     os.makedirs(target_dir, exist_ok=True)
 
     try:
-        logger.info(f"Running local Demucs vocal separation for '{os.path.basename(audio_path)}'...")
-        # Local Demucs execution
+        device = _get_demucs_device()
+        logger.info(f"Running Demucs htdemucs --two-stems=vocals for '{os.path.basename(audio_path)}' (device={device})...")
         import demucs.separate
-        demucs.separate.main([
-            "--two-stems", "vocals",
-            "-n", "htdemucs",
-            "-o", target_dir,
-            audio_path,
-        ])
+
+        def _run_demucs(dev: str):
+            args = ["--two-stems", "vocals", "-n", "htdemucs", "-o", target_dir]
+            if dev != "cpu":
+                args.extend(["-d", dev])
+            args.append(audio_path)
+            demucs.separate.main(args)
+
+        try:
+            _run_demucs(device)
+        except Exception as dev_err:
+            if device == "mps":
+                logger.warning(f"Demucs MPS separation failed ({dev_err}). Falling back to CPU...")
+                _run_demucs("cpu")
+            else:
+                raise dev_err
 
         # Locating the output vocals stem: target_dir/htdemucs/{track_name}/vocals.wav
         track_stem = os.path.splitext(os.path.basename(audio_path))[0]
         expected_vocals_path = os.path.join(target_dir, "htdemucs", track_stem, "vocals.wav")
 
         if os.path.isfile(expected_vocals_path):
-            logger.info(f"Local Demucs vocal separation completed: '{expected_vocals_path}'")
+            logger.info(f"Demucs vocal separation completed: '{expected_vocals_path}'")
             return expected_vocals_path, "completed"
 
         # Search recursively in target_dir for any vocals.wav
@@ -72,11 +205,19 @@ def separate_vocals_locally(
                     return found, "completed"
 
         logger.warning("Demucs finished but separated vocals.wav was not found.")
+        if created_temp_dir:
+            shutil.rmtree(target_dir, ignore_errors=True)
         return None, "failed"
 
     except Exception as e:
-        logger.error(f"Local Demucs separation failed: {e}", exc_info=True)
+        logger.error(f"Demucs vocal separation failed: {e}", exc_info=True)
+        if created_temp_dir:
+            shutil.rmtree(target_dir, ignore_errors=True)
         return None, "failed"
+
+
+# Backward-compatible alias
+separate_vocals_locally = separate_vocals_demucs
 
 
 def calculate_transcript_quality_score(
@@ -163,9 +304,6 @@ def select_best_transcription(
     """
     Compares raw audio transcription with isolated vocal transcription.
     Selects the higher quality result based on documented empirical checks.
-    
-    Returns:
-        (best_result, comparison_note)
     """
     if not vocal_result:
         return raw_result, "Vocal separation not available; using original audio transcription."
@@ -178,7 +316,6 @@ def select_best_transcription(
         f"Isolated Vocals={vocal_score:.1f}/100"
     )
 
-    # If vocal score is higher by at least 3 points, prefer vocal separation
     if vocal_score > raw_score + 3.0:
         if isinstance(vocal_result, dict):
             vocal_result["vocal_separation_used"] = True
@@ -194,7 +331,6 @@ def select_best_transcription(
             )
         return vocal_result, "Isolated vocals transcription selected based on higher vocal clarity."
 
-    # Otherwise stick with original audio transcription
     if isinstance(raw_result, dict):
         raw_result["vocal_separation_used"] = False
         raw_result["separation_status"] = "rejected_lower_quality"

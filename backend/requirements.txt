@@ -11,3 +11,6 @@ anyascii>=0.3.2
 indic-transliteration>=2.3.0
 pykakasi>=2.3.0
 groq>=0.9.0
+demucs==4.0.1
+whisperx==3.3.1
+jiwer==4.0.0

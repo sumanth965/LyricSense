@@ -14,6 +14,7 @@ from .config import settings
 from .schemas import HealthResponse, TranscriptionResponse
 from .transcription import check_ffmpeg, get_model, is_model_loaded, transcribe_audio_file
 from .separation import is_vocal_separation_available
+from .alignment import is_whisperx_available
 from .groq_service import is_groq_available
 
 # Configure logging
@@ -38,6 +39,19 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
         )
     else:
         logger.info("FFmpeg detected and ready.")
+
+    # Startup verification of optional audio engines
+    demucs_ok = is_vocal_separation_available()
+    whisperx_ok = is_whisperx_available()
+    if demucs_ok:
+        logger.info("Demucs vocal separation engine: Available (htdemucs ready).")
+    else:
+        logger.warning("Demucs vocal separation engine: NOT installed. Falling back to original audio.")
+
+    if whisperx_ok:
+        logger.info("WhisperX forced alignment engine: Available (phoneme alignment ready).")
+    else:
+        logger.warning("WhisperX forced alignment engine: NOT installed. Falling back to native Whisper timestamps.")
 
     # Pre-warm the singleton WhisperModel so the first user request doesn't wait for model initialization
     try:
@@ -77,6 +91,8 @@ async def health_check() -> HealthResponse:
     """
     ffmpeg_available = check_ffmpeg()
     model_ready = is_model_loaded()
+    demucs_ready = is_vocal_separation_available()
+    whisperx_ready = is_whisperx_available()
 
     status_str = "healthy" if ffmpeg_available else "degraded"
 
@@ -88,7 +104,9 @@ async def health_check() -> HealthResponse:
         model_loaded=model_ready,
         ffmpeg_available=ffmpeg_available,
         alignment_available=True,
-        vocal_separation_available=is_vocal_separation_available(),
+        vocal_separation_available=demucs_ready,
+        demucs_available=demucs_ready,
+        whisperx_available=whisperx_ready,
         groq_available=is_groq_available(),
         cloud_transcription_enabled=settings.groq_enabled,
         groq_model=settings.groq_model,
@@ -100,7 +118,9 @@ async def transcribe_audio(
     file: UploadFile = File(..., description="Audio file to transcribe"),
     language: Optional[str] = Form(None, description="Optional target language code (e.g. 'hi', 'en', 'es')"),
     enable_cloud: bool = Form(True, description="Enable cloud transcription with automatic local fallback"),
-    enable_vocal_separation: bool = Form(False, description="Optional local Demucs vocal separation"),
+    enable_vocal_separation: Optional[bool] = Form(None, description="Legacy boolean for vocal separation"),
+    separate_vocals: Optional[str] = Form("off", description="Vocal separation mode: 'auto', 'on', or 'off'"),
+    lyrics: Optional[str] = Form(None, description="Optional known lyrics text for forced alignment"),
 ) -> TranscriptionResponse:
     """
     Transcribes an uploaded audio file locally using faster-whisper.
@@ -172,6 +192,8 @@ async def transcribe_audio(
                 language=language,
                 enable_cloud=enable_cloud,
                 enable_vocal_separation=enable_vocal_separation,
+                separate_vocals=separate_vocals,
+                lyrics=lyrics,
             )
             return result
         except Exception as e:

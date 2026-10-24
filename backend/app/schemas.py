@@ -7,6 +7,7 @@ class WordItem(BaseModel):
     start: Optional[float] = None
     end: Optional[float] = None
     probability: Optional[float] = None
+    low_confidence: bool = False
     original_word: Optional[str] = None
 
 
@@ -28,7 +29,7 @@ class TranscriptionResponse(BaseModel):
     original_transcript: Optional[str] = None
     transliterated: bool = False
     segments: List[SegmentItem]
-    alignment_status: Literal["completed", "partial", "failed", "unsupported", "unavailable"]
+    alignment_status: Literal["completed", "partial", "failed", "unsupported", "unavailable", "native"]
     aligned_words_count: Optional[int] = None
     total_words_count: Optional[int] = None
     vocal_separation_used: bool = False
@@ -37,6 +38,8 @@ class TranscriptionResponse(BaseModel):
     fallback_used: bool = False
     fallback_reason: Optional[str] = None
     warnings: List[str] = Field(default_factory=list)
+    music_detected: Optional[bool] = None
+    known_lyrics_used: bool = False
 
 
 class HealthResponse(BaseModel):
@@ -48,6 +51,8 @@ class HealthResponse(BaseModel):
     ffmpeg_available: bool
     alignment_available: bool
     vocal_separation_available: bool = False
+    demucs_available: bool = False
+    whisperx_available: bool = False
     groq_available: bool = False
     cloud_transcription_enabled: bool = True
     groq_model: str = "whisper-large-v3"

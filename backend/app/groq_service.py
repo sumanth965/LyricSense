@@ -126,8 +126,9 @@ def transcribe_with_groq(
 
     try:
         with open(audio_path, "rb") as audio_file:
+            dispatch_name = f"{Path(original_filename).stem}{Path(audio_path).suffix}"
             response = client.audio.transcriptions.create(
-                file=(original_filename, audio_file),
+                file=(dispatch_name, audio_file),
                 model=settings.groq_model,
                 response_format="verbose_json",
                 timestamp_granularities=["word", "segment"],

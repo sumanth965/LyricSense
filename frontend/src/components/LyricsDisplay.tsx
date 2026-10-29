@@ -7,6 +7,7 @@ import {
   FileText,
   Globe,
   Loader2,
+  Mic,
   Music2,
   RefreshCw,
   Sparkles,
@@ -40,6 +41,7 @@ interface LyricsDisplayProps {
   ) => void
   onSeek?: (time: number) => void
   onUpdateWord?: (segmentIndex: number, wordIndex: number, newWord: string) => void
+  onOpenSingAlong?: () => void
   theme: Theme
   backendAvailable?: boolean
   vocalSeparationAvailable?: boolean
@@ -77,6 +79,7 @@ export default function LyricsDisplay({
   onRetry,
   onSeek,
   onUpdateWord,
+  onOpenSingAlong,
   theme,
   backendAvailable = true,
   vocalSeparationAvailable = false,
@@ -861,6 +864,24 @@ export default function LyricsDisplay({
           >
             Scroll: {autoScroll ? 'ON' : 'OFF'}
           </button>
+
+          {/* Sing Along Button (Active when analysis_id is available) */}
+          {transcription.analysis_id && onOpenSingAlong && (
+            <button
+              type="button"
+              onClick={onOpenSingAlong}
+              title="Sing along with live microphone pitch and timing scoring"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold shadow-xs transition-all duration-200 hover:scale-102 active:scale-98 cursor-pointer"
+              style={{
+                backgroundColor: '#734128',
+                color: '#FDFCE8',
+                border: '1px solid #C7A07A',
+              }}
+            >
+              <Mic className="w-3.5 h-3.5 text-lion" />
+              <span>Sing Along</span>
+            </button>
+          )}
 
           {/* Copy Transcript Button */}
           <button

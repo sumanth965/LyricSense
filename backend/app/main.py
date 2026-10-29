@@ -11,11 +11,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from .config import settings
-from .schemas import HealthResponse, TranscriptionResponse
+from .schemas import HealthResponse, ScoreResponse, TranscriptionResponse
 from .transcription import check_ffmpeg, get_model, is_model_loaded, transcribe_audio_file
 from .separation import is_vocal_separation_available
 from .alignment import is_whisperx_available
 from .groq_service import is_groq_available
+from .scoring import cleanup_old_references, score_singalong_take
 
 # Configure logging
 logging.basicConfig(
@@ -52,6 +53,12 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
         logger.info("WhisperX forced alignment engine: Available (phoneme alignment ready).")
     else:
         logger.warning("WhisperX forced alignment engine: NOT installed. Falling back to native Whisper timestamps.")
+
+    # Cleanup old sing-along reference pitch contours
+    try:
+        cleanup_old_references()
+    except Exception as e:
+        logger.warning(f"Reference contour startup cleanup notice: {e}")
 
     # Pre-warm the singleton WhisperModel so the first user request doesn't wait for model initialization
     try:
@@ -110,6 +117,7 @@ async def health_check() -> HealthResponse:
         groq_available=is_groq_available(),
         cloud_transcription_enabled=settings.groq_enabled,
         groq_model=settings.groq_model,
+        scoring_available=True,
     )
 
 
@@ -211,3 +219,91 @@ async def transcribe_audio(
                 logger.debug(f"Cleaned up temporary file: {temp_path}")
             except Exception as e:
                 logger.warning(f"Failed to remove temporary file {temp_path}: {e}")
+
+
+@app.post("/api/score", response_model=ScoreResponse)
+async def score_audio(
+    analysis_id: str = Form(..., description="ID of the completed audio analysis"),
+    file: UploadFile = File(..., description="User sing-along microphone recording"),
+    latency_ms: Optional[str] = Form("auto", description="Latency in ms or 'auto'"),
+    range_start: Optional[float] = Form(None, description="Start time in seconds"),
+    range_end: Optional[float] = Form(None, description="End time in seconds"),
+    key_shift: Optional[str] = Form("auto", description="Key shift mode: 'auto', 'off', or semitones float"),
+) -> ScoreResponse:
+    """
+    Scores a visitor sing-along take against the reference vocal pitch contour.
+    Performs auto latency compensation, octave-folded transposition-tolerant pitch scoring,
+    WhisperX word timing/presence alignment, and duration-weighted line scoring.
+    Never persists user recording audio.
+    """
+    clean_id = (analysis_id or "").strip()
+    if not clean_id:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="analysis_id is required for scoring.",
+        )
+
+    # 1. Prepare temporary recording file
+    target_dir = settings.temp_dir or tempfile.gettempdir()
+    os.makedirs(target_dir, exist_ok=True)
+    temp_filename = f"lyricsense_sing_{uuid.uuid4().hex}.tmp"
+    temp_recording_path = os.path.join(target_dir, temp_filename)
+
+    bytes_written = 0
+    max_bytes = settings.max_upload_size_bytes
+
+    try:
+        with open(temp_recording_path, "wb") as buffer:
+            while chunk := await file.read(1024 * 1024):  # 1 MB chunks
+                bytes_written += len(chunk)
+                if bytes_written > max_bytes:
+                    raise HTTPException(
+                        status_code=status.HTTP_413_CONTENT_TOO_LARGE,
+                        detail=f"Singing recording exceeds maximum allowed size of {settings.max_upload_size_mb} MB.",
+                    )
+                buffer.write(chunk)
+
+        if bytes_written == 0:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Uploaded singing recording is empty (0 bytes).",
+            )
+
+        # 2. Perform sing-along evaluation
+        try:
+            score_result = score_singalong_take(
+                analysis_id=clean_id,
+                user_audio_path=temp_recording_path,
+                latency_ms_arg=latency_ms,
+                range_start=range_start,
+                range_end=range_end,
+                key_shift_arg=key_shift,
+            )
+            return score_result
+        except FileNotFoundError as fnf_err:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"Analysis reference '{clean_id}' not found or expired. Please re-analyze the song.",
+            ) from fnf_err
+        except ValueError as val_err:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail=str(val_err),
+            ) from val_err
+        except HTTPException:
+            raise
+        except Exception as e:
+            logger.error(f"Scoring failed for analysis_id='{clean_id}': {e}", exc_info=True)
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail=f"Sing-along scoring calculation error: {e}",
+            ) from e
+
+    finally:
+        # Guarantee immediate deletion of user recording audio on success and on error
+        if os.path.exists(temp_recording_path):
+            try:
+                os.unlink(temp_recording_path)
+            except Exception as e:
+                logger.warning(f"Failed to remove temp user recording {temp_recording_path}: {e}")
+

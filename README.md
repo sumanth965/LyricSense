@@ -21,11 +21,12 @@
    - [Root Monorepo Commands](#root-monorepo-commands)
 8. [Environment Variables Reference](#environment-variables-reference)
 9. [Whisper Model Sizes & Hardware Guide](#whisper-model-sizes--hardware-guide)
-10. [Accuracy Benchmark Suite](#accuracy-benchmark-suite)
-11. [API Specification](#api-specification)
-12. [Testing & Quality Assurance](#testing--quality-assurance)
-13. [Troubleshooting & FAQs](#troubleshooting--faqs)
-14. [License](#license)
+10. [Sing-Along Scoring](#sing-along-scoring)
+11. [Accuracy Benchmark Suite](#accuracy-benchmark-suite)
+12. [API Specification](#api-specification)
+13. [Testing & Quality Assurance](#testing--quality-assurance)
+14. [Troubleshooting & FAQs](#troubleshooting--faqs)
+15. [License](#license)
 
 ---
 
@@ -294,6 +295,11 @@ For convenience, you can run all project tasks directly from the repository root
 | `HOST` | `0.0.0.0` | Bind host address. |
 | `PORT` | `8000` | Bind port number. |
 | `MODEL_CACHE_DIR` | `None` | Optional custom path for storing downloaded model weights. |
+| `SCORING_PITCH_ENGINE` | `pyin` | Pitch estimation engine for sing-along scoring (`pyin` via librosa or `crepe` via torchcrepe if installed). |
+| `SCORING_PITCH_TOLERANCE_CENTS` | `75.0` | Pitch tolerance in cents for 100% credit (linear falloff to 0 credit at 200 cents). |
+| `SCORING_WEIGHTS` | `0.5,0.3,0.2` | Comma-separated weights for `pitch`, `timing`, and `presence` scoring components. |
+| `SCORING_MAX_RECORDING_SECONDS` | `360` | Maximum sing-along recording length accepted in seconds (6 minutes default). |
+| `REFERENCE_TTL_HOURS` | `24` | Hours to retain reference pitch contour `.npz` cache files before automatic deletion. |
 
 ### Frontend (`frontend/.env`)
 
@@ -387,6 +393,36 @@ When `faster-whisper` runs for the first time with a chosen model, it downloads 
   "warnings": []
 }
 ```
+
+---
+
+## Sing-Along Scoring
+
+LyricSense includes a live expo demo **Sing-Along Scoring** feature. After analyzing a song, visitors can grab a microphone or headset, sing along while the track plays with synchronized teleprompter lyrics, and receive instant feedback on pitch accuracy, timing onsets, and vocal presence.
+
+### How Scoring Works
+1. **Reference Contour Extraction**: When Demucs isolates the vocals stem (or mix audio if separation was off), LyricSense runs `librosa.pyin` (fundamental frequency $C_2 \approx 65\text{ Hz}$ to $C_6 \approx 1046\text{ Hz}$ at 16 kHz mono with ~12.5 ms hop) to extract time-stamped MIDI pitch contours and voicing decisions. This contour is saved with WhisperX word-alignment timestamps as a compressed `.npz` file keyed by `analysis_id`.
+2. **Audio Preprocessing**: User takes recorded in the browser (via MediaRecorder with echo cancellation and noise suppression) are sent to `POST /api/score`. The backend converts audio to 16 kHz mono WAV using FFmpeg, normalizes loudness, and applies an adaptive noise gate.
+3. **Latency Estimation**: Time offset between visitor audio and song playback is auto-estimated by cross-correlating voiced/unvoiced activation envelopes within $\pm 600\text{ ms}$ (or configured via `latency_ms`).
+4. **Transposition & Octave Tolerance**:
+   - Compares per-frame pitch differences in semitones for mutually voiced frames.
+   - Folds semitone differences into $[-6, +6)$ to ensure singing an octave higher or lower is not penalized.
+   - In `key_shift="auto"` mode (default), calculates the global median shift and adjusts for the singer's natural vocal range, reporting the detected shift (e.g. $+3\text{ semitones}$).
+   - Pitches within $75\text{ cents}$ earn 100% credit, with linear falloff to 0 credit at $200\text{ cents}$.
+5. **Timing Onset & Presence**:
+   - **Onset**: Evaluates the start of singing against WhisperX word start boundaries within $\pm 400\text{ ms}$ (full credit within $100\text{ ms}$).
+   - **Presence**: Measures the fraction of reference voiced frames where the visitor is also actively singing.
+6. **Overall & Line Scoring**: Combines pitch (50%), timing (30%), and presence (20%) per line. Pure instrumental segments are marked `skipped: true`. The overall score is a duration-weighted average scaled to 0–100 with a performance badge.
+
+### Honest Limits
+- **Fun Approximation**: This scoring engine is designed as an engaging, robust expo experience and party game, not a rigorous classical vocal-pedagogy coach.
+- **Microphone & Acoustics**: For best results, singers should use headphones. Open laptop speakers bleed track audio back into the microphone and lower pitch accuracy.
+- **pYIN Algorithm Boundaries**: Algorithmic pitch tracking (`pyin`) can occasionally jump octaves on raspy, distorted, or heavily reverberant voices.
+- **Genre Differences**: Rapid rap, spoken word, and guttural vocal styles naturally score lower because they lack steady fundamental musical pitches.
+
+### Privacy & Data Retention
+- User recordings are converted into temporary files strictly for scoring execution and are **immediately deleted on completion or failure**.
+- **No user audio is ever stored on disk or transmitted to any third party.** Reference pitch envelopes are retained locally in `backend/data/references/` for 24 hours (`REFERENCE_TTL_HOURS`) to allow re-takes and practice sessions before automatic purge.
 
 ---
 

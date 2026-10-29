@@ -61,6 +61,7 @@ export interface TranscriptionResponse {
   warnings?: string[]
   music_detected?: boolean | null
   known_lyrics_used?: boolean
+  analysis_id?: string | null
 }
 
 export interface BackendHealth {
@@ -75,6 +76,42 @@ export interface BackendHealth {
   groq_available?: boolean
   cloud_transcription_enabled?: boolean
   groq_model?: string
+  scoring_available?: boolean
+}
+
+export interface LineScoreItem {
+  index: number
+  start: number
+  end: number
+  text: string
+  score: number
+  pitch: number
+  timing: number
+  presence: number
+  skipped: boolean
+}
+
+export interface ScoreResponse {
+  overall_score: number
+  grade: string
+  lines: LineScoreItem[]
+  key_shift_semitones: number
+  estimated_offset_ms: number
+  warnings: string[]
+  reference_contour: (number | null)[]
+  user_contour: (number | null)[]
+  contour_sample_rate_hz: number
+  range_start?: number | null
+  range_end?: number | null
+}
+
+export interface LeaderboardEntry {
+  nickname: string
+  score: number
+  grade: string
+  timestamp: number
+  songName: string
+  keyShift: number
 }
 
 export type ProcessingStage =

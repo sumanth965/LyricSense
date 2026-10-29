@@ -1,4 +1,4 @@
-import type { BackendHealth, TranscriptionResponse } from '../types'
+import type { BackendHealth, ScoreResponse, TranscriptionResponse } from '../types'
 
 const API_BASE_URL = (
   import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
@@ -117,3 +117,66 @@ export async function transcribeAudioFile(
     )
   }
 }
+
+export async function scoreSingalongRecording(
+  analysisId: string,
+  audioBlob: Blob,
+  options?: {
+    latencyMs?: string | number
+    rangeStart?: number
+    rangeEnd?: number
+    keyShift?: string | number
+    signal?: AbortSignal
+  },
+): Promise<ScoreResponse> {
+  const formData = new FormData()
+  formData.append('analysis_id', analysisId)
+  formData.append('file', audioBlob, 'singalong_take.webm')
+  if (options?.latencyMs !== undefined) {
+    formData.append('latency_ms', String(options.latencyMs))
+  }
+  if (options?.rangeStart !== undefined) {
+    formData.append('range_start', String(options.rangeStart))
+  }
+  if (options?.rangeEnd !== undefined) {
+    formData.append('range_end', String(options.rangeEnd))
+  }
+  if (options?.keyShift !== undefined) {
+    formData.append('key_shift', String(options.keyShift))
+  }
+
+  try {
+    const res = await fetch(`${API_BASE_URL}/api/score`, {
+      method: 'POST',
+      body: formData,
+      signal: options?.signal,
+    })
+
+    if (!res.ok) {
+      let errorDetail = ''
+      try {
+        const errorJson = await res.json()
+        errorDetail = errorJson.detail || ''
+      } catch {
+        errorDetail = await res.text().catch(() => '')
+      }
+
+      throw new ApiError(
+        errorDetail || `Scoring failed with HTTP ${res.status}`,
+        res.status,
+      )
+    }
+
+    return (await res.json()) as ScoreResponse
+  } catch (err: unknown) {
+    if (err instanceof DOMException && err.name === 'AbortError') {
+      throw err
+    }
+    if (err instanceof ApiError) {
+      throw err
+    }
+    const rawMsg = err instanceof Error ? err.message : String(err)
+    throw new ApiError(`Network error connecting to scoring endpoint: ${rawMsg}`)
+  }
+}
+

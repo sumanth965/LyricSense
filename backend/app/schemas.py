@@ -40,6 +40,7 @@ class TranscriptionResponse(BaseModel):
     warnings: List[str] = Field(default_factory=list)
     music_detected: Optional[bool] = None
     known_lyrics_used: bool = False
+    analysis_id: Optional[str] = None
 
 
 class HealthResponse(BaseModel):
@@ -56,3 +57,30 @@ class HealthResponse(BaseModel):
     groq_available: bool = False
     cloud_transcription_enabled: bool = True
     groq_model: str = "whisper-large-v3"
+    scoring_available: bool = True
+
+
+class LineScoreItem(BaseModel):
+    index: int
+    start: float
+    end: float
+    text: str
+    score: float
+    pitch: float
+    timing: float
+    presence: float
+    skipped: bool = False
+
+
+class ScoreResponse(BaseModel):
+    overall_score: float
+    grade: str
+    lines: List[LineScoreItem] = Field(default_factory=list)
+    key_shift_semitones: float = 0.0
+    estimated_offset_ms: float = 0.0
+    warnings: List[str] = Field(default_factory=list)
+    reference_contour: List[Optional[float]] = Field(default_factory=list)
+    user_contour: List[Optional[float]] = Field(default_factory=list)
+    contour_sample_rate_hz: float = 20.0
+    range_start: Optional[float] = None
+    range_end: Optional[float] = None

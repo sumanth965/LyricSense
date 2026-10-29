@@ -37,6 +37,14 @@ class Settings(BaseSettings):
     groq_timeout_seconds: float = 30.0
     groq_max_file_size_bytes: int = 25 * 1024 * 1024  # 25 MB limit for Groq audio endpoint
 
+    # Scoring configuration
+    scoring_pitch_engine: str = "pyin"  # pyin or crepe
+    scoring_pitch_tolerance_cents: float = 75.0
+    scoring_weights: str = "0.5,0.3,0.2"  # pitch, timing, presence
+    scoring_max_recording_seconds: int = 360  # max 6 minutes
+    reference_ttl_hours: float = 24.0
+    reference_data_dir: Optional[str] = None
+
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
@@ -50,6 +58,17 @@ class Settings(BaseSettings):
     @property
     def max_upload_size_bytes(self) -> int:
         return self.max_upload_size_mb * 1024 * 1024
+
+    @property
+    def parsed_scoring_weights(self) -> List[float]:
+        try:
+            parts = [float(x.strip()) for x in self.scoring_weights.split(",")]
+            if len(parts) == 3 and sum(parts) > 0:
+                s = sum(parts)
+                return [p / s for p in parts]
+        except Exception:
+            pass
+        return [0.5, 0.3, 0.2]
 
 
 settings = Settings()

@@ -9,6 +9,7 @@ import AudioUploader from './AudioUploader'
 import TrackInfo from './TrackInfo'
 import AudioPlayer from './AudioPlayer'
 import LyricsDisplay from './LyricsDisplay'
+import SingAlongModal from './SingAlongModal'
 
 interface AudioWorkspaceProps {
   onBackToHome: () => void
@@ -26,6 +27,7 @@ export default function AudioWorkspace({
   const isDark = theme === 'dark'
   const fileInputRef = useRef<HTMLInputElement | null>(null)
   const [knownLyrics, setKnownLyrics] = useState<string | null>(null)
+  const [showSingAlongModal, setShowSingAlongModal] = useState<boolean>(false)
 
   const {
     metadata,
@@ -37,6 +39,8 @@ export default function AudioWorkspace({
     error: audioError,
     loadAudio,
     unloadAudio,
+    play,
+    pause,
     togglePlay,
     seek,
     seekBy,
@@ -207,6 +211,7 @@ export default function AudioWorkspace({
                     }}
                     onSeek={seek}
                     onUpdateWord={updateWord}
+                    onOpenSingAlong={() => setShowSingAlongModal(true)}
                     theme={theme}
                     backendAvailable={backendHealth !== null}
                     vocalSeparationAvailable={backendHealth?.vocal_separation_available ?? false}
@@ -218,6 +223,27 @@ export default function AudioWorkspace({
           </div>
         </div>
       </main>
+
+      {/* Sing Along Live Scoring Modal */}
+      {transcriptionResult?.analysis_id && (
+        <SingAlongModal
+          isOpen={showSingAlongModal}
+          onClose={() => setShowSingAlongModal(false)}
+          analysisId={transcriptionResult.analysis_id}
+          trackName={metadata?.name}
+          audioDuration={duration}
+          segments={transcriptionResult.segments}
+          transcript={transcriptionResult.transcript}
+          transliterated={transcriptionResult.transliterated}
+          language={transcriptionResult.language}
+          currentTime={currentTime}
+          isPlaying={isPlaying}
+          onPlay={play}
+          onPause={pause}
+          onSeek={seek}
+          theme={theme}
+        />
+      )}
 
       {/* Subtle bottom spacing */}
       <div className="h-4 sm:h-6" aria-hidden="true" />

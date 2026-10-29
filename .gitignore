@@ -63,4 +63,8 @@ datasets/
 backend/benchmark/dataset*/
 backend/dataset*/
 
+# Scoring & Reference Data
+backend/data/
+data/
+
 

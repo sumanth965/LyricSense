@@ -2,6 +2,7 @@ import logging
 import os
 import shutil
 import tempfile
+import uuid
 from typing import Optional, Tuple
 
 # Configure OpenMP & CTranslate2 thread settings before importing / initializing models to prevent
@@ -31,11 +32,39 @@ from .audio_processing import (
     preprocess_to_16k_mono_wav,
 )
 from .groq_service import is_groq_available, transcribe_with_groq
+from .scoring import save_reference_contour
 
 logger = logging.getLogger(__name__)
 
 _model_instance: Optional[WhisperModel] = None
 _model_load_error: Optional[str] = None
+
+
+def _attach_scoring_reference(
+    response: TranscriptionResponse,
+    audio_path: str,
+    vocal_separation_used: bool,
+) -> TranscriptionResponse:
+    """Extract and persist reference pitch contour for sing-along scoring."""
+    if response.analysis_id:
+        return response
+    analysis_id = str(uuid.uuid4())
+    try:
+        if audio_path and os.path.isfile(audio_path):
+            save_reference_contour(
+                analysis_id=analysis_id,
+                audio_path=audio_path,
+                segments=response.segments,
+                has_vocals_stem=vocal_separation_used,
+            )
+            response.analysis_id = analysis_id
+            if not vocal_separation_used:
+                response.warnings.append(
+                    "Vocal separation was off or unavailable; reference pitch contour was extracted from the full mix, so scoring will be less accurate."
+                )
+    except Exception as e:
+        logger.warning(f"Failed to generate reference contour for scoring: {e}")
+    return response
 
 
 def check_ffmpeg() -> bool:
@@ -323,7 +352,7 @@ def transcribe_local_audio_file(
         result.music_detected = is_music if mode == "auto" else None
         if sep_warnings:
             result.warnings.extend(sep_warnings)
-        return result
+        return _attach_scoring_reference(result, active_audio_path, vocal_sep_used)
     finally:
         if temp_vocals_dir and os.path.exists(temp_vocals_dir):
             shutil.rmtree(temp_vocals_dir, ignore_errors=True)
@@ -416,7 +445,7 @@ def transcribe_audio_file(
             full_transcript = " ".join(seg.text for seg in aligned_segments if seg.text).strip()
 
             resp_warnings = list(separation_warnings) + warnings
-            return TranscriptionResponse(
+            resp = TranscriptionResponse(
                 status="completed",
                 filename=original_filename,
                 language=language or "en",
@@ -438,6 +467,7 @@ def transcribe_audio_file(
                 music_detected=is_music if sep_mode == "auto" else None,
                 known_lyrics_used=True,
             )
+            return _attach_scoring_reference(resp, active_audio_path, vocal_separation_used)
 
         # 4. Hybrid Cloud (Groq) or Local Transcription
         fallback_reason: Optional[str] = None
@@ -478,7 +508,7 @@ def transcribe_audio_file(
                         groq_result.total_words_count = total_words
                         groq_result.warnings.extend(align_warnings)
 
-                    return groq_result
+                    return _attach_scoring_reference(groq_result, active_audio_path, vocal_separation_used)
                 else:
                     fallback_reason = "Groq returned an empty transcript."
                     logger.warning(f"{fallback_reason} Falling back to local faster-whisper.")
@@ -511,7 +541,7 @@ def transcribe_audio_file(
             local_result.warnings.append(f"Cloud transcription notice: {fallback_reason}. Used local engine.")
 
         local_result.engine_used = "local_whisper"
-        return local_result
+        return _attach_scoring_reference(local_result, active_audio_path, vocal_separation_used)
 
     finally:
         # Guaranteed cleanup of all intermediate temporary files

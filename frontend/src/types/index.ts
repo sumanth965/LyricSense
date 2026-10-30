@@ -173,5 +173,6 @@ export interface SongCatalogItem {
   coverColor?: string
   demoAudioUrl?: string
   demoLyrics?: string
+  preAnalyzedData?: TranscriptionResponse
 }
 

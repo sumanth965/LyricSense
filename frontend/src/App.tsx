@@ -26,7 +26,7 @@ import ProgressDashboardView from './components/ProgressDashboardView'
 import SettingsModal from './components/SettingsModal'
 import HowItWorksDialog from './components/HowItWorksDialog'
 import EdgeWaveDecorations from './components/EdgeWaveDecorations'
-import { SAMPLE_SONG_LYRICS } from './lib/songCatalog'
+import { SAMPLE_SONG_LYRICS, SAMPLE_SONG_PREANALYZED } from './lib/songCatalog'
 
 export default function App() {
   const [theme, setTheme] = useState<Theme>(() => {
@@ -109,6 +109,7 @@ export default function App() {
     isTranscribing,
     backendHealth,
     transcribe,
+    setPreAnalyzedResult,
     updateWord,
     cancel: cancelTranscription,
     clear: clearTranscription,
@@ -117,11 +118,23 @@ export default function App() {
   // Track selection from Explore view
   const handleSelectTrackFromExplore = async (track: SongCatalogItem) => {
     clearTranscription()
-    if (track.demoAudioUrl && track.demoLyrics) {
-      setLyricsInput(track.demoLyrics)
-      await loadAudioFromUrl(track.demoAudioUrl, `${track.title.toLowerCase().replace(/\s+/g, '_')}.mp3`)
-      setShowSetupStep(true)
-      setCurrentTab('add-song')
+    if (track.demoAudioUrl) {
+      if (track.demoLyrics) {
+        setLyricsInput(track.demoLyrics)
+      } else {
+        setLyricsInput('')
+      }
+      await loadAudioFromUrl(track.demoAudioUrl, `${track.title.toLowerCase().replace(/[^a-z0-9]+/g, '_')}.mp3`)
+
+      // If pre-analyzed lyrics data is available, load it immediately into Lyrics Studio!
+      if (track.preAnalyzedData) {
+        setPreAnalyzedResult(track.preAnalyzedData)
+        setShowSetupStep(false)
+        setCurrentTab('studio')
+      } else {
+        setShowSetupStep(true)
+        setCurrentTab('add-song')
+      }
     } else {
       // Guide user to upload audio file for this song recommendation
       setLyricsInput('')
@@ -136,8 +149,9 @@ export default function App() {
     setLyricsInput(SAMPLE_SONG_LYRICS)
     const success = await loadAudioFromUrl('/demo/sample_song.mp3', 'sample_song.mp3')
     if (success) {
-      setShowSetupStep(true)
-      setCurrentTab('add-song')
+      setPreAnalyzedResult(SAMPLE_SONG_PREANALYZED)
+      setShowSetupStep(false)
+      setCurrentTab('studio')
     }
   }
 
@@ -221,6 +235,7 @@ export default function App() {
         onOpenSettings={() => setIsSettingsOpen(true)}
         onOpenHowItWorks={() => setIsHowItWorksOpen(true)}
         theme={theme}
+        activeTrackName={metadata?.name}
       />
 
       {/* Main Studio Viewport */}

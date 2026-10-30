@@ -1,0 +1,3032 @@
+{
+  "status": "completed",
+  "filename": "Breathless (Official Music Video)  Shankar Mahadevan  Javed Akhtar.mp3",
+  "language": "hi",
+  "detected_language_name": "Hindi",
+  "duration": 173.97,
+  "transcript": "Paapa mammee ke lie besta kiphta saaregaama kaarava Khushboo kee haandee hai bahakee huee see aba saaree phijaaee hai Sabanon men beede hue saare vo lange hai Jaba koee aaya tha najaron para Chaaya tha tila men samaaya tha Kaise main bataao tumen kaisa use paaya tha Bhaarate Chahare pe bikharee jo julaphe to aisa lagata tha Jaise kuhara ke peeChe eka osa men dhula huaa phoola khila hai Jaise baadala men eka chaanda chupa hai aura chaanka raha hai Jaise raata ke parade men eka savera hai Roshana roshana aakhon men sabanon ka saagara Jisame prema sikhaaron kee chaadara jaise Chalaka rahee hai Laharon baata karen to jaise mootee parase Jaise kaheen jaanadhee kee paayala goojhe  Kaisee meetee baata thee vo, kaisee mulaakaata thee vo Jaba mainne jaana tha naasamon se kaise bigalate hain dila Aura aahara sunbaahee hai kaise mandila Aura kaise utarata hai chaandai jameepa hara Kaise kabhee lagata hai sa.dakee agara hai To basa hai yahee para Onbune bataaya mujhe Aura samachaaya mujhe Hama jo mile hain Hamen aise hee milane tha Onbune jo khile hain Naheen hai vaha aise hee kilana talakkaila janmon ke vasanda jarishada men kahaava milate hain poaisee sabskraaiba gesha aapon Ke khaabonke duniya bhee agara chaahie kharaaba ke duniya ki hee dostiyon kitanee hajee aura kesee ranga ve lange Metara ko ka kahane ko dhee uthee ba.de kaminda naheen ye laganaate kee aankha chokalee meree hocha juba aaya mujhe Aate gaanvee chaala virdyoo treeparana men deshaka ke para doltiya jaae Soatota pooren raato hain, Na chamaseon men aa jaaenge aura nagavon para greeddaaja ke lie, Koee arma hai...na...koee dapanna hai...na...koee sapana hai Aba jo mere dina...aura aba jo|meree raate hai, Unamen sirpha aasu hai, Unamen sirpha darda kee ..ranja hee kee baate hai, Aura bareeyaade hai, Mera aba koee naheen main hoo.n Main hoo.n aura goe hue pyaara kee aade hain",
+  "original_transcript": "पापा मम्मी के लिए बेस्ट किफ्ट सारेगामा कारवा खुश्बू की हांदी है बहकी हुई सी अब सारी फिजाई है सबनों में बीदे हुए सारे वो लंगे है जब कोई आया था नजरों पर छाया था तिल में समाया था कैसे मैं बताओ तुमें कैसा उसे पाया था भारते छहरे पे बिखरी जो जुलफे तो ऐसा लगता था जैसे कुहर के पीछे एक ओस में धुला हुआ फूल खिला है जैसे बादल में एक चांद चुपा है और चांक रहा है जैसे रात के परदे में एक सवेरा है रोशन रोशन आखों में सबनों का सागर जिसमे प्रेम सिखारों की चादर जैसे छलक रही है लहरों बात करें तो जैसे मूती परसे जैसे कहीं जानधी की पायल गूझे कैसी मीटी बात थी वो, कैसी मुलाकात थी वो जब मैंने जाना था नासमों से कैसे बिगलते हैं दिल और आहर सुंबाही है कैसे मंदिल और कैसे उतरता है चांदı जमीप हर कैसे कभी लगता है सड़की अगर है तो बस है यही पर ॐबुने बटाया मुझे और समचाया मुझे हम जो मिले हैं हमें ऐसे ही मिलने था ॐबुने जो खिले हैं नहीं है वह ऐसे ही किलना तलक्कैल जन्मों के वसंद जरिषद में कहाव मिलते हैं पॉइसी सब्स्क्राइब गेश आपों के खाबोंके दुनिया भी अगर चाहिए खराब के दुनिया कि ही दोस्तियों कितनी हजी और केसी रंग वे लंगे मेतर को क कहने को धी उठी बड़े कमिंद नहीं ये लगनाते की आंख चोकली मेरी होच जुब आया मुझे आते गांवी चाल विर्ड्यू ट्रीपरन में देशक के पर दोल्टिया जाए सॉतोत पूरें रातो हैं। ना चमसेओं में आ जाएंगे और नगवों पर ग्रीड्डाज के लिए। कोई अर्मा है...ना…कोई दपन्ना है…ना...कोई सपना है अब जो मेरे दिन…और अब जो।मेरी राते है। उनमें सिर्फ आसु है। उनमें सिर्फ दर्द की ..रंज ही की बाते है। और बरीयादे है। मेरा अब कोई नहीं मैं हूँ मैं हूँ और गोए हुए प्यार की आदे हैं",
+  "transliterated": true,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 4.46,
+      "text": "Paapa mammee ke lie besta kiphta saaregaama kaarava",
+      "original_text": "पापा मम्मी के लिए बेस्ट किफ्ट सारेगामा कारवा",
+      "words": [
+        {
+          "word": "Paapa",
+          "start": 0.0,
+          "end": 1.2,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "पापा"
+        },
+        {
+          "word": "mammee",
+          "start": 1.2,
+          "end": 1.5,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "मम्मी"
+        },
+        {
+          "word": "ke",
+          "start": 1.5,
+          "end": 1.72,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "के"
+        },
+        {
+          "word": "lie",
+          "start": 1.72,
+          "end": 1.86,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "लिए"
+        },
+        {
+          "word": "besta",
+          "start": 1.86,
+          "end": 2.52,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "बेस्ट"
+        },
+        {
+          "word": "kiphta",
+          "start": 2.52,
+          "end": 2.88,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "किफ्ट"
+        },
+        {
+          "word": "saaregaama",
+          "start": 2.88,
+          "end": 3.82,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "सारेगामा"
+        },
+        {
+          "word": "kaarava",
+          "start": 3.82,
+          "end": 4.38,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "कारवा"
+        }
+      ]
+    },
+    {
+      "start": 30.0,
+      "end": 33.72,
+      "text": "Khushboo kee haandee hai bahakee huee see aba saaree phijaaee hai",
+      "original_text": "खुश्बू की हांदी है बहकी हुई सी अब सारी फिजाई है",
+      "words": [
+        {
+          "word": "Khushboo",
+          "start": 30.0,
+          "end": 30.6,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "खुश्बू"
+        },
+        {
+          "word": "kee",
+          "start": 30.6,
+          "end": 30.74,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "की"
+        },
+        {
+          "word": "haandee",
+          "start": 30.74,
+          "end": 31.24,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "हांदी"
+        },
+        {
+          "word": "hai",
+          "start": 31.24,
+          "end": 31.34,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "है"
+        },
+        {
+          "word": "bahakee",
+          "start": 31.34,
+          "end": 31.78,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "बहकी"
+        },
+        {
+          "word": "huee",
+          "start": 31.78,
+          "end": 32.04,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "हुई"
+        },
+        {
+          "word": "see",
+          "start": 32.04,
+          "end": 32.2,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "सी"
+        },
+        {
+          "word": "aba",
+          "start": 32.2,
+          "end": 32.46,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "अब"
+        },
+        {
+          "word": "saaree",
+          "start": 32.46,
+          "end": 32.9,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "सारी"
+        },
+        {
+          "word": "phijaaee",
+          "start": 32.9,
+          "end": 33.52,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "फिजाई"
+        },
+        {
+          "word": "hai",
+          "start": 33.52,
+          "end": 33.68,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "है"
+        },
+        {
+          "word": "sabanon",
+          "start": 33.72,
+          "end": 47.42,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "सबनों"
+        }
+      ]
+    },
+    {
+      "start": 33.72,
+      "end": 49.32,
+      "text": "Sabanon men beede hue saare vo lange hai",
+      "original_text": "सबनों में बीदे हुए सारे वो लंगे है",
+      "words": [
+        {
+          "word": "Men",
+          "start": 47.42,
+          "end": 47.54,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "में"
+        },
+        {
+          "word": "beede",
+          "start": 47.54,
+          "end": 47.9,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "बीदे"
+        },
+        {
+          "word": "hue",
+          "start": 47.9,
+          "end": 48.1,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "हुए"
+        },
+        {
+          "word": "saare",
+          "start": 48.1,
+          "end": 48.54,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "सारे"
+        },
+        {
+          "word": "vo",
+          "start": 48.54,
+          "end": 48.8,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "वो"
+        },
+        {
+          "word": "lange",
+          "start": 48.8,
+          "end": 49.2,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "लंगे"
+        },
+        {
+          "word": "hai",
+          "start": 49.2,
+          "end": 49.32,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "है"
+        },
+        {
+          "word": "jaba",
+          "start": 49.02,
+          "end": 49.64,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जब"
+        }
+      ]
+    },
+    {
+      "start": 49.32,
+      "end": 52.94,
+      "text": "Jaba koee aaya tha najaron para Chaaya tha tila men samaaya tha",
+      "original_text": "जब कोई आया था नजरों पर छाया था तिल में समाया था",
+      "words": [
+        {
+          "word": "Koee",
+          "start": 49.64,
+          "end": 49.92,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "कोई"
+        },
+        {
+          "word": "aaya",
+          "start": 49.92,
+          "end": 50.42,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "आया"
+        },
+        {
+          "word": "tha",
+          "start": 50.42,
+          "end": 50.54,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "था"
+        },
+        {
+          "word": "najaron",
+          "start": 50.54,
+          "end": 51.04,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "नजरों"
+        },
+        {
+          "word": "para",
+          "start": 51.04,
+          "end": 51.16,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "पर"
+        },
+        {
+          "word": "Chaaya",
+          "start": 51.16,
+          "end": 51.62,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "छाया"
+        },
+        {
+          "word": "tha",
+          "start": 51.62,
+          "end": 51.74,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "था"
+        },
+        {
+          "word": "tila",
+          "start": 51.74,
+          "end": 52.02,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "तिल"
+        },
+        {
+          "word": "men",
+          "start": 52.02,
+          "end": 52.16,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "में"
+        },
+        {
+          "word": "samaaya",
+          "start": 52.16,
+          "end": 52.76,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "समाया"
+        },
+        {
+          "word": "tha",
+          "start": 52.76,
+          "end": 52.92,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "था"
+        },
+        {
+          "word": "kaise",
+          "start": 52.68,
+          "end": 53.24,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "कैसे"
+        }
+      ]
+    },
+    {
+      "start": 52.94,
+      "end": 55.34,
+      "text": "Kaise main bataao tumen kaisa use paaya tha",
+      "original_text": "कैसे मैं बताओ तुमें कैसा उसे पाया था",
+      "words": [
+        {
+          "word": "Main",
+          "start": 53.24,
+          "end": 53.4,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "मैं"
+        },
+        {
+          "word": "bataao",
+          "start": 53.4,
+          "end": 53.82,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "बताओ"
+        },
+        {
+          "word": "tumen",
+          "start": 53.82,
+          "end": 54.18,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "तुमें"
+        },
+        {
+          "word": "kaisa",
+          "start": 54.18,
+          "end": 54.46,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "कैसा"
+        },
+        {
+          "word": "use",
+          "start": 54.46,
+          "end": 54.76,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "उसे"
+        },
+        {
+          "word": "paaya",
+          "start": 54.76,
+          "end": 55.2,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "पाया"
+        },
+        {
+          "word": "tha",
+          "start": 55.2,
+          "end": 55.3,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "था"
+        },
+        {
+          "word": "bhaarate",
+          "start": 55.34,
+          "end": 55.94,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "भारते"
+        }
+      ]
+    },
+    {
+      "start": 55.34,
+      "end": 58.64,
+      "text": "Bhaarate Chahare pe bikharee jo julaphe to aisa lagata tha",
+      "original_text": "भारते छहरे पे बिखरी जो जुलफे तो ऐसा लगता था",
+      "words": [
+        {
+          "word": "Chahare",
+          "start": 55.94,
+          "end": 56.46,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "छहरे"
+        },
+        {
+          "word": "pe",
+          "start": 56.46,
+          "end": 56.56,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "पे"
+        },
+        {
+          "word": "bikharee",
+          "start": 56.56,
+          "end": 57.0,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "बिखरी"
+        },
+        {
+          "word": "jo",
+          "start": 57.0,
+          "end": 57.16,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जो"
+        },
+        {
+          "word": "julaphe",
+          "start": 57.16,
+          "end": 57.6,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जुलफे"
+        },
+        {
+          "word": "to",
+          "start": 57.6,
+          "end": 57.76,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "तो"
+        },
+        {
+          "word": "aisa",
+          "start": 57.76,
+          "end": 58.06,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ऐसा"
+        },
+        {
+          "word": "lagata",
+          "start": 58.06,
+          "end": 58.52,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "लगता"
+        },
+        {
+          "word": "tha",
+          "start": 58.52,
+          "end": 58.62,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "था"
+        },
+        {
+          "word": "jaise",
+          "start": 58.44,
+          "end": 58.92,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जैसे"
+        }
+      ]
+    },
+    {
+      "start": 58.64,
+      "end": 62.24,
+      "text": "Jaise kuhara ke peeChe eka osa men dhula huaa phoola khila hai",
+      "original_text": "जैसे कुहर के पीछे एक ओस में धुला हुआ फूल खिला है",
+      "words": [
+        {
+          "word": "Kuhara",
+          "start": 58.92,
+          "end": 59.36,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "कुहर"
+        },
+        {
+          "word": "ke",
+          "start": 59.36,
+          "end": 59.6,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "के"
+        },
+        {
+          "word": "peeChe",
+          "start": 59.6,
+          "end": 59.84,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "पीछे"
+        },
+        {
+          "word": "eka",
+          "start": 59.84,
+          "end": 60.1,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "एक"
+        },
+        {
+          "word": "osa",
+          "start": 60.1,
+          "end": 60.56,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ओस"
+        },
+        {
+          "word": "men",
+          "start": 60.56,
+          "end": 60.74,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "में"
+        },
+        {
+          "word": "dhula",
+          "start": 60.74,
+          "end": 61.14,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "धुला"
+        },
+        {
+          "word": "huaa",
+          "start": 61.14,
+          "end": 61.32,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "हुआ"
+        },
+        {
+          "word": "phoola",
+          "start": 61.32,
+          "end": 61.74,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "फूल"
+        },
+        {
+          "word": "khila",
+          "start": 61.74,
+          "end": 62.18,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "खिला"
+        },
+        {
+          "word": "hai",
+          "start": 62.18,
+          "end": 62.22,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "है"
+        },
+        {
+          "word": "jaise",
+          "start": 61.86,
+          "end": 62.54,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जैसे"
+        }
+      ]
+    },
+    {
+      "start": 62.24,
+      "end": 65.84,
+      "text": "Jaise baadala men eka chaanda chupa hai aura chaanka raha hai",
+      "original_text": "जैसे बादल में एक चांद चुपा है और चांक रहा है",
+      "words": [
+        {
+          "word": "Baadala",
+          "start": 62.54,
+          "end": 63.14,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "बादल"
+        },
+        {
+          "word": "men",
+          "start": 63.14,
+          "end": 63.4,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "में"
+        },
+        {
+          "word": "eka",
+          "start": 63.4,
+          "end": 63.74,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "एक"
+        },
+        {
+          "word": "chaanda",
+          "start": 63.74,
+          "end": 64.14,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "चांद"
+        },
+        {
+          "word": "chupa",
+          "start": 64.14,
+          "end": 64.58,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "चुपा"
+        },
+        {
+          "word": "hai",
+          "start": 64.58,
+          "end": 64.64,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "है"
+        },
+        {
+          "word": "aura",
+          "start": 64.64,
+          "end": 64.92,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "और"
+        },
+        {
+          "word": "chaanka",
+          "start": 64.92,
+          "end": 65.4,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "चांक"
+        },
+        {
+          "word": "raha",
+          "start": 65.4,
+          "end": 65.76,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "रहा"
+        },
+        {
+          "word": "hai",
+          "start": 65.76,
+          "end": 65.84,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "है"
+        },
+        {
+          "word": "jaise",
+          "start": 65.5,
+          "end": 66.16,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जैसे"
+        }
+      ]
+    },
+    {
+      "start": 65.84,
+      "end": 68.56,
+      "text": "Jaise raata ke parade men eka savera hai",
+      "original_text": "जैसे रात के परदे में एक सवेरा है",
+      "words": [
+        {
+          "word": "Raata",
+          "start": 66.16,
+          "end": 66.56,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "रात"
+        },
+        {
+          "word": "ke",
+          "start": 66.56,
+          "end": 66.78,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "के"
+        },
+        {
+          "word": "parade",
+          "start": 66.78,
+          "end": 67.26,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "परदे"
+        },
+        {
+          "word": "men",
+          "start": 67.26,
+          "end": 67.38,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "में"
+        },
+        {
+          "word": "eka",
+          "start": 67.38,
+          "end": 67.76,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "एक"
+        },
+        {
+          "word": "savera",
+          "start": 67.76,
+          "end": 68.42,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "सवेरा"
+        },
+        {
+          "word": "hai",
+          "start": 68.42,
+          "end": 68.56,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "है"
+        },
+        {
+          "word": "roshana",
+          "start": 68.34,
+          "end": 69.14,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "रोशन"
+        }
+      ]
+    },
+    {
+      "start": 68.56,
+      "end": 71.5,
+      "text": "Roshana roshana aakhon men sabanon ka saagara",
+      "original_text": "रोशन रोशन आखों में सबनों का सागर",
+      "words": [
+        {
+          "word": "Roshana",
+          "start": 69.14,
+          "end": 69.72,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "रोशन"
+        },
+        {
+          "word": "aakhon",
+          "start": 69.72,
+          "end": 70.24,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "आखों"
+        },
+        {
+          "word": "men",
+          "start": 70.24,
+          "end": 70.34,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "में"
+        },
+        {
+          "word": "sabanon",
+          "start": 70.34,
+          "end": 70.86,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "सबनों"
+        },
+        {
+          "word": "ka",
+          "start": 70.86,
+          "end": 70.98,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "का"
+        },
+        {
+          "word": "saagara",
+          "start": 70.98,
+          "end": 71.48,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "सागर"
+        },
+        {
+          "word": "jisame",
+          "start": 71.5,
+          "end": 72.06,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जिसमे"
+        }
+      ]
+    },
+    {
+      "start": 71.5,
+      "end": 75.68,
+      "text": "Jisame prema sikhaaron kee chaadara jaise Chalaka rahee hai",
+      "original_text": "जिसमे प्रेम सिखारों की चादर जैसे छलक रही है",
+      "words": [
+        {
+          "word": "Prema",
+          "start": 72.06,
+          "end": 72.52,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "प्रेम"
+        },
+        {
+          "word": "sikhaaron",
+          "start": 72.52,
+          "end": 73.28,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "सिखारों"
+        },
+        {
+          "word": "kee",
+          "start": 73.28,
+          "end": 73.36,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "की"
+        },
+        {
+          "word": "chaadara",
+          "start": 73.36,
+          "end": 73.9,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "चादर"
+        },
+        {
+          "word": "jaise",
+          "start": 73.9,
+          "end": 74.42,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जैसे"
+        },
+        {
+          "word": "Chalaka",
+          "start": 74.42,
+          "end": 74.96,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "छलक"
+        },
+        {
+          "word": "rahee",
+          "start": 74.96,
+          "end": 75.36,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "रही"
+        },
+        {
+          "word": "hai",
+          "start": 75.36,
+          "end": 75.64,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "है"
+        },
+        {
+          "word": "laharon",
+          "start": 75.48,
+          "end": 76.38,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "लहरों"
+        }
+      ]
+    },
+    {
+      "start": 75.68,
+      "end": 79.32,
+      "text": "Laharon baata karen to jaise mootee parase",
+      "original_text": "लहरों बात करें तो जैसे मूती परसे",
+      "words": [
+        {
+          "word": "Baata",
+          "start": 76.38,
+          "end": 77.34,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "बात"
+        },
+        {
+          "word": "karen",
+          "start": 77.34,
+          "end": 77.78,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "करें"
+        },
+        {
+          "word": "to",
+          "start": 77.78,
+          "end": 77.9,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "तो"
+        },
+        {
+          "word": "jaise",
+          "start": 77.9,
+          "end": 78.16,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जैसे"
+        },
+        {
+          "word": "mootee",
+          "start": 78.16,
+          "end": 78.7,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "मूती"
+        },
+        {
+          "word": "parase",
+          "start": 78.7,
+          "end": 79.28,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "परसे"
+        },
+        {
+          "word": "jaise",
+          "start": 79.0,
+          "end": 79.7,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जैसे"
+        }
+      ]
+    },
+    {
+      "start": 79.32,
+      "end": 81.72,
+      "text": "Jaise kaheen jaanadhee kee paayala goojhe",
+      "original_text": "जैसे कहीं जानधी की पायल गूझे",
+      "words": [
+        {
+          "word": "Kaheen",
+          "start": 79.7,
+          "end": 80.0,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "कहीं"
+        },
+        {
+          "word": "jaanadhee",
+          "start": 80.0,
+          "end": 80.46,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जानधी"
+        },
+        {
+          "word": "kee",
+          "start": 80.46,
+          "end": 80.6,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "की"
+        },
+        {
+          "word": "paayala",
+          "start": 80.6,
+          "end": 81.14,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "पायल"
+        },
+        {
+          "word": "goojhe",
+          "start": 81.14,
+          "end": 81.66,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "गूझे"
+        },
+        {
+          "word": "jaise",
+          "start": 81.24,
+          "end": 82.08,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जैसे"
+        }
+      ]
+    },
+    {
+      "start": 81.72,
+      "end": 92.547,
+      "text": "",
+      "original_text": "",
+      "words": [
+        {
+          "word": "Kaheen",
+          "start": 82.08,
+          "end": 82.42,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "कहीं"
+        },
+        {
+          "word": "sheesha",
+          "start": 82.42,
+          "end": 82.76,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "शीश"
+        },
+        {
+          "word": "ke",
+          "start": 82.76,
+          "end": 82.98,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "के"
+        },
+        {
+          "word": "jaama",
+          "start": 82.98,
+          "end": 83.36,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जाम"
+        },
+        {
+          "word": "giren",
+          "start": 83.36,
+          "end": 83.88,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "गिरें"
+        },
+        {
+          "word": "aura",
+          "start": 83.88,
+          "end": 84.14,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "और"
+        },
+        {
+          "word": "chana",
+          "start": 84.14,
+          "end": 84.44,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "चन"
+        },
+        {
+          "word": "se",
+          "start": 84.44,
+          "end": 84.72,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "से"
+        },
+        {
+          "word": "doote",
+          "start": 84.72,
+          "end": 85.26,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "डूटे"
+        },
+        {
+          "word": "jaise",
+          "start": 84.86,
+          "end": 85.66,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जैसे"
+        },
+        {
+          "word": "koee",
+          "start": 85.66,
+          "end": 85.9,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "कोई"
+        },
+        {
+          "word": "Chipa",
+          "start": 85.9,
+          "end": 86.24,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "छिप"
+        },
+        {
+          "word": "ke",
+          "start": 86.24,
+          "end": 86.44,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "के"
+        },
+        {
+          "word": "sidhaara",
+          "start": 86.44,
+          "end": 86.98,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "सिधार"
+        },
+        {
+          "word": "ba.dhaae",
+          "start": 86.967,
+          "end": 87.607,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "बढ़ाए"
+        },
+        {
+          "word": "jaise",
+          "start": 87.507,
+          "end": 88.067,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जैसे"
+        },
+        {
+          "word": "koee",
+          "start": 88.067,
+          "end": 88.347,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "कोई"
+        },
+        {
+          "word": "chaandanee",
+          "start": 88.347,
+          "end": 89.027,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "चांदनी"
+        },
+        {
+          "word": "raata",
+          "start": 89.027,
+          "end": 89.367,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "रात"
+        },
+        {
+          "word": "men",
+          "start": 89.367,
+          "end": 89.567,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "में"
+        },
+        {
+          "word": "gaae",
+          "start": 89.567,
+          "end": 89.867,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "गाए"
+        },
+        {
+          "word": "jaise",
+          "start": 89.567,
+          "end": 90.467,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जैसे"
+        },
+        {
+          "word": "koee",
+          "start": 90.467,
+          "end": 90.747,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "कोई"
+        },
+        {
+          "word": "hoale",
+          "start": 90.747,
+          "end": 91.247,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "हॉले"
+        },
+        {
+          "word": "se",
+          "start": 91.247,
+          "end": 91.407,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "से"
+        },
+        {
+          "word": "paasa",
+          "start": 91.407,
+          "end": 91.787,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "पास"
+        },
+        {
+          "word": "bulaae",
+          "start": 91.787,
+          "end": 92.487,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "बुलाए"
+        },
+        {
+          "word": "kaisee",
+          "start": 92.207,
+          "end": 92.907,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "कैसी"
+        }
+      ]
+    },
+    {
+      "start": 92.547,
+      "end": 95.007,
+      "text": "Kaisee meetee baata thee vo, kaisee mulaakaata thee vo",
+      "original_text": "कैसी मीटी बात थी वो, कैसी मुलाकात थी वो",
+      "words": [
+        {
+          "word": "Meetee",
+          "start": 92.907,
+          "end": 93.207,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "मीटी"
+        },
+        {
+          "word": "baata",
+          "start": 93.207,
+          "end": 93.447,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "बात"
+        },
+        {
+          "word": "thee",
+          "start": 93.447,
+          "end": 93.647,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "थी"
+        },
+        {
+          "word": "vo,",
+          "start": 93.647,
+          "end": 93.867,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "वो,"
+        },
+        {
+          "word": "kaisee",
+          "start": 93.867,
+          "end": 94.087,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "कैसी"
+        },
+        {
+          "word": "mulaakaata",
+          "start": 94.087,
+          "end": 94.627,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "मुलाकात"
+        },
+        {
+          "word": "thee",
+          "start": 94.627,
+          "end": 94.827,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "थी"
+        },
+        {
+          "word": "vo",
+          "start": 94.827,
+          "end": 94.967,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "वो"
+        },
+        {
+          "word": "jaba",
+          "start": 94.687,
+          "end": 95.287,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जब"
+        }
+      ]
+    },
+    {
+      "start": 95.007,
+      "end": 98.247,
+      "text": "Jaba mainne jaana tha naasamon se kaise bigalate hain dila",
+      "original_text": "जब मैंने जाना था नासमों से कैसे बिगलते हैं दिल",
+      "words": [
+        {
+          "word": "Mainne",
+          "start": 95.287,
+          "end": 95.587,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "मैंने"
+        },
+        {
+          "word": "jaana",
+          "start": 95.587,
+          "end": 96.047,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जाना"
+        },
+        {
+          "word": "tha",
+          "start": 96.047,
+          "end": 96.187,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "था"
+        },
+        {
+          "word": "naasamon",
+          "start": 96.187,
+          "end": 96.687,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "नासमों"
+        },
+        {
+          "word": "se",
+          "start": 96.687,
+          "end": 96.787,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "से"
+        },
+        {
+          "word": "kaise",
+          "start": 96.787,
+          "end": 97.227,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "कैसे"
+        },
+        {
+          "word": "bigalate",
+          "start": 97.227,
+          "end": 97.867,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "बिगलते"
+        },
+        {
+          "word": "hain",
+          "start": 97.867,
+          "end": 97.987,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "हैं"
+        },
+        {
+          "word": "dila",
+          "start": 97.987,
+          "end": 98.167,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "दिल"
+        },
+        {
+          "word": "aura",
+          "start": 98.247,
+          "end": 98.567,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "और"
+        }
+      ]
+    },
+    {
+      "start": 98.247,
+      "end": 100.687,
+      "text": "Aura aahara sunbaahee hai kaise mandila",
+      "original_text": "और आहर सुंबाही है कैसे मंदिल",
+      "words": [
+        {
+          "word": "Aahara",
+          "start": 98.567,
+          "end": 99.027,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "आहर"
+        },
+        {
+          "word": "sunbaahee",
+          "start": 99.027,
+          "end": 99.687,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "सुंबाही"
+        },
+        {
+          "word": "hai",
+          "start": 99.687,
+          "end": 99.787,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "है"
+        },
+        {
+          "word": "kaise",
+          "start": 99.787,
+          "end": 100.087,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "कैसे"
+        },
+        {
+          "word": "mandila",
+          "start": 100.087,
+          "end": 100.707,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "मंदिल"
+        },
+        {
+          "word": "aura",
+          "start": 100.187,
+          "end": 100.987,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "और"
+        }
+      ]
+    },
+    {
+      "start": 100.687,
+      "end": 103.387,
+      "text": "Aura kaise utarata hai chaandai jameepa hara",
+      "original_text": "और कैसे उतरता है चांदı जमीप हर",
+      "words": [
+        {
+          "word": "Kaise",
+          "start": 100.987,
+          "end": 101.447,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "कैसे"
+        },
+        {
+          "word": "utarata",
+          "start": 101.447,
+          "end": 102.127,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "उतरता"
+        },
+        {
+          "word": "hai",
+          "start": 102.127,
+          "end": 102.207,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "है"
+        },
+        {
+          "word": "chaandai",
+          "start": 102.207,
+          "end": 102.727,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "चांदı"
+        },
+        {
+          "word": "jameepa",
+          "start": 102.727,
+          "end": 103.227,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जमीप"
+        },
+        {
+          "word": "hara",
+          "start": 103.227,
+          "end": 103.367,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "हर"
+        },
+        {
+          "word": "kaise",
+          "start": 103.067,
+          "end": 103.747,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "कैसे"
+        }
+      ]
+    },
+    {
+      "start": 103.387,
+      "end": 105.687,
+      "text": "Kaise kabhee lagata hai sa.dakee agara hai",
+      "original_text": "कैसे कभी लगता है सड़की अगर है",
+      "words": [
+        {
+          "word": "Kabhee",
+          "start": 103.747,
+          "end": 104.007,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "कभी"
+        },
+        {
+          "word": "lagata",
+          "start": 104.007,
+          "end": 104.507,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "लगता"
+        },
+        {
+          "word": "hai",
+          "start": 104.507,
+          "end": 104.587,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "है"
+        },
+        {
+          "word": "sa.dakee",
+          "start": 104.587,
+          "end": 105.067,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "सड़की"
+        },
+        {
+          "word": "agara",
+          "start": 105.067,
+          "end": 105.367,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "अगर"
+        },
+        {
+          "word": "hai",
+          "start": 105.367,
+          "end": 105.627,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "है"
+        },
+        {
+          "word": "to",
+          "start": 105.187,
+          "end": 105.827,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "तो"
+        },
+        {
+          "word": "basa",
+          "start": 105.827,
+          "end": 106.047,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "बस"
+        }
+      ]
+    },
+    {
+      "start": 105.687,
+      "end": 106.987,
+      "text": "To basa hai yahee para",
+      "original_text": "तो बस है यही पर",
+      "words": [
+        {
+          "word": "Hai",
+          "start": 106.047,
+          "end": 106.267,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "है"
+        },
+        {
+          "word": "yahee",
+          "start": 106.267,
+          "end": 106.607,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "यही"
+        },
+        {
+          "word": "para",
+          "start": 106.607,
+          "end": 106.927,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "पर"
+        },
+        {
+          "word": "onbune",
+          "start": 106.767,
+          "end": 107.427,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ॐबुने"
+        }
+      ]
+    },
+    {
+      "start": 106.987,
+      "end": 108.307,
+      "text": "Onbune bataaya mujhe",
+      "original_text": "ॐबुने बटाया मुझे",
+      "words": [
+        {
+          "word": "Bataaya",
+          "start": 107.427,
+          "end": 107.907,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "बटाया"
+        },
+        {
+          "word": "mujhe",
+          "start": 107.907,
+          "end": 108.227,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "मुझे"
+        },
+        {
+          "word": "aura",
+          "start": 107.907,
+          "end": 108.467,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "और"
+        }
+      ]
+    },
+    {
+      "start": 108.307,
+      "end": 109.387,
+      "text": "Aura samachaaya mujhe",
+      "original_text": "और समचाया मुझे",
+      "words": [
+        {
+          "word": "Samachaaya",
+          "start": 108.467,
+          "end": 109.107,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "समचाया"
+        },
+        {
+          "word": "mujhe",
+          "start": 109.107,
+          "end": 109.407,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "मुझे"
+        },
+        {
+          "word": "hama",
+          "start": 109.107,
+          "end": 109.667,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "हम"
+        }
+      ]
+    },
+    {
+      "start": 109.387,
+      "end": 110.107,
+      "text": "Hama jo mile hain",
+      "original_text": "हम जो मिले हैं",
+      "words": [
+        {
+          "word": "Jo",
+          "start": 109.667,
+          "end": 109.847,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जो"
+        },
+        {
+          "word": "mile",
+          "start": 109.847,
+          "end": 110.187,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "मिले"
+        },
+        {
+          "word": "hain",
+          "start": 110.187,
+          "end": 110.367,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "हैं"
+        },
+        {
+          "word": "hamen",
+          "start": 110.247,
+          "end": 110.627,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "हमें"
+        }
+      ]
+    },
+    {
+      "start": 110.107,
+      "end": 111.787,
+      "text": "Hamen aise hee milane tha",
+      "original_text": "हमें ऐसे ही मिलने था",
+      "words": [
+        {
+          "word": "Aise",
+          "start": 110.627,
+          "end": 111.047,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ऐसे"
+        },
+        {
+          "word": "hee",
+          "start": 111.047,
+          "end": 111.187,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ही"
+        },
+        {
+          "word": "milane",
+          "start": 111.187,
+          "end": 111.607,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "मिलने"
+        },
+        {
+          "word": "tha",
+          "start": 111.607,
+          "end": 111.807,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "था"
+        },
+        {
+          "word": "onbune",
+          "start": 111.807,
+          "end": 112.247,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ॐबुने"
+        }
+      ]
+    },
+    {
+      "start": 111.787,
+      "end": 112.627,
+      "text": "Onbune jo khile hain",
+      "original_text": "ॐबुने जो खिले हैं",
+      "words": [
+        {
+          "word": "Jo",
+          "start": 112.247,
+          "end": 112.267,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जो"
+        },
+        {
+          "word": "khile",
+          "start": 112.267,
+          "end": 112.607,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "खिले"
+        },
+        {
+          "word": "hain",
+          "start": 112.607,
+          "end": 112.767,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "हैं"
+        },
+        {
+          "word": "naheen",
+          "start": 112.627,
+          "end": 112.647,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "नहीं"
+        },
+        {
+          "word": "hai",
+          "start": 112.647,
+          "end": 112.667,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "है"
+        },
+        {
+          "word": "vaha",
+          "start": 112.667,
+          "end": 112.987,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "वह"
+        }
+      ]
+    },
+    {
+      "start": 112.627,
+      "end": 121.287,
+      "text": "Naheen hai vaha aise hee kilana talakkaila janmon ke vasanda jarishada men kahaava milate hain poaisee sabskraaiba gesha aapon",
+      "original_text": "नहीं है वह ऐसे ही किलना तलक्कैल जन्मों के वसंद जरिषद में कहाव मिलते हैं पॉइसी सब्स्क्राइब गेश आपों",
+      "words": [
+        {
+          "word": "Aise",
+          "start": 112.987,
+          "end": 113.487,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ऐसे"
+        },
+        {
+          "word": "hee",
+          "start": 113.487,
+          "end": 113.607,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ही"
+        },
+        {
+          "word": "kilana",
+          "start": 113.607,
+          "end": 114.067,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "किलना"
+        },
+        {
+          "word": "talakkaila",
+          "start": 114.067,
+          "end": 114.707,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "तलक्कैल"
+        },
+        {
+          "word": "janmon",
+          "start": 114.707,
+          "end": 115.927,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जन्मों"
+        },
+        {
+          "word": "ke",
+          "start": 115.927,
+          "end": 116.027,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "के"
+        },
+        {
+          "word": "vasanda",
+          "start": 116.027,
+          "end": 116.247,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "वसंद"
+        },
+        {
+          "word": "jarishada",
+          "start": 116.247,
+          "end": 116.447,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जरिषद"
+        },
+        {
+          "word": "men",
+          "start": 116.447,
+          "end": 117.627,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "में"
+        },
+        {
+          "word": "kahaava",
+          "start": 117.627,
+          "end": 118.267,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "कहाव"
+        },
+        {
+          "word": "milate",
+          "start": 118.267,
+          "end": 118.847,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "मिलते"
+        },
+        {
+          "word": "hain",
+          "start": 118.847,
+          "end": 119.047,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "हैं"
+        },
+        {
+          "word": "poaisee",
+          "start": 119.047,
+          "end": 120.207,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "पॉइसी"
+        },
+        {
+          "word": "sabskraaiba",
+          "start": 120.207,
+          "end": 121.247,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "सब्स्क्राइब"
+        },
+        {
+          "word": "gesha",
+          "start": 121.247,
+          "end": 121.767,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "गेश"
+        }
+      ]
+    },
+    {
+      "start": 121.287,
+      "end": 127.447,
+      "text": "Ke khaabonke duniya bhee agara chaahie kharaaba ke duniya ki hee dostiyon kitanee hajee aura kesee ranga ve lange",
+      "original_text": "के खाबोंके दुनिया भी अगर चाहिए खराब के दुनिया कि ही दोस्तियों कितनी हजी और केसी रंग वे लंगे",
+      "words": [
+        {
+          "word": "Aapon",
+          "start": 121.767,
+          "end": 121.787,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "आपों"
+        },
+        {
+          "word": "ke",
+          "start": 121.287,
+          "end": 121.507,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "के"
+        },
+        {
+          "word": "khaabonke",
+          "start": 121.507,
+          "end": 122.027,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "खाबोंके"
+        },
+        {
+          "word": "duniya",
+          "start": 122.027,
+          "end": 124.847,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "दुनिया"
+        },
+        {
+          "word": "bhee",
+          "start": 124.847,
+          "end": 125.007,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "भी"
+        },
+        {
+          "word": "agara",
+          "start": 125.007,
+          "end": 125.307,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "अगर"
+        },
+        {
+          "word": "chaahie",
+          "start": 125.307,
+          "end": 125.327,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "चाहिए"
+        },
+        {
+          "word": "kharaaba",
+          "start": 125.327,
+          "end": 125.347,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "खराब"
+        },
+        {
+          "word": "ke",
+          "start": 125.347,
+          "end": 125.367,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "के"
+        },
+        {
+          "word": "duniya",
+          "start": 125.367,
+          "end": 125.387,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "दुनिया"
+        },
+        {
+          "word": "ki",
+          "start": 125.387,
+          "end": 125.407,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "कि"
+        },
+        {
+          "word": "hee",
+          "start": 125.407,
+          "end": 125.427,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ही"
+        },
+        {
+          "word": "dostiyon",
+          "start": 125.427,
+          "end": 125.447,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "दोस्तियों"
+        },
+        {
+          "word": "kitanee",
+          "start": 125.447,
+          "end": 125.467,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "कितनी"
+        },
+        {
+          "word": "hajee",
+          "start": 125.467,
+          "end": 125.847,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "हजी"
+        },
+        {
+          "word": "aura",
+          "start": 125.847,
+          "end": 126.167,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "और"
+        },
+        {
+          "word": "kesee",
+          "start": 126.167,
+          "end": 126.507,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "केसी"
+        },
+        {
+          "word": "ranga",
+          "start": 126.507,
+          "end": 126.847,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "रंग"
+        },
+        {
+          "word": "ve",
+          "start": 126.847,
+          "end": 127.047,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "वे"
+        },
+        {
+          "word": "lange",
+          "start": 127.047,
+          "end": 127.327,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "लंगे"
+        },
+        {
+          "word": "metara",
+          "start": 126.947,
+          "end": 127.667,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "मेतर"
+        }
+      ]
+    },
+    {
+      "start": 127.447,
+      "end": 134.547,
+      "text": "Metara ko ka kahane ko dhee uthee ba.de kaminda naheen ye laganaate kee aankha chokalee meree hocha juba aaya mujhe",
+      "original_text": "मेतर को क कहने को धी उठी बड़े कमिंद नहीं ये लगनाते की आंख चोकली मेरी होच जुब आया मुझे",
+      "words": [
+        {
+          "word": "Ko",
+          "start": 127.667,
+          "end": 128.107,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "को"
+        },
+        {
+          "word": "ka",
+          "start": 128.107,
+          "end": 128.687,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "क"
+        },
+        {
+          "word": "kahane",
+          "start": 128.687,
+          "end": 129.067,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "कहने"
+        },
+        {
+          "word": "ko",
+          "start": 129.067,
+          "end": 129.247,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "को"
+        },
+        {
+          "word": "dhee",
+          "start": 129.247,
+          "end": 129.467,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "धी"
+        },
+        {
+          "word": "uthee",
+          "start": 129.467,
+          "end": 129.727,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "उठी"
+        },
+        {
+          "word": "ba.de",
+          "start": 129.727,
+          "end": 129.867,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "बड़े"
+        },
+        {
+          "word": "kaminda",
+          "start": 129.867,
+          "end": 130.247,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "कमिंद"
+        },
+        {
+          "word": "naheen",
+          "start": 130.247,
+          "end": 130.607,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "नहीं"
+        },
+        {
+          "word": "ye",
+          "start": 130.607,
+          "end": 131.027,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ये"
+        },
+        {
+          "word": "laganaate",
+          "start": 131.027,
+          "end": 131.327,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "लगनाते"
+        },
+        {
+          "word": "kee",
+          "start": 131.327,
+          "end": 131.967,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "की"
+        },
+        {
+          "word": "aankha",
+          "start": 131.967,
+          "end": 132.547,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "आंख"
+        },
+        {
+          "word": "chokalee",
+          "start": 132.547,
+          "end": 133.127,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "चोकली"
+        },
+        {
+          "word": "meree",
+          "start": 133.127,
+          "end": 133.427,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "मेरी"
+        },
+        {
+          "word": "hocha",
+          "start": 133.427,
+          "end": 133.767,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "होच"
+        },
+        {
+          "word": "juba",
+          "start": 133.767,
+          "end": 134.127,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जुब"
+        },
+        {
+          "word": "aaya",
+          "start": 134.127,
+          "end": 134.367,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "आया"
+        },
+        {
+          "word": "mujhe",
+          "start": 134.367,
+          "end": 134.647,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "मुझे"
+        },
+        {
+          "word": "aate",
+          "start": 134.547,
+          "end": 134.567,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "आते"
+        },
+        {
+          "word": "gaanvee",
+          "start": 134.567,
+          "end": 134.947,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "गांवी"
+        }
+      ]
+    },
+    {
+      "start": 134.547,
+      "end": 139.727,
+      "text": "Aate gaanvee chaala virdyoo treeparana men deshaka ke para doltiya jaae",
+      "original_text": "आते गांवी चाल विर्ड्यू ट्रीपरन में देशक के पर दोल्टिया जाए",
+      "words": [
+        {
+          "word": "Chaala",
+          "start": 134.947,
+          "end": 135.787,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "चाल"
+        },
+        {
+          "word": "virdyoo",
+          "start": 135.787,
+          "end": 136.147,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "विर्ड्यू"
+        },
+        {
+          "word": "treeparana",
+          "start": 136.147,
+          "end": 138.667,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ट्रीपरन"
+        },
+        {
+          "word": "men",
+          "start": 138.667,
+          "end": 138.687,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "में"
+        },
+        {
+          "word": "deshaka",
+          "start": 138.687,
+          "end": 140.047,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "देशक"
+        }
+      ]
+    },
+    {
+      "start": 139.967,
+      "end": 141.247,
+      "text": "Soatota pooren raato hain,",
+      "original_text": "सॉतोत पूरें रातो हैं।",
+      "words": [
+        {
+          "word": "Ke",
+          "start": 140.047,
+          "end": 140.207,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "के"
+        },
+        {
+          "word": "para",
+          "start": 140.207,
+          "end": 140.227,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "पर"
+        },
+        {
+          "word": "doltiya",
+          "start": 140.227,
+          "end": 140.247,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "दोल्टिया"
+        },
+        {
+          "word": "jaae",
+          "start": 140.247,
+          "end": 140.267,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जाए"
+        },
+        {
+          "word": "soatota",
+          "start": 139.467,
+          "end": 141.187,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "सॉतोत"
+        },
+        {
+          "word": "pooren",
+          "start": 141.187,
+          "end": 141.207,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "पूरें"
+        },
+        {
+          "word": "raato",
+          "start": 141.207,
+          "end": 141.307,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "रातो"
+        },
+        {
+          "word": "hain,",
+          "start": 141.307,
+          "end": 141.727,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "हैं।"
+        }
+      ]
+    },
+    {
+      "start": 141.247,
+      "end": 143.327,
+      "text": "Na chamaseon men aa jaaenge aura nagavon para greeddaaja ke lie,",
+      "original_text": "ना चमसेओं में आ जाएंगे और नगवों पर ग्रीड्डाज के लिए।",
+      "words": [
+        {
+          "word": "Na",
+          "start": 142.487,
+          "end": 142.587,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ना"
+        },
+        {
+          "word": "chamaseon",
+          "start": 142.587,
+          "end": 143.807,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "चमसेओं"
+        }
+      ]
+    },
+    {
+      "start": 143.327,
+      "end": 146.707,
+      "text": "Koee arma hai...na...koee dapanna hai...na...koee sapana hai",
+      "original_text": "कोई अर्मा है...ना…कोई दपन्ना है…ना...कोई सपना है",
+      "words": [
+        {
+          "word": "Men",
+          "start": 143.807,
+          "end": 143.827,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "में"
+        },
+        {
+          "word": "aa",
+          "start": 143.827,
+          "end": 143.847,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "आ"
+        },
+        {
+          "word": "jaaenge",
+          "start": 143.847,
+          "end": 143.867,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जाएंगे"
+        },
+        {
+          "word": "aura",
+          "start": 143.867,
+          "end": 143.887,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "और"
+        },
+        {
+          "word": "nagavon",
+          "start": 143.887,
+          "end": 143.907,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "नगवों"
+        },
+        {
+          "word": "para",
+          "start": 143.907,
+          "end": 143.927,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "पर"
+        },
+        {
+          "word": "greeddaaja",
+          "start": 143.927,
+          "end": 143.947,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ग्रीड्डाज"
+        },
+        {
+          "word": "ke",
+          "start": 143.947,
+          "end": 143.967,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "के"
+        },
+        {
+          "word": "lie,",
+          "start": 143.967,
+          "end": 143.987,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "लिए।"
+        },
+        {
+          "word": "koee",
+          "start": 143.327,
+          "end": 143.567,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "कोई"
+        },
+        {
+          "word": "arma",
+          "start": 143.567,
+          "end": 144.107,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "अर्मा"
+        },
+        {
+          "word": "hai...na...koee",
+          "start": 144.107,
+          "end": 144.647,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "है...ना…कोई"
+        },
+        {
+          "word": "dapanna",
+          "start": 144.647,
+          "end": 145.367,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "दपन्ना"
+        },
+        {
+          "word": "hai...na...koee",
+          "start": 145.367,
+          "end": 145.987,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "है…ना...कोई"
+        },
+        {
+          "word": "sapana",
+          "start": 145.987,
+          "end": 146.487,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "सपना"
+        },
+        {
+          "word": "hai",
+          "start": 146.487,
+          "end": 146.627,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "है"
+        },
+        {
+          "word": "aba",
+          "start": 146.647,
+          "end": 146.827,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "अब"
+        },
+        {
+          "word": "jo",
+          "start": 146.827,
+          "end": 146.987,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जो"
+        }
+      ]
+    },
+    {
+      "start": 146.727,
+      "end": 149.127,
+      "text": "Aba jo mere dina...aura aba jo|meree raate hai,",
+      "original_text": "अब जो मेरे दिन…और अब जो।मेरी राते है।",
+      "words": [
+        {
+          "word": "Mere",
+          "start": 146.987,
+          "end": 147.227,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "मेरे"
+        },
+        {
+          "word": "dina...aura",
+          "start": 147.227,
+          "end": 147.827,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "दिन…और"
+        },
+        {
+          "word": "aba",
+          "start": 147.827,
+          "end": 148.047,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "अब"
+        },
+        {
+          "word": "jo|meree",
+          "start": 148.047,
+          "end": 148.427,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "जो।मेरी"
+        },
+        {
+          "word": "raate",
+          "start": 148.427,
+          "end": 148.927,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "राते"
+        },
+        {
+          "word": "hai,",
+          "start": 148.927,
+          "end": 149.107,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "है।"
+        },
+        {
+          "word": "unamen",
+          "start": 149.107,
+          "end": 149.367,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "उनमें"
+        }
+      ]
+    },
+    {
+      "start": 149.147,
+      "end": 150.287,
+      "text": "Unamen sirpha aasu hai,",
+      "original_text": "उनमें सिर्फ आसु है।",
+      "words": [
+        {
+          "word": "Sirpha",
+          "start": 149.367,
+          "end": 149.627,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "सिर्फ"
+        },
+        {
+          "word": "aasu",
+          "start": 149.627,
+          "end": 150.087,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "आसु"
+        },
+        {
+          "word": "hai,",
+          "start": 150.087,
+          "end": 150.267,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "है।"
+        },
+        {
+          "word": "unamen",
+          "start": 150.267,
+          "end": 150.647,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "उनमें"
+        }
+      ]
+    },
+    {
+      "start": 150.347,
+      "end": 152.607,
+      "text": "Unamen sirpha darda kee ..ranja hee kee baate hai,",
+      "original_text": "उनमें सिर्फ दर्द की ..रंज ही की बाते है।",
+      "words": [
+        {
+          "word": "Sirpha",
+          "start": 150.647,
+          "end": 150.807,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "सिर्फ"
+        },
+        {
+          "word": "darda",
+          "start": 150.807,
+          "end": 151.247,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "दर्द"
+        },
+        {
+          "word": "kee",
+          "start": 151.247,
+          "end": 151.467,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "की"
+        },
+        {
+          "word": "..ranja",
+          "start": 151.467,
+          "end": 151.847,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "..रंज"
+        },
+        {
+          "word": "hee",
+          "start": 151.847,
+          "end": 151.947,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ही"
+        },
+        {
+          "word": "kee",
+          "start": 151.947,
+          "end": 152.167,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "की"
+        },
+        {
+          "word": "baate",
+          "start": 152.167,
+          "end": 152.547,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "बाते"
+        },
+        {
+          "word": "hai,",
+          "start": 152.547,
+          "end": 152.587,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "है।"
+        },
+        {
+          "word": "aura",
+          "start": 152.647,
+          "end": 152.947,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "और"
+        }
+      ]
+    },
+    {
+      "start": 152.647,
+      "end": 153.827,
+      "text": "Aura bareeyaade hai,",
+      "original_text": "और बरीयादे है।",
+      "words": [
+        {
+          "word": "Bareeyaade",
+          "start": 152.947,
+          "end": 153.707,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "बरीयादे"
+        },
+        {
+          "word": "hai,",
+          "start": 153.707,
+          "end": 153.847,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "है।"
+        },
+        {
+          "word": "mera",
+          "start": 153.847,
+          "end": 154.207,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "मेरा"
+        }
+      ]
+    },
+    {
+      "start": 153.947,
+      "end": 155.367,
+      "text": "Mera aba koee naheen main hoo.n",
+      "original_text": "मेरा अब कोई नहीं मैं हूँ",
+      "words": [
+        {
+          "word": "Aba",
+          "start": 154.207,
+          "end": 154.427,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "अब"
+        },
+        {
+          "word": "koee",
+          "start": 154.427,
+          "end": 154.707,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "कोई"
+        },
+        {
+          "word": "naheen",
+          "start": 154.707,
+          "end": 155.067,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "नहीं"
+        },
+        {
+          "word": "main",
+          "start": 155.067,
+          "end": 155.307,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "मैं"
+        },
+        {
+          "word": "hoo.n",
+          "start": 155.307,
+          "end": 155.367,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "हूँ"
+        },
+        {
+          "word": "main",
+          "start": 155.367,
+          "end": 155.467,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "मैं"
+        },
+        {
+          "word": "hoo.n",
+          "start": 155.467,
+          "end": 155.487,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "हूँ"
+        },
+        {
+          "word": "aura",
+          "start": 155.487,
+          "end": 155.667,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "और"
+        }
+      ]
+    },
+    {
+      "start": 155.367,
+      "end": 162.467,
+      "text": "Main hoo.n aura goe hue pyaara kee aade hain",
+      "original_text": "मैं हूँ और गोए हुए प्यार की आदे हैं",
+      "words": [
+        {
+          "word": "Goe",
+          "start": 155.667,
+          "end": 155.967,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "गोए"
+        },
+        {
+          "word": "hue",
+          "start": 155.967,
+          "end": 156.227,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "हुए"
+        },
+        {
+          "word": "pyaara",
+          "start": 156.227,
+          "end": 156.647,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "प्यार"
+        },
+        {
+          "word": "kee",
+          "start": 156.647,
+          "end": 156.887,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "की"
+        },
+        {
+          "word": "aade",
+          "start": 156.887,
+          "end": 157.287,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "आदे"
+        },
+        {
+          "word": "hain",
+          "start": 157.287,
+          "end": 162.447,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "हैं"
+        }
+      ]
+    }
+  ],
+  "alignment_status": "completed",
+  "aligned_words_count": 338,
+  "total_words_count": 338,
+  "vocal_separation_used": false,
+  "separation_status": "skipped",
+  "engine_used": "groq",
+  "fallback_used": false,
+  "fallback_reason": null,
+  "warnings": [],
+  "music_detected": null,
+  "known_lyrics_used": false,
+  "analysis_id": "7738dc98-be73-428a-8bb9-bb947a04b375"
+}

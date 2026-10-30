@@ -150,53 +150,63 @@ export default function ExploreView({
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {recommendedSongs.map((song) => (
-            <motion.div
-              key={song.id}
-              whileHover={{ y: -3 }}
-              transition={{ duration: 0.2 }}
-              onClick={() => onSelectTrack(song)}
-              className="p-4 rounded-2xl border transition-all cursor-pointer group flex flex-col justify-between"
-              style={{
-                backgroundColor: isDark ? 'rgba(43, 22, 12, 0.75)' : '#FFFFFF',
-                borderColor: isDark ? 'rgba(199, 160, 122, 0.22)' : 'rgba(226, 206, 177, 0.9)',
-              }}
-            >
-              <div className="flex items-start gap-3">
-                <div
-                  className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0 shadow-inner group-hover:scale-105 transition-transform"
-                  style={{ backgroundColor: song.coverColor || '#734128' }}
-                >
-                  <Music2 className="w-6 h-6 text-lion" />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <span className="inline-block px-2 py-0.5 rounded text-[10px] font-medium bg-lion/15 text-lion mb-1">
-                    {song.language}
-                  </span>
-                  <h3 className="font-medium text-sm truncate group-hover:text-lion transition-colors">
-                    {song.title}
-                  </h3>
-                  <p
-                    className="text-xs truncate"
-                    style={{ color: isDark ? '#E2CEB1' : '#734128' }}
+          {recommendedSongs.map((song) => {
+            const hasBundledAudio = Boolean(song.demoAudioUrl)
+            return (
+              <motion.div
+                key={song.id}
+                whileHover={{ y: -3 }}
+                transition={{ duration: 0.2 }}
+                onClick={() => onSelectTrack(song)}
+                className="p-4 rounded-2xl border transition-all cursor-pointer group flex flex-col justify-between"
+                style={{
+                  backgroundColor: isDark ? 'rgba(43, 22, 12, 0.75)' : '#FFFFFF',
+                  borderColor: isDark ? 'rgba(199, 160, 122, 0.22)' : 'rgba(226, 206, 177, 0.9)',
+                }}
+              >
+                <div className="flex items-start gap-3">
+                  <div
+                    className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0 shadow-inner group-hover:scale-105 transition-transform"
+                    style={{ backgroundColor: song.coverColor || '#734128' }}
                   >
-                    {song.artist}
-                  </p>
+                    <Music2 className="w-6 h-6 text-lion" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-1.5 mb-1">
+                      <span className="inline-block px-2 py-0.5 rounded text-[10px] font-medium bg-lion/15 text-lion">
+                        {song.language}
+                      </span>
+                      {hasBundledAudio && (
+                        <span className="inline-block px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-500/20 text-emerald-400">
+                          Demo Ready
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="font-medium text-sm truncate group-hover:text-lion transition-colors">
+                      {song.title}
+                    </h3>
+                    <p
+                      className="text-xs truncate"
+                      style={{ color: isDark ? '#E2CEB1' : '#734128' }}
+                    >
+                      {song.artist}
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-              <div className="mt-4 pt-3 border-t border-dun/15 flex items-center justify-between text-xs">
-                <span className="text-dun/70 flex items-center gap-1">
-                  <Clock className="w-3.5 h-3.5" />
-                  {song.duration}
-                </span>
-                <span className="text-lion font-medium group-hover:underline flex items-center gap-1">
-                  <Play className="w-3 h-3 fill-current" />
-                  Practice Now
-                </span>
-              </div>
-            </motion.div>
-          ))}
+                <div className="mt-4 pt-3 border-t border-dun/15 flex items-center justify-between text-xs">
+                  <span className="text-dun/70 flex items-center gap-1">
+                    <Clock className="w-3.5 h-3.5" />
+                    {song.duration}
+                  </span>
+                  <span className="text-lion font-medium group-hover:underline flex items-center gap-1">
+                    <Play className="w-3 h-3 fill-current" />
+                    {hasBundledAudio ? 'Load & Sync' : 'Practice Now'}
+                  </span>
+                </div>
+              </motion.div>
+            )
+          })}
         </div>
       </section>
 

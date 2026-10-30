@@ -48,6 +48,14 @@ export function useLyricsTranscription() {
     setStage('idle')
   }, [cancel])
 
+  // Immediately load pre-analyzed transcription data
+  const setPreAnalyzedResult = useCallback((data: TranscriptionResponse) => {
+    cancel()
+    setResult(data)
+    setError(null)
+    setStage('completed')
+  }, [cancel])
+
   // Transcribe uploaded audio file
   const transcribe = useCallback(
     async (
@@ -199,6 +207,7 @@ export function useLyricsTranscription() {
     backendHealth,
     isCheckingBackend,
     transcribe,
+    setPreAnalyzedResult,
     updateWord,
     cancel,
     clear,

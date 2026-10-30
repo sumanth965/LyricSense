@@ -1,0 +1,2504 @@
+{
+  "status": "completed",
+  "filename": "Let It Be (Remastered 2009).mp3",
+  "language": "en",
+  "detected_language_name": "English",
+  "duration": 243.03,
+  "transcript": "When I find myself in times of trouble, Mother Mary comes to me, speaking words of wisdom, let it be. And in my hour of darkness She is standing right in front of me Speaking words of wisdom Let it be Let it be Let it be Let it be Let it be Whisper words of wisdom Let it be And when the broken hearted people Living in the world agree There will be an answer Let it be But though they may be parted there is still a chance that they will see There will be an answer. Let it be. Let it be. Let it be. Let it be. Let it be. Yeah, there will be an answer, let it be Let it be, let it be, let it be, let it be Whisper words of wisdom, let it be Thank you guitar solo Let it be, let it be, yeah, let it be Whisper words of wisdom, let it be And when the night is cloudy There is still a light that shines on me Shine until tomorrow, let it be I wake up to the sound of music Mother Mary comes to me speaking words of wisdom let it be let it be let it be let it be thou wilt be an answer let it be let it be let it be let it be Yeah, let it be There will be an answer Let it be Let it be Let it be Let it be Yeah, let it be Whisper words of wisdom Let it be you",
+  "original_transcript": null,
+  "transliterated": false,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 23.28,
+      "text": "When I find myself in times of trouble, Mother Mary comes to me, speaking words of wisdom, let it be.",
+      "original_text": "When I find myself in times of trouble, Mother Mary comes to me, speaking words of wisdom, let it be.",
+      "words": [
+        {
+          "word": "When",
+          "start": 12.94,
+          "end": 12.96,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "When"
+        },
+        {
+          "word": "I",
+          "start": 12.96,
+          "end": 13.12,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "I"
+        },
+        {
+          "word": "find",
+          "start": 13.12,
+          "end": 13.56,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "find"
+        },
+        {
+          "word": "myself",
+          "start": 13.56,
+          "end": 14.2,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "myself"
+        },
+        {
+          "word": "in",
+          "start": 14.2,
+          "end": 14.6,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "in"
+        },
+        {
+          "word": "times",
+          "start": 14.6,
+          "end": 15.26,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "times"
+        },
+        {
+          "word": "of",
+          "start": 15.26,
+          "end": 15.54,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "of"
+        },
+        {
+          "word": "trouble,",
+          "start": 15.54,
+          "end": 16.66,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "trouble,"
+        },
+        {
+          "word": "Mother",
+          "start": 16.66,
+          "end": 16.8,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Mother"
+        },
+        {
+          "word": "Mary",
+          "start": 16.8,
+          "end": 17.64,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Mary"
+        },
+        {
+          "word": "comes",
+          "start": 17.64,
+          "end": 18.16,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "comes"
+        },
+        {
+          "word": "to",
+          "start": 18.16,
+          "end": 18.4,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "to"
+        },
+        {
+          "word": "me,",
+          "start": 18.4,
+          "end": 19.6,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "me,"
+        },
+        {
+          "word": "speaking",
+          "start": 19.6,
+          "end": 19.9,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "speaking"
+        },
+        {
+          "word": "words",
+          "start": 19.9,
+          "end": 20.82,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "words"
+        },
+        {
+          "word": "of",
+          "start": 20.82,
+          "end": 21.04,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "of"
+        },
+        {
+          "word": "wisdom,",
+          "start": 21.04,
+          "end": 22.22,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "wisdom,"
+        },
+        {
+          "word": "let",
+          "start": 22.22,
+          "end": 22.34,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "let"
+        },
+        {
+          "word": "it",
+          "start": 22.34,
+          "end": 22.5,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be.",
+          "start": 22.5,
+          "end": 23.76,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be."
+        }
+      ]
+    },
+    {
+      "start": 23.28,
+      "end": 27.96,
+      "text": "And in my hour of darkness",
+      "original_text": "And in my hour of darkness",
+      "words": [
+        {
+          "word": "And",
+          "start": 25.76,
+          "end": 25.9,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "And"
+        },
+        {
+          "word": "in",
+          "start": 25.9,
+          "end": 26.12,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "in"
+        },
+        {
+          "word": "my",
+          "start": 26.12,
+          "end": 26.62,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "my"
+        },
+        {
+          "word": "hour",
+          "start": 26.62,
+          "end": 27.14,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "hour"
+        },
+        {
+          "word": "of",
+          "start": 27.14,
+          "end": 27.28,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "of"
+        },
+        {
+          "word": "darkness",
+          "start": 27.28,
+          "end": 27.82,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "darkness"
+        },
+        {
+          "word": "She",
+          "start": 28.02,
+          "end": 28.52,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "She"
+        }
+      ]
+    },
+    {
+      "start": 27.96,
+      "end": 31.6,
+      "text": "She is standing right in front of me",
+      "original_text": "She is standing right in front of me",
+      "words": [
+        {
+          "word": "Is",
+          "start": 28.52,
+          "end": 28.68,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "is"
+        },
+        {
+          "word": "standing",
+          "start": 28.68,
+          "end": 29.26,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "standing"
+        },
+        {
+          "word": "right",
+          "start": 29.26,
+          "end": 30.18,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "right"
+        },
+        {
+          "word": "in",
+          "start": 30.18,
+          "end": 30.64,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "in"
+        },
+        {
+          "word": "front",
+          "start": 30.64,
+          "end": 31.02,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "front"
+        },
+        {
+          "word": "of",
+          "start": 31.02,
+          "end": 31.18,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "of"
+        },
+        {
+          "word": "me",
+          "start": 31.18,
+          "end": 31.5,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "me"
+        },
+        {
+          "word": "Speaking",
+          "start": 31.1,
+          "end": 32.54,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Speaking"
+        }
+      ]
+    },
+    {
+      "start": 31.6,
+      "end": 34.3,
+      "text": "Speaking words of wisdom",
+      "original_text": "Speaking words of wisdom",
+      "words": [
+        {
+          "word": "Words",
+          "start": 32.54,
+          "end": 33.54,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "words"
+        },
+        {
+          "word": "of",
+          "start": 33.54,
+          "end": 33.74,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "of"
+        },
+        {
+          "word": "wisdom",
+          "start": 33.74,
+          "end": 34.16,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "wisdom"
+        },
+        {
+          "word": "Let",
+          "start": 33.8,
+          "end": 35.12,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Let"
+        }
+      ]
+    },
+    {
+      "start": 34.3,
+      "end": 36.12,
+      "text": "Let it be",
+      "original_text": "Let it be",
+      "words": [
+        {
+          "word": "It",
+          "start": 35.12,
+          "end": 35.24,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 35.24,
+          "end": 35.56,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        }
+      ]
+    },
+    {
+      "start": 36.12,
+      "end": 39.24,
+      "text": "Let it be",
+      "original_text": "Let it be",
+      "words": [
+        {
+          "word": "Let",
+          "start": 37.68,
+          "end": 38.06,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Let"
+        },
+        {
+          "word": "it",
+          "start": 38.06,
+          "end": 38.26,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 38.26,
+          "end": 38.74,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        },
+        {
+          "word": "Let",
+          "start": 38.74,
+          "end": 39.74,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Let"
+        }
+      ]
+    },
+    {
+      "start": 39.24,
+      "end": 40.42,
+      "text": "Let it be",
+      "original_text": "Let it be",
+      "words": [
+        {
+          "word": "It",
+          "start": 39.74,
+          "end": 39.9,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 39.9,
+          "end": 40.3,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        }
+      ]
+    },
+    {
+      "start": 40.42,
+      "end": 42.46,
+      "text": "Let it be",
+      "original_text": "Let it be",
+      "words": [
+        {
+          "word": "Let",
+          "start": 41.0,
+          "end": 41.36,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Let"
+        },
+        {
+          "word": "it",
+          "start": 41.36,
+          "end": 41.52,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 41.52,
+          "end": 42.02,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        }
+      ]
+    },
+    {
+      "start": 42.46,
+      "end": 44.2,
+      "text": "Let it be",
+      "original_text": "Let it be",
+      "words": [
+        {
+          "word": "Let",
+          "start": 42.8,
+          "end": 43.12,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Let"
+        },
+        {
+          "word": "it",
+          "start": 43.12,
+          "end": 43.34,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 43.34,
+          "end": 44.02,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        }
+      ]
+    },
+    {
+      "start": 44.2,
+      "end": 47.42,
+      "text": "Whisper words of wisdom",
+      "original_text": "Whisper words of wisdom",
+      "words": [
+        {
+          "word": "Whisper",
+          "start": 45.4,
+          "end": 45.98,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Whisper"
+        },
+        {
+          "word": "words",
+          "start": 45.98,
+          "end": 46.58,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "words"
+        },
+        {
+          "word": "of",
+          "start": 46.58,
+          "end": 46.8,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "of"
+        },
+        {
+          "word": "wisdom",
+          "start": 46.8,
+          "end": 47.2,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "wisdom"
+        },
+        {
+          "word": "Let",
+          "start": 46.92,
+          "end": 48.2,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Let"
+        }
+      ]
+    },
+    {
+      "start": 47.42,
+      "end": 49.42,
+      "text": "Let it be",
+      "original_text": "Let it be",
+      "words": [
+        {
+          "word": "It",
+          "start": 48.2,
+          "end": 48.38,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 48.38,
+          "end": 48.98,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        },
+        {
+          "word": "And",
+          "start": 49.42,
+          "end": 51.88,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "And"
+        }
+      ]
+    },
+    {
+      "start": 49.42,
+      "end": 54.58,
+      "text": "And when the broken hearted people",
+      "original_text": "And when the broken hearted people",
+      "words": [
+        {
+          "word": "When",
+          "start": 51.88,
+          "end": 52.18,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "when"
+        },
+        {
+          "word": "the",
+          "start": 52.18,
+          "end": 52.5,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "the"
+        },
+        {
+          "word": "broken",
+          "start": 52.5,
+          "end": 53.0,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "broken"
+        },
+        {
+          "word": "hearted",
+          "start": 53.0,
+          "end": 53.98,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "hearted"
+        },
+        {
+          "word": "people",
+          "start": 53.98,
+          "end": 54.5,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "people"
+        },
+        {
+          "word": "Living",
+          "start": 54.18,
+          "end": 55.44,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Living"
+        }
+      ]
+    },
+    {
+      "start": 54.58,
+      "end": 70.817,
+      "text": "Living in the world agree There will be an answer Let it be But though they may be parted there is still a chance that they will see",
+      "original_text": "Living in the world agree There will be an answer Let it be But though they may be parted there is still a chance that they will see",
+      "words": [
+        {
+          "word": "In",
+          "start": 55.44,
+          "end": 56.12,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "in"
+        },
+        {
+          "word": "the",
+          "start": 56.12,
+          "end": 56.34,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "the"
+        },
+        {
+          "word": "world",
+          "start": 56.34,
+          "end": 56.9,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "world"
+        },
+        {
+          "word": "agree",
+          "start": 56.9,
+          "end": 57.5,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "agree"
+        },
+        {
+          "word": "There",
+          "start": 57.08,
+          "end": 58.86,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "There"
+        },
+        {
+          "word": "will",
+          "start": 58.86,
+          "end": 59.28,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "will"
+        },
+        {
+          "word": "be",
+          "start": 59.28,
+          "end": 59.56,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        },
+        {
+          "word": "an",
+          "start": 59.56,
+          "end": 59.86,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "an"
+        },
+        {
+          "word": "answer",
+          "start": 59.86,
+          "end": 60.36,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "answer"
+        },
+        {
+          "word": "Let",
+          "start": 59.96,
+          "end": 61.34,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Let"
+        },
+        {
+          "word": "it",
+          "start": 61.34,
+          "end": 61.44,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 61.44,
+          "end": 61.94,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        },
+        {
+          "word": "But",
+          "start": 64.697,
+          "end": 64.897,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "But"
+        },
+        {
+          "word": "though",
+          "start": 64.897,
+          "end": 65.257,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "though"
+        },
+        {
+          "word": "they",
+          "start": 65.257,
+          "end": 65.557,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "they"
+        },
+        {
+          "word": "may",
+          "start": 65.557,
+          "end": 65.837,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "may"
+        },
+        {
+          "word": "be",
+          "start": 65.837,
+          "end": 66.197,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        },
+        {
+          "word": "parted,",
+          "start": 66.197,
+          "end": 66.957,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "parted,"
+        },
+        {
+          "word": "there",
+          "start": 66.957,
+          "end": 67.877,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "there"
+        },
+        {
+          "word": "is",
+          "start": 67.877,
+          "end": 68.117,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "is"
+        },
+        {
+          "word": "still",
+          "start": 68.117,
+          "end": 68.497,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "still"
+        },
+        {
+          "word": "a",
+          "start": 68.497,
+          "end": 68.677,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "a"
+        },
+        {
+          "word": "chance",
+          "start": 68.677,
+          "end": 69.397,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "chance"
+        },
+        {
+          "word": "that",
+          "start": 69.397,
+          "end": 69.657,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "that"
+        },
+        {
+          "word": "they",
+          "start": 69.657,
+          "end": 69.957,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "they"
+        },
+        {
+          "word": "will",
+          "start": 69.957,
+          "end": 70.317,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "will"
+        },
+        {
+          "word": "see.",
+          "start": 70.317,
+          "end": 70.777,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "see."
+        }
+      ]
+    },
+    {
+      "start": 71.577,
+      "end": 73.537,
+      "text": "There will be an answer.",
+      "original_text": "There will be an answer.",
+      "words": [
+        {
+          "word": "There",
+          "start": 71.677,
+          "end": 72.157,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "There"
+        },
+        {
+          "word": "will",
+          "start": 72.157,
+          "end": 72.457,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "will"
+        },
+        {
+          "word": "be",
+          "start": 72.457,
+          "end": 72.717,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        },
+        {
+          "word": "an",
+          "start": 72.717,
+          "end": 73.017,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "an"
+        },
+        {
+          "word": "answer.",
+          "start": 73.017,
+          "end": 73.457,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "answer."
+        }
+      ]
+    },
+    {
+      "start": 74.217,
+      "end": 75.197,
+      "text": "Let it be.",
+      "original_text": "Let it be.",
+      "words": [
+        {
+          "word": "Let",
+          "start": 74.457,
+          "end": 74.617,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Let"
+        },
+        {
+          "word": "it",
+          "start": 74.617,
+          "end": 74.757,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be.",
+          "start": 74.757,
+          "end": 75.177,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be."
+        }
+      ]
+    },
+    {
+      "start": 77.077,
+      "end": 78.697,
+      "text": "Let it be.",
+      "original_text": "Let it be.",
+      "words": [
+        {
+          "word": "Let",
+          "start": 77.477,
+          "end": 77.817,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Let"
+        },
+        {
+          "word": "it",
+          "start": 77.817,
+          "end": 77.997,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be.",
+          "start": 77.997,
+          "end": 78.397,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be."
+        }
+      ]
+    },
+    {
+      "start": 79.177,
+      "end": 80.157,
+      "text": "Let it be.",
+      "original_text": "Let it be.",
+      "words": [
+        {
+          "word": "Let",
+          "start": 79.337,
+          "end": 79.537,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Let"
+        },
+        {
+          "word": "it",
+          "start": 79.537,
+          "end": 79.677,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be.",
+          "start": 79.677,
+          "end": 80.017,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be."
+        }
+      ]
+    },
+    {
+      "start": 80.797,
+      "end": 81.877,
+      "text": "Let it be.",
+      "original_text": "Let it be.",
+      "words": [
+        {
+          "word": "Let",
+          "start": 80.877,
+          "end": 81.217,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Let"
+        },
+        {
+          "word": "it",
+          "start": 81.217,
+          "end": 81.377,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be.",
+          "start": 81.377,
+          "end": 81.737,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be."
+        }
+      ]
+    },
+    {
+      "start": 82.657,
+      "end": 83.897,
+      "text": "Let it be.",
+      "original_text": "Let it be.",
+      "words": [
+        {
+          "word": "Let",
+          "start": 82.757,
+          "end": 82.977,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Let"
+        },
+        {
+          "word": "it",
+          "start": 82.977,
+          "end": 83.157,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be.",
+          "start": 83.157,
+          "end": 83.597,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be."
+        }
+      ]
+    },
+    {
+      "start": 83.897,
+      "end": 89.317,
+      "text": "Yeah, there will be an answer, let it be",
+      "original_text": "Yeah, there will be an answer, let it be",
+      "words": [
+        {
+          "word": "Yeah,",
+          "start": 84.977,
+          "end": 85.137,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Yeah,"
+        },
+        {
+          "word": "there",
+          "start": 85.137,
+          "end": 85.517,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "there"
+        },
+        {
+          "word": "will",
+          "start": 85.517,
+          "end": 85.957,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "will"
+        },
+        {
+          "word": "be",
+          "start": 85.957,
+          "end": 86.297,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        },
+        {
+          "word": "an",
+          "start": 86.297,
+          "end": 86.597,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "an"
+        },
+        {
+          "word": "answer,",
+          "start": 86.597,
+          "end": 87.697,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "answer,"
+        },
+        {
+          "word": "let",
+          "start": 87.697,
+          "end": 88.137,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "let"
+        },
+        {
+          "word": "it",
+          "start": 88.137,
+          "end": 88.257,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 88.257,
+          "end": 88.557,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        }
+      ]
+    },
+    {
+      "start": 89.317,
+      "end": 97.297,
+      "text": "Let it be, let it be, let it be, let it be",
+      "original_text": "Let it be, let it be, let it be, let it be",
+      "words": [
+        {
+          "word": "Let",
+          "start": 91.117,
+          "end": 91.457,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Let"
+        },
+        {
+          "word": "it",
+          "start": 91.457,
+          "end": 91.637,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be,",
+          "start": 91.637,
+          "end": 92.537,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be,"
+        },
+        {
+          "word": "let",
+          "start": 92.537,
+          "end": 92.877,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "let"
+        },
+        {
+          "word": "it",
+          "start": 92.877,
+          "end": 93.057,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be,",
+          "start": 93.057,
+          "end": 94.217,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be,"
+        },
+        {
+          "word": "let",
+          "start": 94.217,
+          "end": 94.537,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "let"
+        },
+        {
+          "word": "it",
+          "start": 94.537,
+          "end": 94.737,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be,",
+          "start": 94.737,
+          "end": 95.857,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be,"
+        },
+        {
+          "word": "let",
+          "start": 95.857,
+          "end": 96.177,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "let"
+        },
+        {
+          "word": "it",
+          "start": 96.177,
+          "end": 96.457,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 96.457,
+          "end": 97.077,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        }
+      ]
+    },
+    {
+      "start": 97.297,
+      "end": 102.637,
+      "text": "Whisper words of wisdom, let it be",
+      "original_text": "Whisper words of wisdom, let it be",
+      "words": [
+        {
+          "word": "Whisper",
+          "start": 98.377,
+          "end": 99.057,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Whisper"
+        },
+        {
+          "word": "words",
+          "start": 99.057,
+          "end": 99.877,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "words"
+        },
+        {
+          "word": "of",
+          "start": 99.877,
+          "end": 100.337,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "of"
+        },
+        {
+          "word": "wisdom,",
+          "start": 100.337,
+          "end": 101.057,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "wisdom,"
+        },
+        {
+          "word": "let",
+          "start": 101.057,
+          "end": 101.517,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "let"
+        },
+        {
+          "word": "it",
+          "start": 101.517,
+          "end": 101.697,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 101.697,
+          "end": 102.137,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        }
+      ]
+    },
+    {
+      "start": 113.897,
+      "end": 146.493,
+      "text": "Thank you guitar solo",
+      "original_text": "Thank you guitar solo",
+      "words": [
+        {
+          "word": "Thank",
+          "start": 113.897,
+          "end": 116.677,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Thank"
+        },
+        {
+          "word": "you.",
+          "start": 116.677,
+          "end": 118.237,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "you."
+        },
+        {
+          "word": "Guitar",
+          "start": 116.533,
+          "end": 117.133,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "guitar"
+        },
+        {
+          "word": "solo",
+          "start": 117.133,
+          "end": 120.913,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "solo"
+        },
+        {
+          "word": "Let",
+          "start": 146.493,
+          "end": 147.893,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Let"
+        }
+      ]
+    },
+    {
+      "start": 146.493,
+      "end": 152.573,
+      "text": "Let it be, let it be, yeah, let it be",
+      "original_text": "Let it be, let it be, yeah, let it be",
+      "words": [
+        {
+          "word": "It",
+          "start": 147.893,
+          "end": 147.973,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be,",
+          "start": 147.973,
+          "end": 148.873,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be,"
+        },
+        {
+          "word": "let",
+          "start": 148.873,
+          "end": 149.573,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "let"
+        },
+        {
+          "word": "it",
+          "start": 149.573,
+          "end": 149.773,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be,",
+          "start": 149.773,
+          "end": 150.873,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be,"
+        },
+        {
+          "word": "yeah,",
+          "start": 150.873,
+          "end": 151.293,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "yeah,"
+        },
+        {
+          "word": "let",
+          "start": 151.293,
+          "end": 151.473,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "let"
+        },
+        {
+          "word": "it",
+          "start": 151.473,
+          "end": 151.673,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 151.673,
+          "end": 152.433,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        }
+      ]
+    },
+    {
+      "start": 152.573,
+      "end": 158.213,
+      "text": "Whisper words of wisdom, let it be",
+      "original_text": "Whisper words of wisdom, let it be",
+      "words": [
+        {
+          "word": "Whisper",
+          "start": 153.733,
+          "end": 154.453,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Whisper"
+        },
+        {
+          "word": "words",
+          "start": 154.453,
+          "end": 155.393,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "words"
+        },
+        {
+          "word": "of",
+          "start": 155.393,
+          "end": 155.713,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "of"
+        },
+        {
+          "word": "wisdom,",
+          "start": 155.713,
+          "end": 156.433,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "wisdom,"
+        },
+        {
+          "word": "let",
+          "start": 156.433,
+          "end": 157.033,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "let"
+        },
+        {
+          "word": "it",
+          "start": 157.033,
+          "end": 157.193,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 157.193,
+          "end": 157.773,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        },
+        {
+          "word": "And",
+          "start": 157.713,
+          "end": 160.973,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "And"
+        }
+      ]
+    },
+    {
+      "start": 158.213,
+      "end": 163.053,
+      "text": "And when the night is cloudy",
+      "original_text": "And when the night is cloudy",
+      "words": [
+        {
+          "word": "When",
+          "start": 160.973,
+          "end": 161.373,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "when"
+        },
+        {
+          "word": "the",
+          "start": 161.373,
+          "end": 161.673,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "the"
+        },
+        {
+          "word": "night",
+          "start": 161.673,
+          "end": 161.973,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "night"
+        },
+        {
+          "word": "is",
+          "start": 161.973,
+          "end": 162.453,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "is"
+        },
+        {
+          "word": "cloudy",
+          "start": 162.453,
+          "end": 163.033,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "cloudy"
+        },
+        {
+          "word": "There",
+          "start": 162.553,
+          "end": 163.893,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "There"
+        }
+      ]
+    },
+    {
+      "start": 163.053,
+      "end": 167.293,
+      "text": "There is still a light that shines on me",
+      "original_text": "There is still a light that shines on me",
+      "words": [
+        {
+          "word": "Is",
+          "start": 163.893,
+          "end": 164.253,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "is"
+        },
+        {
+          "word": "still",
+          "start": 164.253,
+          "end": 164.773,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "still"
+        },
+        {
+          "word": "a",
+          "start": 164.773,
+          "end": 165.053,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "a"
+        },
+        {
+          "word": "light",
+          "start": 165.053,
+          "end": 165.413,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "light"
+        },
+        {
+          "word": "that",
+          "start": 165.413,
+          "end": 166.073,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "that"
+        },
+        {
+          "word": "shines",
+          "start": 166.073,
+          "end": 166.493,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "shines"
+        },
+        {
+          "word": "on",
+          "start": 166.493,
+          "end": 166.813,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "on"
+        },
+        {
+          "word": "me",
+          "start": 166.813,
+          "end": 167.193,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "me"
+        },
+        {
+          "word": "Shine",
+          "start": 166.833,
+          "end": 168.533,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Shine"
+        }
+      ]
+    },
+    {
+      "start": 167.293,
+      "end": 172.313,
+      "text": "Shine until tomorrow, let it be",
+      "original_text": "Shine until tomorrow, let it be",
+      "words": [
+        {
+          "word": "Until",
+          "start": 168.533,
+          "end": 169.133,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "until"
+        },
+        {
+          "word": "tomorrow,",
+          "start": 169.133,
+          "end": 170.313,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "tomorrow,"
+        },
+        {
+          "word": "let",
+          "start": 170.313,
+          "end": 171.033,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "let"
+        },
+        {
+          "word": "it",
+          "start": 171.033,
+          "end": 171.193,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 171.193,
+          "end": 171.773,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        },
+        {
+          "word": "I",
+          "start": 172.313,
+          "end": 174.893,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "I"
+        }
+      ]
+    },
+    {
+      "start": 172.313,
+      "end": 187.29,
+      "text": "I wake up to the sound of music Mother Mary comes to me speaking words of wisdom let it be",
+      "original_text": "I wake up to the sound of music Mother Mary comes to me speaking words of wisdom let it be",
+      "words": [
+        {
+          "word": "Wake",
+          "start": 174.893,
+          "end": 175.173,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "wake"
+        },
+        {
+          "word": "up",
+          "start": 175.173,
+          "end": 175.513,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "up"
+        },
+        {
+          "word": "to",
+          "start": 175.513,
+          "end": 176.073,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "to"
+        },
+        {
+          "word": "the",
+          "start": 176.073,
+          "end": 176.433,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "the"
+        },
+        {
+          "word": "sound",
+          "start": 176.433,
+          "end": 176.913,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "sound"
+        },
+        {
+          "word": "of",
+          "start": 176.913,
+          "end": 177.353,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "of"
+        },
+        {
+          "word": "music",
+          "start": 177.353,
+          "end": 177.993,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "music"
+        },
+        {
+          "word": "Mother",
+          "start": 177.933,
+          "end": 178.853,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Mother"
+        },
+        {
+          "word": "Mary",
+          "start": 178.853,
+          "end": 179.713,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Mary"
+        },
+        {
+          "word": "comes",
+          "start": 179.713,
+          "end": 180.293,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "comes"
+        },
+        {
+          "word": "to",
+          "start": 180.293,
+          "end": 180.573,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "to"
+        },
+        {
+          "word": "me",
+          "start": 180.573,
+          "end": 181.013,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "me"
+        },
+        {
+          "word": "speaking",
+          "start": 181.57,
+          "end": 182.47,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "speaking"
+        },
+        {
+          "word": "words",
+          "start": 182.47,
+          "end": 183.41,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "words"
+        },
+        {
+          "word": "of",
+          "start": 183.41,
+          "end": 183.65,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "of"
+        },
+        {
+          "word": "wisdom",
+          "start": 183.65,
+          "end": 184.25,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "wisdom"
+        },
+        {
+          "word": "let",
+          "start": 183.59,
+          "end": 185.03,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "let"
+        },
+        {
+          "word": "it",
+          "start": 185.03,
+          "end": 185.23,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 185.23,
+          "end": 186.49,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        },
+        {
+          "word": "let",
+          "start": 186.79,
+          "end": 188.23,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "let"
+        }
+      ]
+    },
+    {
+      "start": 187.29,
+      "end": 190.29,
+      "text": "let it be",
+      "original_text": "let it be",
+      "words": [
+        {
+          "word": "It",
+          "start": 188.23,
+          "end": 188.41,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 188.41,
+          "end": 189.27,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        },
+        {
+          "word": "let",
+          "start": 189.79,
+          "end": 191.59,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "let"
+        }
+      ]
+    },
+    {
+      "start": 190.29,
+      "end": 193.29,
+      "text": "let it be",
+      "original_text": "let it be",
+      "words": [
+        {
+          "word": "It",
+          "start": 191.59,
+          "end": 191.83,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 191.83,
+          "end": 192.21,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        },
+        {
+          "word": "let",
+          "start": 192.79,
+          "end": 193.39,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "let"
+        },
+        {
+          "word": "it",
+          "start": 193.39,
+          "end": 193.61,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        }
+      ]
+    },
+    {
+      "start": 193.29,
+      "end": 196.29,
+      "text": "let it be",
+      "original_text": "let it be",
+      "words": [
+        {
+          "word": "Be",
+          "start": 193.61,
+          "end": 194.43,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        },
+        {
+          "word": "thou",
+          "start": 195.79,
+          "end": 196.35,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "thou"
+        },
+        {
+          "word": "wilt",
+          "start": 196.35,
+          "end": 196.75,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "wilt"
+        }
+      ]
+    },
+    {
+      "start": 196.29,
+      "end": 198.29,
+      "text": "thou wilt be an answer",
+      "original_text": "thou wilt be an answer",
+      "words": [
+        {
+          "word": "Be",
+          "start": 196.75,
+          "end": 197.21,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        },
+        {
+          "word": "an",
+          "start": 197.21,
+          "end": 197.45,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "an"
+        },
+        {
+          "word": "answer",
+          "start": 197.45,
+          "end": 198.01,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "answer"
+        },
+        {
+          "word": "let",
+          "start": 197.79,
+          "end": 198.87,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "let"
+        }
+      ]
+    },
+    {
+      "start": 198.29,
+      "end": 200.29,
+      "text": "let it be",
+      "original_text": "let it be",
+      "words": [
+        {
+          "word": "It",
+          "start": 198.87,
+          "end": 199.05,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 199.05,
+          "end": 200.11,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        },
+        {
+          "word": "let",
+          "start": 199.79,
+          "end": 201.09,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "let"
+        }
+      ]
+    },
+    {
+      "start": 200.29,
+      "end": 202.29,
+      "text": "let it be",
+      "original_text": "let it be",
+      "words": [
+        {
+          "word": "It",
+          "start": 201.09,
+          "end": 202.33,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 202.33,
+          "end": 202.77,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        },
+        {
+          "word": "let",
+          "start": 201.79,
+          "end": 203.85,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "let"
+        }
+      ]
+    },
+    {
+      "start": 202.29,
+      "end": 204.29,
+      "text": "let it be",
+      "original_text": "let it be",
+      "words": [
+        {
+          "word": "It",
+          "start": 203.85,
+          "end": 203.99,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 203.99,
+          "end": 204.71,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        },
+        {
+          "word": "let",
+          "start": 203.79,
+          "end": 205.57,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "let"
+        }
+      ]
+    },
+    {
+      "start": 204.29,
+      "end": 206.29,
+      "text": "let it be",
+      "original_text": "let it be",
+      "words": [
+        {
+          "word": "It",
+          "start": 205.57,
+          "end": 205.79,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 205.79,
+          "end": 206.45,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        },
+        {
+          "word": "Yeah,",
+          "start": 206.29,
+          "end": 206.95,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Yeah,"
+        }
+      ]
+    },
+    {
+      "start": 206.29,
+      "end": 208.21,
+      "text": "Yeah, let it be",
+      "original_text": "Yeah, let it be",
+      "words": [
+        {
+          "word": "Let",
+          "start": 206.95,
+          "end": 207.39,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "let"
+        },
+        {
+          "word": "it",
+          "start": 207.39,
+          "end": 207.51,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 207.51,
+          "end": 207.95,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        }
+      ]
+    },
+    {
+      "start": 208.21,
+      "end": 211.85,
+      "text": "There will be an answer",
+      "original_text": "There will be an answer",
+      "words": [
+        {
+          "word": "There",
+          "start": 209.51,
+          "end": 209.95,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "There"
+        },
+        {
+          "word": "will",
+          "start": 209.95,
+          "end": 210.59,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "will"
+        },
+        {
+          "word": "be",
+          "start": 210.59,
+          "end": 210.91,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        },
+        {
+          "word": "an",
+          "start": 210.91,
+          "end": 211.25,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "an"
+        },
+        {
+          "word": "answer",
+          "start": 211.25,
+          "end": 211.73,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "answer"
+        }
+      ]
+    },
+    {
+      "start": 211.85,
+      "end": 213.83,
+      "text": "Let it be",
+      "original_text": "Let it be",
+      "words": [
+        {
+          "word": "Let",
+          "start": 212.29,
+          "end": 212.79,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Let"
+        },
+        {
+          "word": "it",
+          "start": 212.79,
+          "end": 212.91,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 212.91,
+          "end": 213.49,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        }
+      ]
+    },
+    {
+      "start": 213.83,
+      "end": 217.17,
+      "text": "Let it be",
+      "original_text": "Let it be",
+      "words": [
+        {
+          "word": "Let",
+          "start": 214.13,
+          "end": 216.03,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Let"
+        },
+        {
+          "word": "it",
+          "start": 216.03,
+          "end": 216.25,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 216.25,
+          "end": 216.83,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        }
+      ]
+    },
+    {
+      "start": 217.17,
+      "end": 218.47,
+      "text": "Let it be",
+      "original_text": "Let it be",
+      "words": [
+        {
+          "word": "Let",
+          "start": 217.49,
+          "end": 217.73,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Let"
+        },
+        {
+          "word": "it",
+          "start": 217.73,
+          "end": 217.89,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 217.89,
+          "end": 218.33,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        }
+      ]
+    },
+    {
+      "start": 218.47,
+      "end": 220.37,
+      "text": "Let it be",
+      "original_text": "Let it be",
+      "words": [
+        {
+          "word": "Let",
+          "start": 219.11,
+          "end": 219.47,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Let"
+        },
+        {
+          "word": "it",
+          "start": 219.47,
+          "end": 219.69,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 219.69,
+          "end": 220.21,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        }
+      ]
+    },
+    {
+      "start": 220.37,
+      "end": 222.61,
+      "text": "Yeah, let it be",
+      "original_text": "Yeah, let it be",
+      "words": [
+        {
+          "word": "Yeah,",
+          "start": 220.69,
+          "end": 221.17,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Yeah,"
+        },
+        {
+          "word": "let",
+          "start": 221.17,
+          "end": 221.39,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "let"
+        },
+        {
+          "word": "it",
+          "start": 221.39,
+          "end": 221.53,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 221.53,
+          "end": 222.33,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        }
+      ]
+    },
+    {
+      "start": 222.61,
+      "end": 225.91,
+      "text": "Whisper words of wisdom",
+      "original_text": "Whisper words of wisdom",
+      "words": [
+        {
+          "word": "Whisper",
+          "start": 223.19,
+          "end": 224.27,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Whisper"
+        },
+        {
+          "word": "words",
+          "start": 224.27,
+          "end": 225.03,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "words"
+        },
+        {
+          "word": "of",
+          "start": 225.03,
+          "end": 225.33,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "of"
+        },
+        {
+          "word": "wisdom",
+          "start": 225.33,
+          "end": 225.85,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "wisdom"
+        },
+        {
+          "word": "Let",
+          "start": 225.41,
+          "end": 226.81,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Let"
+        }
+      ]
+    },
+    {
+      "start": 225.91,
+      "end": 227.65,
+      "text": "Let it be",
+      "original_text": "Let it be",
+      "words": [
+        {
+          "word": "It",
+          "start": 226.81,
+          "end": 226.99,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "be",
+          "start": 226.99,
+          "end": 227.41,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        }
+      ]
+    },
+    {
+      "start": 236.29,
+      "end": 236.79,
+      "text": "you",
+      "original_text": "you",
+      "words": [
+        {
+          "word": "You",
+          "start": 236.33,
+          "end": 236.77,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "you"
+        }
+      ]
+    }
+  ],
+  "alignment_status": "completed",
+  "aligned_words_count": 263,
+  "total_words_count": 263,
+  "vocal_separation_used": false,
+  "separation_status": "skipped",
+  "engine_used": "groq",
+  "fallback_used": false,
+  "fallback_reason": null,
+  "warnings": [],
+  "music_detected": null,
+  "known_lyrics_used": false,
+  "analysis_id": "6e86c13e-c7ad-43fb-b6c3-de757a66e886"
+}

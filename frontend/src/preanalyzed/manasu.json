@@ -1,0 +1,1224 @@
+{
+  "status": "completed",
+  "filename": "Manasu Maree Full video Song  V Songs  Nani, Aditi Rao Hydari  Amit Trivedi.mp3",
+  "language": "te",
+  "detected_language_name": "Telugu",
+  "duration": 267.55,
+  "transcript": "Manasu mari mattu ga tulgi botunnade Emo eeveda Vayasu mari vindaga vistu botunnade nide ilila Andega kavlistaave gilli Anduke bandhinche nandalli Kilaadi komali gulebakkaavali  Vayasumari vintaga vistugotunnade nide nila Vaadugulo vaaduguvai laara naato mityan varaana Vaadugulo vaadugulai nive restaana sarva jakapana Poolanaava gaagitova haaylo haayle sov  Vayasu maree gindaga vistugotunnade nide ilila Manasulo aralale raasyaale vo cheppe shanamedi Manuvutu mudaranye maro chanmaanni potte varavedi Nilo uncha na praanaanni choosi polchuko  Vayasu maree vintaga vistu potunnade mide ilila Andaka kavvistaave killi Anduki bandinchi nanni Kilaadi komali gulebakaavali Sukhaana jaavali vinaali kogili Meeddi meeddi",
+  "original_transcript": "మనసు మరి మత్తు గా తుల్గి బోతున్నదే ఏమో ఈవేడా వయసు మరి విందగా విస్తు బోతున్నదే నిదే ఇలిలా అందేగా కవ్లిస్తావే గిల్లి అందుకే బంధించే నండల్లి కిలాడి కోమలి గులేబక్కావళి వయసుమరి వింతగా విస్తుగోతున్నదే నిదే నిలా వాడుగులో వాడుగువై లారా నాతో మిత్యం వరానా వాడుగులో వాడుగులై నివే రేస్తానా సర్వ జకపనా పూలనావా గాగితోవా హాయ్లో హాయ్లే సోవ్ వయసు మరీ గిందగా విస్తుగోతున్నదే నిదే ఇలిలా మనసులో అరలలే రాస్యాలే వో చెప్పే శనమేది మనువుతు ముదరంయే మరో చన్మాన్ని పొట్టే వరవేది నిలో ఉంచా నా ప్రాణాన్ని చూసి పోల్చుకో వయసు మరీ వింతగా విస్తు పోతున్నదే మిదే ఇలిలా అందకా కవ్విస్తావే కిల్లి అందుకి బందించి నన్ని కిలాడి కోమలి గులేబకావలి సుఖాన జావలి వినాలి కోగిలి మీడ్డి మీడ్డి",
+  "transliterated": true,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 29.38,
+      "text": "Manasu mari mattu ga tulgi botunnade",
+      "original_text": "మనసు మరి మత్తు గా తుల్గి బోతున్నదే",
+      "words": [
+        {
+          "word": "Manasu",
+          "start": 0.0,
+          "end": 26.2,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మనసు"
+        },
+        {
+          "word": "mari",
+          "start": 26.2,
+          "end": 26.64,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మరి"
+        },
+        {
+          "word": "mattu",
+          "start": 26.64,
+          "end": 27.14,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మత్తు"
+        },
+        {
+          "word": "ga",
+          "start": 27.14,
+          "end": 27.46,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "గా"
+        },
+        {
+          "word": "tulgi",
+          "start": 27.46,
+          "end": 28.12,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "తుల్గి"
+        },
+        {
+          "word": "botunnade",
+          "start": 28.12,
+          "end": 29.32,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "బోతున్నదే"
+        },
+        {
+          "word": "emo",
+          "start": 29.38,
+          "end": 30.44,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ఏమో"
+        }
+      ]
+    },
+    {
+      "start": 29.38,
+      "end": 32.62,
+      "text": "Emo eeveda",
+      "original_text": "ఏమో ఈవేడా",
+      "words": [
+        {
+          "word": "Eeveda",
+          "start": 30.44,
+          "end": 31.98,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ఈవేడా"
+        }
+      ]
+    },
+    {
+      "start": 32.62,
+      "end": 40.54,
+      "text": "Vayasu mari vindaga vistu botunnade nide ilila",
+      "original_text": "వయసు మరి విందగా విస్తు బోతున్నదే నిదే ఇలిలా",
+      "words": [
+        {
+          "word": "Vayasu",
+          "start": 33.54,
+          "end": 34.22,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "వయసు"
+        },
+        {
+          "word": "mari",
+          "start": 34.22,
+          "end": 34.62,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మరి"
+        },
+        {
+          "word": "vindaga",
+          "start": 34.62,
+          "end": 35.44,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "విందగా"
+        },
+        {
+          "word": "vistu",
+          "start": 35.44,
+          "end": 36.12,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "విస్తు"
+        },
+        {
+          "word": "botunnade",
+          "start": 36.12,
+          "end": 37.42,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "బోతున్నదే"
+        },
+        {
+          "word": "nide",
+          "start": 37.42,
+          "end": 38.38,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నిదే"
+        },
+        {
+          "word": "ilila",
+          "start": 38.38,
+          "end": 40.1,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ఇలిలా"
+        }
+      ]
+    },
+    {
+      "start": 40.54,
+      "end": 44.3,
+      "text": "Andega kavlistaave gilli",
+      "original_text": "అందేగా కవ్లిస్తావే గిల్లి",
+      "words": [
+        {
+          "word": "Andega",
+          "start": 40.8,
+          "end": 41.58,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "అందేగా"
+        },
+        {
+          "word": "kavlistaave",
+          "start": 41.58,
+          "end": 43.42,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "కవ్లిస్తావే"
+        },
+        {
+          "word": "gilli",
+          "start": 43.42,
+          "end": 44.2,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "గిల్లి"
+        }
+      ]
+    },
+    {
+      "start": 44.3,
+      "end": 48.28,
+      "text": "Anduke bandhinche nandalli",
+      "original_text": "అందుకే బంధించే నండల్లి",
+      "words": [
+        {
+          "word": "Anduke",
+          "start": 44.92,
+          "end": 45.6,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "అందుకే"
+        },
+        {
+          "word": "bandhinche",
+          "start": 45.6,
+          "end": 46.98,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "బంధించే"
+        },
+        {
+          "word": "nandalli",
+          "start": 46.98,
+          "end": 48.2,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నండల్లి"
+        },
+        {
+          "word": "kilaadi",
+          "start": 48.28,
+          "end": 49.2,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "కిలాడి"
+        }
+      ]
+    },
+    {
+      "start": 48.28,
+      "end": 55.72,
+      "text": "Kilaadi komali gulebakkaavali",
+      "original_text": "కిలాడి కోమలి గులేబక్కావళి",
+      "words": [
+        {
+          "word": "Komali",
+          "start": 49.2,
+          "end": 50.02,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "కోమలి"
+        },
+        {
+          "word": "gulebakkaavali",
+          "start": 50.02,
+          "end": 54.0,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "గులేబక్కావళి"
+        }
+      ]
+    },
+    {
+      "start": 55.72,
+      "end": 71.888,
+      "text": "",
+      "original_text": "",
+      "words": [
+        {
+          "word": "Sukhaala",
+          "start": 56.38,
+          "end": 57.08,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "సుఖాల"
+        },
+        {
+          "word": "jaavali",
+          "start": 57.08,
+          "end": 58.62,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "జావళి"
+        },
+        {
+          "word": "venaali",
+          "start": 58.62,
+          "end": 61.18,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "వేనాలి"
+        },
+        {
+          "word": "kogili",
+          "start": 61.18,
+          "end": 62.2,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "కోగిలి"
+        },
+        {
+          "word": "manasumaree",
+          "start": 65.6,
+          "end": 66.62,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మనసుమరీ"
+        },
+        {
+          "word": "mattuka",
+          "start": 66.62,
+          "end": 67.48,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మత్తుకా"
+        },
+        {
+          "word": "tukipotunnade",
+          "start": 67.428,
+          "end": 69.308,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "తుకిపోతున్నదే"
+        },
+        {
+          "word": "emo",
+          "start": 69.308,
+          "end": 70.428,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ఏమో"
+        },
+        {
+          "word": "iveda",
+          "start": 70.428,
+          "end": 71.928,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ఇవేడా"
+        }
+      ]
+    },
+    {
+      "start": 71.888,
+      "end": 80.888,
+      "text": "Vayasumari vintaga vistugotunnade nide nila",
+      "original_text": "వయసుమరి వింతగా విస్తుగోతున్నదే నిదే నిలా",
+      "words": [
+        {
+          "word": "Vayasumari",
+          "start": 73.528,
+          "end": 74.648,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "వయసుమరి"
+        },
+        {
+          "word": "vintaga",
+          "start": 74.648,
+          "end": 75.568,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "వింతగా"
+        },
+        {
+          "word": "vistugotunnade",
+          "start": 75.568,
+          "end": 77.428,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "విస్తుగోతున్నదే"
+        },
+        {
+          "word": "nide",
+          "start": 77.428,
+          "end": 78.688,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నిదే"
+        },
+        {
+          "word": "nila",
+          "start": 78.688,
+          "end": 79.988,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నిలా"
+        }
+      ]
+    },
+    {
+      "start": 91.888,
+      "end": 110.068,
+      "text": "Vaadugulo vaaduguvai laara naato mityan varaana",
+      "original_text": "వాడుగులో వాడుగువై లారా నాతో మిత్యం వరానా",
+      "words": [
+        {
+          "word": "Vaadugulo",
+          "start": 91.888,
+          "end": 104.468,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "వాడుగులో"
+        },
+        {
+          "word": "vaaduguvai",
+          "start": 104.468,
+          "end": 105.468,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "వాడుగువై"
+        },
+        {
+          "word": "laara",
+          "start": 105.468,
+          "end": 106.448,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "లారా"
+        },
+        {
+          "word": "naato",
+          "start": 106.448,
+          "end": 107.388,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నాతో"
+        },
+        {
+          "word": "mityan",
+          "start": 107.388,
+          "end": 108.368,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మిత్యం"
+        },
+        {
+          "word": "varaana",
+          "start": 108.368,
+          "end": 109.788,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "వరానా"
+        }
+      ]
+    },
+    {
+      "start": 110.068,
+      "end": 118.068,
+      "text": "Vaadugulo vaadugulai nive restaana sarva jakapana",
+      "original_text": "వాడుగులో వాడుగులై నివే రేస్తానా సర్వ జకపనా",
+      "words": [
+        {
+          "word": "Vaadugulo",
+          "start": 110.688,
+          "end": 112.508,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "వాడుగులో"
+        },
+        {
+          "word": "vaadugulai",
+          "start": 112.508,
+          "end": 113.448,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "వాడుగులై"
+        },
+        {
+          "word": "nive",
+          "start": 113.448,
+          "end": 113.848,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నివే"
+        },
+        {
+          "word": "restaana",
+          "start": 113.848,
+          "end": 115.448,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "రేస్తానా"
+        },
+        {
+          "word": "sarva",
+          "start": 115.448,
+          "end": 116.128,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "సర్వ"
+        },
+        {
+          "word": "jakapana",
+          "start": 116.128,
+          "end": 118.108,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "జకపనా"
+        },
+        {
+          "word": "poolanaava",
+          "start": 118.068,
+          "end": 120.348,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "పూలనావా"
+        }
+      ]
+    },
+    {
+      "start": 118.068,
+      "end": 126.048,
+      "text": "Poolanaava gaagitova haaylo haayle sov",
+      "original_text": "పూలనావా గాగితోవా హాయ్లో హాయ్లే సోవ్",
+      "words": [
+        {
+          "word": "Gaagitova",
+          "start": 120.348,
+          "end": 122.328,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "గాగితోవా"
+        },
+        {
+          "word": "haaylo",
+          "start": 122.328,
+          "end": 123.648,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "హాయ్లో"
+        },
+        {
+          "word": "haayle",
+          "start": 123.648,
+          "end": 124.148,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "హాయ్లే"
+        },
+        {
+          "word": "sov",
+          "start": 124.148,
+          "end": 125.688,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "సోవ్"
+        }
+      ]
+    },
+    {
+      "start": 126.048,
+      "end": 142.876,
+      "text": "",
+      "original_text": "",
+      "words": [
+        {
+          "word": "Cheraniva",
+          "start": 126.948,
+          "end": 128.468,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "చేరనివా"
+        },
+        {
+          "word": "cheraniva",
+          "start": 128.468,
+          "end": 130.468,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "చేరనివా"
+        },
+        {
+          "word": "sevari",
+          "start": 130.468,
+          "end": 131.968,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "సేవరి"
+        },
+        {
+          "word": "vevo",
+          "start": 131.968,
+          "end": 132.948,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "వేవో"
+        },
+        {
+          "word": "manusumare",
+          "start": 135.508,
+          "end": 136.608,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మనుసుమరే"
+        },
+        {
+          "word": "mattuga",
+          "start": 136.608,
+          "end": 137.388,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మత్తుగా"
+        },
+        {
+          "word": "tovipoto",
+          "start": 137.388,
+          "end": 138.788,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "తోవిపోతో"
+        },
+        {
+          "word": "maanusu",
+          "start": 128.776,
+          "end": 136.236,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మానుసు"
+        },
+        {
+          "word": "maree",
+          "start": 136.236,
+          "end": 136.536,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మరీ"
+        },
+        {
+          "word": "mattuga",
+          "start": 136.536,
+          "end": 137.316,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మత్తుగా"
+        },
+        {
+          "word": "tovi",
+          "start": 137.316,
+          "end": 138.176,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "తోవి"
+        },
+        {
+          "word": "potunnade",
+          "start": 138.176,
+          "end": 139.296,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "పోతున్నదే"
+        },
+        {
+          "word": "emo",
+          "start": 139.296,
+          "end": 140.456,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ఏమో"
+        },
+        {
+          "word": "ivela",
+          "start": 140.456,
+          "end": 142.356,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ఇవేళా"
+        },
+        {
+          "word": "vayasu",
+          "start": 142.376,
+          "end": 144.216,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "వయసు"
+        }
+      ]
+    },
+    {
+      "start": 142.876,
+      "end": 150.876,
+      "text": "Vayasu maree gindaga vistugotunnade nide ilila",
+      "original_text": "వయసు మరీ గిందగా విస్తుగోతున్నదే నిదే ఇలిలా",
+      "words": [
+        {
+          "word": "Maree",
+          "start": 144.216,
+          "end": 144.616,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మరీ"
+        },
+        {
+          "word": "gindaga",
+          "start": 144.616,
+          "end": 145.496,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "గిందగా"
+        },
+        {
+          "word": "vistugotunnade",
+          "start": 145.496,
+          "end": 147.476,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "విస్తుగోతున్నదే"
+        },
+        {
+          "word": "nide",
+          "start": 147.476,
+          "end": 148.596,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నిదే"
+        },
+        {
+          "word": "ilila",
+          "start": 148.596,
+          "end": 150.016,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ఇలిలా"
+        }
+      ]
+    },
+    {
+      "start": 158.776,
+      "end": 180.196,
+      "text": "Manasulo aralale raasyaale vo cheppe shanamedi",
+      "original_text": "మనసులో అరలలే రాస్యాలే వో చెప్పే శనమేది",
+      "words": [
+        {
+          "word": "Manasulo",
+          "start": 158.776,
+          "end": 174.556,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మనసులో"
+        },
+        {
+          "word": "aralale",
+          "start": 174.556,
+          "end": 175.336,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "అరలలే"
+        },
+        {
+          "word": "raasyaale",
+          "start": 175.336,
+          "end": 176.916,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "రాస్యాలే"
+        },
+        {
+          "word": "vo",
+          "start": 176.916,
+          "end": 177.436,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "వో"
+        },
+        {
+          "word": "cheppe",
+          "start": 177.436,
+          "end": 178.196,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "చెప్పే"
+        },
+        {
+          "word": "shanamedi",
+          "start": 178.196,
+          "end": 179.956,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "శనమేది"
+        }
+      ]
+    },
+    {
+      "start": 180.196,
+      "end": 188.196,
+      "text": "Manuvutu mudaranye maro chanmaanni potte varavedi",
+      "original_text": "మనువుతు ముదరంయే మరో చన్మాన్ని పొట్టే వరవేది",
+      "words": [
+        {
+          "word": "Manuvutu",
+          "start": 181.476,
+          "end": 182.496,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మనువుతు"
+        },
+        {
+          "word": "mudaranye",
+          "start": 182.496,
+          "end": 183.496,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ముదరంయే"
+        },
+        {
+          "word": "maro",
+          "start": 183.496,
+          "end": 183.976,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మరో"
+        },
+        {
+          "word": "chanmaanni",
+          "start": 183.976,
+          "end": 185.476,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "చన్మాన్ని"
+        },
+        {
+          "word": "potte",
+          "start": 185.476,
+          "end": 186.356,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "పొట్టే"
+        },
+        {
+          "word": "varavedi",
+          "start": 186.356,
+          "end": 188.016,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "వరవేది"
+        }
+      ]
+    },
+    {
+      "start": 188.776,
+      "end": 195.616,
+      "text": "Nilo uncha na praanaanni choosi polchuko",
+      "original_text": "నిలో ఉంచా నా ప్రాణాన్ని చూసి పోల్చుకో",
+      "words": [
+        {
+          "word": "Nilo",
+          "start": 188.776,
+          "end": 189.596,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నిలో"
+        },
+        {
+          "word": "uncha",
+          "start": 189.596,
+          "end": 190.396,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ఉంచా"
+        },
+        {
+          "word": "na",
+          "start": 190.396,
+          "end": 191.416,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నా"
+        },
+        {
+          "word": "praanaanni",
+          "start": 191.416,
+          "end": 192.456,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ప్రాణాన్ని"
+        },
+        {
+          "word": "choosi",
+          "start": 192.456,
+          "end": 193.616,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "చూసి"
+        },
+        {
+          "word": "polchuko",
+          "start": 193.616,
+          "end": 194.796,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "పోల్చుకో"
+        },
+        {
+          "word": "maano",
+          "start": 195.616,
+          "end": 197.576,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మానో"
+        }
+      ]
+    },
+    {
+      "start": 195.616,
+      "end": 212.664,
+      "text": "",
+      "original_text": "",
+      "words": [
+        {
+          "word": "Pencha",
+          "start": 197.576,
+          "end": 198.776,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "పెంచా"
+        },
+        {
+          "word": "nigaralanni",
+          "start": 198.776,
+          "end": 200.376,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నిగరలన్ని"
+        },
+        {
+          "word": "ugani",
+          "start": 200.376,
+          "end": 202.136,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ఉగని"
+        },
+        {
+          "word": "uyallu",
+          "start": 202.136,
+          "end": 203.476,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ఉయల్లు"
+        },
+        {
+          "word": "maanasu",
+          "start": 195.664,
+          "end": 206.204,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మానసు"
+        },
+        {
+          "word": "maree",
+          "start": 206.204,
+          "end": 206.584,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మరీ"
+        },
+        {
+          "word": "mattuga",
+          "start": 206.584,
+          "end": 207.424,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మత్తుగా"
+        },
+        {
+          "word": "toogi",
+          "start": 207.424,
+          "end": 208.184,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "తూగి"
+        },
+        {
+          "word": "potunnade",
+          "start": 208.184,
+          "end": 209.264,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "పోతున్నదే"
+        },
+        {
+          "word": "emo",
+          "start": 209.264,
+          "end": 210.464,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ఏమో"
+        },
+        {
+          "word": "iveda",
+          "start": 210.464,
+          "end": 212.224,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ఇవేడా"
+        }
+      ]
+    },
+    {
+      "start": 212.664,
+      "end": 220.664,
+      "text": "Vayasu maree vintaga vistu potunnade mide ilila",
+      "original_text": "వయసు మరీ వింతగా విస్తు పోతున్నదే మిదే ఇలిలా",
+      "words": [
+        {
+          "word": "Vayasu",
+          "start": 213.344,
+          "end": 214.264,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "వయసు"
+        },
+        {
+          "word": "maree",
+          "start": 214.264,
+          "end": 214.624,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మరీ"
+        },
+        {
+          "word": "vintaga",
+          "start": 214.624,
+          "end": 215.524,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "వింతగా"
+        },
+        {
+          "word": "vistu",
+          "start": 215.524,
+          "end": 216.144,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "విస్తు"
+        },
+        {
+          "word": "potunnade",
+          "start": 216.144,
+          "end": 217.504,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "పోతున్నదే"
+        },
+        {
+          "word": "mide",
+          "start": 217.504,
+          "end": 218.644,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మిదే"
+        },
+        {
+          "word": "ilila",
+          "start": 218.644,
+          "end": 220.304,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ఇలిలా"
+        }
+      ]
+    },
+    {
+      "start": 220.664,
+      "end": 224.324,
+      "text": "Andaka kavvistaave killi",
+      "original_text": "అందకా కవ్విస్తావే కిల్లి",
+      "words": [
+        {
+          "word": "Andaka",
+          "start": 221.004,
+          "end": 221.604,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "అందకా"
+        },
+        {
+          "word": "kavvistaave",
+          "start": 221.604,
+          "end": 223.424,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "కవ్విస్తావే"
+        },
+        {
+          "word": "killi",
+          "start": 223.424,
+          "end": 224.224,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "కిల్లి"
+        },
+        {
+          "word": "anduki",
+          "start": 224.324,
+          "end": 225.584,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "అందుకి"
+        }
+      ]
+    },
+    {
+      "start": 224.324,
+      "end": 228.264,
+      "text": "Anduki bandinchi nanni",
+      "original_text": "అందుకి బందించి నన్ని",
+      "words": [
+        {
+          "word": "Bandinchi",
+          "start": 225.584,
+          "end": 227.044,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "బందించి"
+        },
+        {
+          "word": "nanni",
+          "start": 227.044,
+          "end": 228.124,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నన్ని"
+        }
+      ]
+    },
+    {
+      "start": 228.264,
+      "end": 234.504,
+      "text": "Kilaadi komali gulebakaavali",
+      "original_text": "కిలాడి కోమలి గులేబకావలి",
+      "words": [
+        {
+          "word": "Kilaadi",
+          "start": 228.464,
+          "end": 229.184,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "కిలాడి"
+        },
+        {
+          "word": "komali",
+          "start": 229.184,
+          "end": 229.964,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "కోమలి"
+        },
+        {
+          "word": "gulebakaavali",
+          "start": 229.964,
+          "end": 233.964,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "గులేబకావలి"
+        }
+      ]
+    },
+    {
+      "start": 234.504,
+      "end": 242.524,
+      "text": "Sukhaana jaavali vinaali kogili",
+      "original_text": "సుఖాన జావలి వినాలి కోగిలి",
+      "words": [
+        {
+          "word": "Sukhaana",
+          "start": 236.184,
+          "end": 237.124,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "సుఖాన"
+        },
+        {
+          "word": "jaavali",
+          "start": 237.124,
+          "end": 238.264,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "జావలి"
+        },
+        {
+          "word": "vinaali",
+          "start": 238.264,
+          "end": 241.164,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "వినాలి"
+        },
+        {
+          "word": "kogili",
+          "start": 241.164,
+          "end": 242.044,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "కోగిలి"
+        }
+      ]
+    },
+    {
+      "start": 254.324,
+      "end": 267.504,
+      "text": "Meeddi meeddi",
+      "original_text": "మీడ్డి మీడ్డి",
+      "words": [
+        {
+          "word": "Meeddi",
+          "start": 254.324,
+          "end": 258.424,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మీడ్డి"
+        },
+        {
+          "word": "meeddi",
+          "start": 258.424,
+          "end": 258.444,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మీడ్డి"
+        }
+      ]
+    }
+  ],
+  "alignment_status": "completed",
+  "aligned_words_count": 127,
+  "total_words_count": 127,
+  "vocal_separation_used": false,
+  "separation_status": "skipped",
+  "engine_used": "groq",
+  "fallback_used": false,
+  "fallback_reason": null,
+  "warnings": [],
+  "music_detected": null,
+  "known_lyrics_used": false,
+  "analysis_id": "1711cdcf-5e30-482e-840e-0fb246f5d946"
+}

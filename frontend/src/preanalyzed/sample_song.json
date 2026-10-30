@@ -1,0 +1,232 @@
+{
+  "status": "completed",
+  "filename": "sample_song.mp3",
+  "language": "en",
+  "detected_language_name": "English",
+  "duration": 15.01,
+  "transcript": "In the silence of the night, echoes of memories roam Whispers of your laughter now just echoes in my home Promises we never made",
+  "original_transcript": null,
+  "transliterated": false,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 6.04,
+      "text": "In the silence of the night, echoes of memories roam",
+      "original_text": "In the silence of the night, echoes of memories roam",
+      "words": [
+        {
+          "word": "In",
+          "start": 0.0,
+          "end": 0.7,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "In"
+        },
+        {
+          "word": "the",
+          "start": 0.7,
+          "end": 1.06,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "the"
+        },
+        {
+          "word": "silence",
+          "start": 1.06,
+          "end": 1.72,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "silence"
+        },
+        {
+          "word": "of",
+          "start": 1.72,
+          "end": 2.14,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "of"
+        },
+        {
+          "word": "the",
+          "start": 2.14,
+          "end": 2.4,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "the"
+        },
+        {
+          "word": "night,",
+          "start": 2.4,
+          "end": 3.7,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "night,"
+        },
+        {
+          "word": "echoes",
+          "start": 3.7,
+          "end": 3.72,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "echoes"
+        },
+        {
+          "word": "of",
+          "start": 3.72,
+          "end": 4.06,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "of"
+        },
+        {
+          "word": "memories",
+          "start": 4.06,
+          "end": 5.14,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "memories"
+        },
+        {
+          "word": "roam",
+          "start": 5.14,
+          "end": 5.8,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "roam"
+        }
+      ]
+    },
+    {
+      "start": 6.04,
+      "end": 13.04,
+      "text": "Whispers of your laughter now just echoes in my home",
+      "original_text": "Whispers of your laughter now just echoes in my home",
+      "words": [
+        {
+          "word": "Whispers",
+          "start": 6.74,
+          "end": 7.56,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Whispers"
+        },
+        {
+          "word": "of",
+          "start": 7.56,
+          "end": 8.12,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "of"
+        },
+        {
+          "word": "your",
+          "start": 8.12,
+          "end": 8.34,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "your"
+        },
+        {
+          "word": "laughter",
+          "start": 8.34,
+          "end": 9.06,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "laughter"
+        },
+        {
+          "word": "now",
+          "start": 9.06,
+          "end": 9.84,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "now"
+        },
+        {
+          "word": "just",
+          "start": 9.84,
+          "end": 10.54,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "just"
+        },
+        {
+          "word": "echoes",
+          "start": 10.54,
+          "end": 11.6,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "echoes"
+        },
+        {
+          "word": "in",
+          "start": 11.6,
+          "end": 12.1,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "in"
+        },
+        {
+          "word": "my",
+          "start": 12.1,
+          "end": 12.38,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "my"
+        },
+        {
+          "word": "home",
+          "start": 12.38,
+          "end": 12.92,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "home"
+        }
+      ]
+    },
+    {
+      "start": 13.04,
+      "end": 15.0,
+      "text": "Promises we never made",
+      "original_text": "Promises we never made",
+      "words": [
+        {
+          "word": "Promises",
+          "start": 13.6,
+          "end": 14.52,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Promises"
+        },
+        {
+          "word": "we",
+          "start": 14.52,
+          "end": 14.92,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "we"
+        },
+        {
+          "word": "never",
+          "start": 14.92,
+          "end": 15.24,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "never"
+        }
+      ]
+    }
+  ],
+  "alignment_status": "completed",
+  "aligned_words_count": 24,
+  "total_words_count": 24,
+  "vocal_separation_used": false,
+  "separation_status": "skipped",
+  "engine_used": "groq",
+  "fallback_used": false,
+  "fallback_reason": null,
+  "warnings": [],
+  "music_detected": null,
+  "known_lyrics_used": false,
+  "analysis_id": "41907cd2-0675-4d10-9e1d-1b7965101a37"
+}

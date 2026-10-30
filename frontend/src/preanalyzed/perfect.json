@@ -1,0 +1,2600 @@
+{
+  "status": "completed",
+  "filename": "Ed Sheeran - Perfect (Official Music Video).mp3",
+  "language": "en",
+  "detected_language_name": "English",
+  "duration": 281.83,
+  "transcript": "I found a love for me Darling, just dive right in and follow my lead I found a girl, beautiful and sweet I never knew you were the someone waiting for me Cause we were just kids when we fell in love Not knowing what it was I will not give you up this time Darling just kiss me slow your heart is all I own And in your eyes you holding mine Baby, I'm dancing in the dark With you between my arms Barefoot on the grass Listening to our favorite song When you said you looked a mess I whispered underneath my breath But you heard it Darling, you look perfect tonight Well, I found a woman Stronger than anyone I know She shares my dreams, I hope that someday I'll share her home I found the love To carry more than just my secrets To carry love to carry children of our own We are still kids but we're so in love Fighting against all odds I know we'll be alright next time Darling, just hold my hand, be my girl, be your man, I see my future in your eyes. Baby, I'm dancing in the dark With you between my arms Barefoot on the grass Listening to our favorite song When I saw you in that dress Looking so beautiful I don deserve this Darling you look perfect tonight Baby I dancing in the dark With you between my arms Barefoot on the cross Listening to our favorite song I have faith in what I see Now I know I have met an angel in person And she looks perfect I don't deserve this You look perfect tonight Thank you.",
+  "original_transcript": null,
+  "transliterated": false,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 26.54,
+      "text": "I found a love for me",
+      "original_text": "I found a love for me",
+      "words": [
+        {
+          "word": "I",
+          "start": 21.32,
+          "end": 21.34,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "I"
+        },
+        {
+          "word": "found",
+          "start": 21.34,
+          "end": 21.82,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "found"
+        },
+        {
+          "word": "a",
+          "start": 21.82,
+          "end": 22.1,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "a"
+        },
+        {
+          "word": "love",
+          "start": 22.1,
+          "end": 22.54,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "love"
+        },
+        {
+          "word": "for",
+          "start": 22.54,
+          "end": 24.62,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "for"
+        },
+        {
+          "word": "me",
+          "start": 24.62,
+          "end": 26.06,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "me"
+        }
+      ]
+    },
+    {
+      "start": 26.54,
+      "end": 34.46,
+      "text": "Darling, just dive right in and follow my lead",
+      "original_text": "Darling, just dive right in and follow my lead",
+      "words": [
+        {
+          "word": "Darling,",
+          "start": 28.62,
+          "end": 29.44,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Darling,"
+        },
+        {
+          "word": "just",
+          "start": 29.44,
+          "end": 29.7,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "just"
+        },
+        {
+          "word": "dive",
+          "start": 29.7,
+          "end": 30.34,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "dive"
+        },
+        {
+          "word": "right",
+          "start": 30.34,
+          "end": 30.78,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "right"
+        },
+        {
+          "word": "in",
+          "start": 30.78,
+          "end": 31.06,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "in"
+        },
+        {
+          "word": "and",
+          "start": 31.06,
+          "end": 32.5,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "and"
+        },
+        {
+          "word": "follow",
+          "start": 32.5,
+          "end": 33.0,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "follow"
+        },
+        {
+          "word": "my",
+          "start": 33.0,
+          "end": 33.62,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "my"
+        },
+        {
+          "word": "lead",
+          "start": 33.62,
+          "end": 34.02,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "lead"
+        }
+      ]
+    },
+    {
+      "start": 34.46,
+      "end": 42.32,
+      "text": "I found a girl, beautiful and sweet",
+      "original_text": "I found a girl, beautiful and sweet",
+      "words": [
+        {
+          "word": "I",
+          "start": 36.18,
+          "end": 36.6,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "I"
+        },
+        {
+          "word": "found",
+          "start": 36.6,
+          "end": 37.06,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "found"
+        },
+        {
+          "word": "a",
+          "start": 37.06,
+          "end": 37.26,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "a"
+        },
+        {
+          "word": "girl,",
+          "start": 37.26,
+          "end": 39.2,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "girl,"
+        },
+        {
+          "word": "beautiful",
+          "start": 39.2,
+          "end": 40.9,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "beautiful"
+        },
+        {
+          "word": "and",
+          "start": 40.9,
+          "end": 41.78,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "and"
+        },
+        {
+          "word": "sweet",
+          "start": 41.78,
+          "end": 42.2,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "sweet"
+        }
+      ]
+    },
+    {
+      "start": 42.32,
+      "end": 49.66,
+      "text": "I never knew you were the someone waiting for me",
+      "original_text": "I never knew you were the someone waiting for me",
+      "words": [
+        {
+          "word": "I",
+          "start": 43.68,
+          "end": 44.1,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "I"
+        },
+        {
+          "word": "never",
+          "start": 44.1,
+          "end": 44.68,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "never"
+        },
+        {
+          "word": "knew",
+          "start": 44.68,
+          "end": 45.38,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "knew"
+        },
+        {
+          "word": "you",
+          "start": 45.38,
+          "end": 45.88,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "you"
+        },
+        {
+          "word": "were",
+          "start": 45.88,
+          "end": 46.54,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "were"
+        },
+        {
+          "word": "the",
+          "start": 46.54,
+          "end": 46.68,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "the"
+        },
+        {
+          "word": "someone",
+          "start": 46.68,
+          "end": 47.22,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "someone"
+        },
+        {
+          "word": "waiting",
+          "start": 47.22,
+          "end": 48.14,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "waiting"
+        },
+        {
+          "word": "for",
+          "start": 48.14,
+          "end": 48.58,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "for"
+        },
+        {
+          "word": "me",
+          "start": 48.58,
+          "end": 49.2,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "me"
+        },
+        {
+          "word": "Cause",
+          "start": 49.16,
+          "end": 50.56,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Cause"
+        }
+      ]
+    },
+    {
+      "start": 49.66,
+      "end": 54.8,
+      "text": "Cause we were just kids when we fell in love",
+      "original_text": "Cause we were just kids when we fell in love",
+      "words": [
+        {
+          "word": "We",
+          "start": 50.56,
+          "end": 50.86,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "we"
+        },
+        {
+          "word": "were",
+          "start": 50.86,
+          "end": 51.2,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "were"
+        },
+        {
+          "word": "just",
+          "start": 51.2,
+          "end": 51.5,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "just"
+        },
+        {
+          "word": "kids",
+          "start": 51.5,
+          "end": 51.9,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "kids"
+        },
+        {
+          "word": "when",
+          "start": 51.9,
+          "end": 52.18,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "when"
+        },
+        {
+          "word": "we",
+          "start": 52.18,
+          "end": 52.38,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "we"
+        },
+        {
+          "word": "fell",
+          "start": 52.38,
+          "end": 53.44,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "fell"
+        },
+        {
+          "word": "in",
+          "start": 53.44,
+          "end": 54.48,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "in"
+        },
+        {
+          "word": "love",
+          "start": 54.48,
+          "end": 54.72,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "love"
+        },
+        {
+          "word": "Not",
+          "start": 54.8,
+          "end": 55.56,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Not"
+        }
+      ]
+    },
+    {
+      "start": 54.8,
+      "end": 79.638,
+      "text": "Not knowing what it was I will not give you up this time Darling just kiss me slow your heart is all I own And in your eyes you holding mine",
+      "original_text": "Not knowing what it was I will not give you up this time Darling just kiss me slow your heart is all I own And in your eyes you holding mine",
+      "words": [
+        {
+          "word": "Knowing",
+          "start": 55.56,
+          "end": 56.12,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "knowing"
+        },
+        {
+          "word": "what",
+          "start": 56.12,
+          "end": 57.3,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "what"
+        },
+        {
+          "word": "it",
+          "start": 57.3,
+          "end": 58.14,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "was,",
+          "start": 58.14,
+          "end": 58.78,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "was,"
+        },
+        {
+          "word": "I",
+          "start": 58.78,
+          "end": 59.34,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "I"
+        },
+        {
+          "word": "will",
+          "start": 59.34,
+          "end": 59.7,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "will"
+        },
+        {
+          "word": "not",
+          "start": 59.7,
+          "end": 59.98,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "not"
+        },
+        {
+          "word": "give",
+          "start": 59.98,
+          "end": 60.98,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "give"
+        },
+        {
+          "word": "you",
+          "start": 60.98,
+          "end": 61.96,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "you"
+        },
+        {
+          "word": "up",
+          "start": 61.96,
+          "end": 62.52,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "up"
+        },
+        {
+          "word": "this",
+          "start": 62.52,
+          "end": 63.7,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "this"
+        },
+        {
+          "word": "time",
+          "start": 63.7,
+          "end": 64.86,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "time"
+        },
+        {
+          "word": "Darling,",
+          "start": 66.54,
+          "end": 67.44,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Darling,"
+        },
+        {
+          "word": "just",
+          "start": 67.44,
+          "end": 67.58,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "just"
+        },
+        {
+          "word": "kiss",
+          "start": 67.58,
+          "end": 68.44,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "kiss"
+        },
+        {
+          "word": "me",
+          "start": 68.44,
+          "end": 68.88,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "me"
+        },
+        {
+          "word": "slow,",
+          "start": 68.88,
+          "end": 70.48,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "slow,"
+        },
+        {
+          "word": "your",
+          "start": 70.48,
+          "end": 70.72,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "your"
+        },
+        {
+          "word": "heart",
+          "start": 70.72,
+          "end": 71.22,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "heart"
+        },
+        {
+          "word": "is",
+          "start": 71.198,
+          "end": 71.458,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "is"
+        },
+        {
+          "word": "all",
+          "start": 71.458,
+          "end": 72.338,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "all"
+        },
+        {
+          "word": "I",
+          "start": 72.338,
+          "end": 73.158,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "I"
+        },
+        {
+          "word": "own",
+          "start": 73.158,
+          "end": 73.578,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "own"
+        },
+        {
+          "word": "And",
+          "start": 73.178,
+          "end": 74.658,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "And"
+        },
+        {
+          "word": "in",
+          "start": 74.658,
+          "end": 74.978,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "in"
+        },
+        {
+          "word": "your",
+          "start": 74.978,
+          "end": 75.198,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "your"
+        },
+        {
+          "word": "eyes",
+          "start": 75.198,
+          "end": 76.098,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "eyes"
+        },
+        {
+          "word": "you're",
+          "start": 76.098,
+          "end": 76.858,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "you're"
+        },
+        {
+          "word": "holding",
+          "start": 76.858,
+          "end": 78.218,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "holding"
+        },
+        {
+          "word": "mine",
+          "start": 78.218,
+          "end": 79.238,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "mine"
+        }
+      ]
+    },
+    {
+      "start": 79.638,
+      "end": 87.078,
+      "text": "Baby, I'm dancing in the dark",
+      "original_text": "Baby, I'm dancing in the dark",
+      "words": [
+        {
+          "word": "Baby,",
+          "start": 80.758,
+          "end": 82.178,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Baby,"
+        },
+        {
+          "word": "I'm",
+          "start": 82.178,
+          "end": 83.338,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "I'm"
+        },
+        {
+          "word": "dancing",
+          "start": 83.338,
+          "end": 85.478,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "dancing"
+        },
+        {
+          "word": "in",
+          "start": 85.478,
+          "end": 86.138,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "in"
+        },
+        {
+          "word": "the",
+          "start": 86.138,
+          "end": 86.478,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "the"
+        },
+        {
+          "word": "dark",
+          "start": 86.478,
+          "end": 86.998,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "dark"
+        }
+      ]
+    },
+    {
+      "start": 87.078,
+      "end": 91.178,
+      "text": "With you between my arms",
+      "original_text": "With you between my arms",
+      "words": [
+        {
+          "word": "With",
+          "start": 87.978,
+          "end": 88.478,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "With"
+        },
+        {
+          "word": "you",
+          "start": 88.478,
+          "end": 88.978,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "you"
+        },
+        {
+          "word": "between",
+          "start": 88.978,
+          "end": 89.798,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "between"
+        },
+        {
+          "word": "my",
+          "start": 89.798,
+          "end": 90.418,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "my"
+        },
+        {
+          "word": "arms",
+          "start": 90.418,
+          "end": 91.078,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "arms"
+        }
+      ]
+    },
+    {
+      "start": 91.178,
+      "end": 94.978,
+      "text": "Barefoot on the grass",
+      "original_text": "Barefoot on the grass",
+      "words": [
+        {
+          "word": "Barefoot",
+          "start": 92.158,
+          "end": 93.278,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Barefoot"
+        },
+        {
+          "word": "on",
+          "start": 93.278,
+          "end": 93.778,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "on"
+        },
+        {
+          "word": "the",
+          "start": 93.778,
+          "end": 94.318,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "the"
+        },
+        {
+          "word": "grass",
+          "start": 94.318,
+          "end": 94.958,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "grass"
+        }
+      ]
+    },
+    {
+      "start": 94.978,
+      "end": 98.878,
+      "text": "Listening to our favorite song",
+      "original_text": "Listening to our favorite song",
+      "words": [
+        {
+          "word": "Listening",
+          "start": 95.858,
+          "end": 96.478,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Listening"
+        },
+        {
+          "word": "to",
+          "start": 96.478,
+          "end": 97.238,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "to"
+        },
+        {
+          "word": "our",
+          "start": 97.238,
+          "end": 97.838,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "our"
+        },
+        {
+          "word": "favorite",
+          "start": 97.838,
+          "end": 98.438,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "favorite"
+        },
+        {
+          "word": "song",
+          "start": 98.438,
+          "end": 98.838,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "song"
+        },
+        {
+          "word": "When",
+          "start": 98.578,
+          "end": 99.438,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "When"
+        }
+      ]
+    },
+    {
+      "start": 98.878,
+      "end": 102.378,
+      "text": "When you said you looked a mess",
+      "original_text": "When you said you looked a mess",
+      "words": [
+        {
+          "word": "You",
+          "start": 99.438,
+          "end": 99.698,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "you"
+        },
+        {
+          "word": "said",
+          "start": 99.698,
+          "end": 100.378,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "said"
+        },
+        {
+          "word": "you",
+          "start": 100.378,
+          "end": 100.638,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "you"
+        },
+        {
+          "word": "looked",
+          "start": 100.638,
+          "end": 101.458,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "looked"
+        },
+        {
+          "word": "a",
+          "start": 101.458,
+          "end": 101.818,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "a"
+        },
+        {
+          "word": "mess",
+          "start": 101.818,
+          "end": 102.378,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "mess"
+        },
+        {
+          "word": "I",
+          "start": 101.878,
+          "end": 102.938,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "I"
+        }
+      ]
+    },
+    {
+      "start": 102.378,
+      "end": 106.118,
+      "text": "I whispered underneath my breath",
+      "original_text": "I whispered underneath my breath",
+      "words": [
+        {
+          "word": "Whispered",
+          "start": 102.938,
+          "end": 103.698,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "whispered"
+        },
+        {
+          "word": "underneath",
+          "start": 103.698,
+          "end": 104.678,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "underneath"
+        },
+        {
+          "word": "my",
+          "start": 104.678,
+          "end": 105.418,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "my"
+        },
+        {
+          "word": "breath",
+          "start": 105.418,
+          "end": 106.098,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "breath"
+        },
+        {
+          "word": "But",
+          "start": 105.618,
+          "end": 106.458,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "But"
+        }
+      ]
+    },
+    {
+      "start": 106.118,
+      "end": 108.758,
+      "text": "But you heard it",
+      "original_text": "But you heard it",
+      "words": [
+        {
+          "word": "You",
+          "start": 106.458,
+          "end": 106.738,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "you"
+        },
+        {
+          "word": "heard",
+          "start": 106.738,
+          "end": 108.378,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "heard"
+        },
+        {
+          "word": "it",
+          "start": 108.378,
+          "end": 108.638,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "it"
+        },
+        {
+          "word": "Darling,",
+          "start": 108.258,
+          "end": 109.458,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Darling,"
+        }
+      ]
+    },
+    {
+      "start": 108.758,
+      "end": 113.238,
+      "text": "Darling, you look perfect tonight",
+      "original_text": "Darling, you look perfect tonight",
+      "words": [
+        {
+          "word": "You",
+          "start": 109.458,
+          "end": 109.898,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "you"
+        },
+        {
+          "word": "look",
+          "start": 109.898,
+          "end": 110.638,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "look"
+        },
+        {
+          "word": "perfect",
+          "start": 110.638,
+          "end": 112.198,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "perfect"
+        },
+        {
+          "word": "tonight",
+          "start": 112.198,
+          "end": 113.178,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "tonight"
+        },
+        {
+          "word": "Well,",
+          "start": 112.738,
+          "end": 119.758,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Well,"
+        }
+      ]
+    },
+    {
+      "start": 113.238,
+      "end": 121.558,
+      "text": "Well, I found a woman",
+      "original_text": "Well, I found a woman",
+      "words": [
+        {
+          "word": "I",
+          "start": 119.758,
+          "end": 119.938,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "I"
+        },
+        {
+          "word": "found",
+          "start": 119.938,
+          "end": 120.378,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "found"
+        },
+        {
+          "word": "a",
+          "start": 120.378,
+          "end": 120.678,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "a"
+        },
+        {
+          "word": "woman",
+          "start": 120.678,
+          "end": 121.458,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "woman"
+        }
+      ]
+    },
+    {
+      "start": 121.558,
+      "end": 126.038,
+      "text": "Stronger than anyone I know",
+      "original_text": "Stronger than anyone I know",
+      "words": [
+        {
+          "word": "Stronger",
+          "start": 123.138,
+          "end": 124.218,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Stronger"
+        },
+        {
+          "word": "than",
+          "start": 124.218,
+          "end": 124.378,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "than"
+        },
+        {
+          "word": "anyone",
+          "start": 124.378,
+          "end": 125.258,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "anyone"
+        },
+        {
+          "word": "I",
+          "start": 125.258,
+          "end": 125.678,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "I"
+        },
+        {
+          "word": "know",
+          "start": 125.678,
+          "end": 126.018,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "know"
+        }
+      ]
+    },
+    {
+      "start": 126.038,
+      "end": 132.998,
+      "text": "She shares my dreams, I hope that someday I'll share her home",
+      "original_text": "She shares my dreams, I hope that someday I'll share her home",
+      "words": [
+        {
+          "word": "She",
+          "start": 127.098,
+          "end": 127.458,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "She"
+        },
+        {
+          "word": "shares",
+          "start": 127.458,
+          "end": 127.898,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "shares"
+        },
+        {
+          "word": "my",
+          "start": 127.898,
+          "end": 128.118,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "my"
+        },
+        {
+          "word": "dreams,",
+          "start": 128.118,
+          "end": 128.938,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "dreams,"
+        },
+        {
+          "word": "I",
+          "start": 128.938,
+          "end": 129.118,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "I"
+        },
+        {
+          "word": "hope",
+          "start": 129.118,
+          "end": 129.618,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "hope"
+        },
+        {
+          "word": "that",
+          "start": 129.618,
+          "end": 129.998,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "that"
+        },
+        {
+          "word": "someday",
+          "start": 129.998,
+          "end": 130.558,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "someday"
+        },
+        {
+          "word": "I'll",
+          "start": 130.558,
+          "end": 131.298,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "I'll"
+        },
+        {
+          "word": "share",
+          "start": 131.298,
+          "end": 131.598,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "share"
+        },
+        {
+          "word": "her",
+          "start": 131.598,
+          "end": 132.018,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "her"
+        },
+        {
+          "word": "home",
+          "start": 132.018,
+          "end": 132.638,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "home"
+        },
+        {
+          "word": "I",
+          "start": 132.498,
+          "end": 134.998,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "I"
+        }
+      ]
+    },
+    {
+      "start": 132.998,
+      "end": 148.196,
+      "text": "I found the love To carry more than just my secrets To carry love to carry children of our own",
+      "original_text": "I found the love To carry more than just my secrets To carry love to carry children of our own",
+      "words": [
+        {
+          "word": "Found",
+          "start": 134.998,
+          "end": 135.498,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "found"
+        },
+        {
+          "word": "the",
+          "start": 135.498,
+          "end": 135.798,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "the"
+        },
+        {
+          "word": "love",
+          "start": 135.798,
+          "end": 136.098,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "love"
+        },
+        {
+          "word": "To",
+          "start": 136.018,
+          "end": 139.258,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "To"
+        },
+        {
+          "word": "carry",
+          "start": 139.258,
+          "end": 139.638,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "carry"
+        },
+        {
+          "word": "more",
+          "start": 139.638,
+          "end": 140.158,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "more"
+        },
+        {
+          "word": "than",
+          "start": 140.158,
+          "end": 140.518,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "than"
+        },
+        {
+          "word": "just",
+          "start": 140.518,
+          "end": 141.158,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "just"
+        },
+        {
+          "word": "my",
+          "start": 141.158,
+          "end": 141.458,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "my"
+        },
+        {
+          "word": "secrets",
+          "start": 141.437,
+          "end": 141.937,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "secrets"
+        },
+        {
+          "word": "To",
+          "start": 141.716,
+          "end": 143.117,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "To"
+        },
+        {
+          "word": "carry",
+          "start": 143.117,
+          "end": 143.457,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "carry"
+        },
+        {
+          "word": "love,",
+          "start": 143.457,
+          "end": 144.377,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "love,"
+        },
+        {
+          "word": "to",
+          "start": 144.377,
+          "end": 144.677,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "to"
+        },
+        {
+          "word": "carry",
+          "start": 144.677,
+          "end": 144.996,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "carry"
+        },
+        {
+          "word": "children",
+          "start": 144.996,
+          "end": 145.797,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "children"
+        },
+        {
+          "word": "of",
+          "start": 145.797,
+          "end": 146.877,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "of"
+        },
+        {
+          "word": "our",
+          "start": 146.877,
+          "end": 147.297,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "our"
+        },
+        {
+          "word": "own",
+          "start": 147.297,
+          "end": 147.917,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "own"
+        },
+        {
+          "word": "We",
+          "start": 147.696,
+          "end": 149.397,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "We"
+        }
+      ]
+    },
+    {
+      "start": 148.196,
+      "end": 153.376,
+      "text": "We are still kids but we're so in love",
+      "original_text": "We are still kids but we're so in love",
+      "words": [
+        {
+          "word": "Are",
+          "start": 149.397,
+          "end": 149.657,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "are"
+        },
+        {
+          "word": "still",
+          "start": 149.657,
+          "end": 150.056,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "still"
+        },
+        {
+          "word": "kids",
+          "start": 150.056,
+          "end": 150.377,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "kids"
+        },
+        {
+          "word": "but",
+          "start": 150.377,
+          "end": 150.657,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "but"
+        },
+        {
+          "word": "we're",
+          "start": 150.657,
+          "end": 151.096,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "we're"
+        },
+        {
+          "word": "so",
+          "start": 151.096,
+          "end": 151.377,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "so"
+        },
+        {
+          "word": "in",
+          "start": 151.377,
+          "end": 152.776,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "in"
+        },
+        {
+          "word": "love",
+          "start": 152.776,
+          "end": 153.256,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "love"
+        },
+        {
+          "word": "Fighting",
+          "start": 152.937,
+          "end": 154.337,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Fighting"
+        }
+      ]
+    },
+    {
+      "start": 153.376,
+      "end": 157.237,
+      "text": "Fighting against all odds",
+      "original_text": "Fighting against all odds",
+      "words": [
+        {
+          "word": "Against",
+          "start": 154.337,
+          "end": 155.696,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "against"
+        },
+        {
+          "word": "all",
+          "start": 155.696,
+          "end": 156.776,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "all"
+        },
+        {
+          "word": "odds",
+          "start": 156.776,
+          "end": 157.177,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "odds"
+        },
+        {
+          "word": "I",
+          "start": 156.737,
+          "end": 157.897,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "I"
+        }
+      ]
+    },
+    {
+      "start": 157.237,
+      "end": 164.696,
+      "text": "I know we'll be alright next time",
+      "original_text": "I know we'll be alright next time",
+      "words": [
+        {
+          "word": "Know",
+          "start": 157.897,
+          "end": 158.256,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "know"
+        },
+        {
+          "word": "we'll",
+          "start": 158.256,
+          "end": 158.577,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "we'll"
+        },
+        {
+          "word": "be",
+          "start": 158.577,
+          "end": 159.397,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        },
+        {
+          "word": "alright",
+          "start": 159.397,
+          "end": 160.677,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "alright"
+        },
+        {
+          "word": "next",
+          "start": 160.677,
+          "end": 162.216,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "next"
+        },
+        {
+          "word": "time",
+          "start": 162.216,
+          "end": 163.876,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "time"
+        }
+      ]
+    },
+    {
+      "start": 164.696,
+      "end": 178.496,
+      "text": "Darling, just hold my hand, be my girl, be your man, I see my future in your eyes.",
+      "original_text": "Darling, just hold my hand, be my girl, be your man, I see my future in your eyes.",
+      "words": [
+        {
+          "word": "Darling,",
+          "start": 165.056,
+          "end": 165.837,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Darling,"
+        },
+        {
+          "word": "just",
+          "start": 165.837,
+          "end": 166.096,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "just"
+        },
+        {
+          "word": "hold",
+          "start": 166.096,
+          "end": 166.657,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "hold"
+        },
+        {
+          "word": "my",
+          "start": 166.657,
+          "end": 167.756,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "my"
+        },
+        {
+          "word": "hand,",
+          "start": 167.756,
+          "end": 168.756,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "hand,"
+        },
+        {
+          "word": "be",
+          "start": 168.756,
+          "end": 168.937,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        },
+        {
+          "word": "my",
+          "start": 168.937,
+          "end": 169.357,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "my"
+        },
+        {
+          "word": "girl,",
+          "start": 169.357,
+          "end": 169.816,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "girl,"
+        },
+        {
+          "word": "be",
+          "start": 169.816,
+          "end": 170.397,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "be"
+        },
+        {
+          "word": "your",
+          "start": 170.397,
+          "end": 171.637,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "your"
+        },
+        {
+          "word": "man,",
+          "start": 171.637,
+          "end": 172.596,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "man,"
+        },
+        {
+          "word": "I",
+          "start": 172.596,
+          "end": 172.996,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "I"
+        },
+        {
+          "word": "see",
+          "start": 172.996,
+          "end": 173.337,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "see"
+        },
+        {
+          "word": "my",
+          "start": 173.337,
+          "end": 173.637,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "my"
+        },
+        {
+          "word": "future",
+          "start": 173.637,
+          "end": 174.756,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "future"
+        },
+        {
+          "word": "in",
+          "start": 174.756,
+          "end": 176.316,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "in"
+        },
+        {
+          "word": "your",
+          "start": 176.316,
+          "end": 176.957,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "your"
+        },
+        {
+          "word": "eyes.",
+          "start": 176.957,
+          "end": 178.476,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "eyes."
+        }
+      ]
+    },
+    {
+      "start": 178.496,
+      "end": 185.756,
+      "text": "Baby, I'm dancing in the dark",
+      "original_text": "Baby, I'm dancing in the dark",
+      "words": [
+        {
+          "word": "Baby,",
+          "start": 179.276,
+          "end": 180.957,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Baby,"
+        },
+        {
+          "word": "I'm",
+          "start": 180.957,
+          "end": 181.837,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "I'm"
+        },
+        {
+          "word": "dancing",
+          "start": 181.837,
+          "end": 183.876,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "dancing"
+        },
+        {
+          "word": "in",
+          "start": 183.876,
+          "end": 184.696,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "in"
+        },
+        {
+          "word": "the",
+          "start": 184.696,
+          "end": 185.036,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "the"
+        },
+        {
+          "word": "dark",
+          "start": 185.036,
+          "end": 185.976,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "dark"
+        }
+      ]
+    },
+    {
+      "start": 185.756,
+      "end": 189.696,
+      "text": "With you between my arms",
+      "original_text": "With you between my arms",
+      "words": [
+        {
+          "word": "With",
+          "start": 186.657,
+          "end": 187.077,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "With"
+        },
+        {
+          "word": "you",
+          "start": 187.077,
+          "end": 187.457,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "you"
+        },
+        {
+          "word": "between",
+          "start": 187.457,
+          "end": 188.256,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "between"
+        },
+        {
+          "word": "my",
+          "start": 188.256,
+          "end": 188.917,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "my"
+        },
+        {
+          "word": "arms",
+          "start": 188.917,
+          "end": 189.596,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "arms"
+        }
+      ]
+    },
+    {
+      "start": 189.696,
+      "end": 193.457,
+      "text": "Barefoot on the grass",
+      "original_text": "Barefoot on the grass",
+      "words": [
+        {
+          "word": "Barefoot",
+          "start": 190.517,
+          "end": 191.776,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Barefoot"
+        },
+        {
+          "word": "on",
+          "start": 191.776,
+          "end": 192.316,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "on"
+        },
+        {
+          "word": "the",
+          "start": 192.316,
+          "end": 192.837,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "the"
+        },
+        {
+          "word": "grass",
+          "start": 192.837,
+          "end": 193.457,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "grass"
+        }
+      ]
+    },
+    {
+      "start": 193.457,
+      "end": 197.397,
+      "text": "Listening to our favorite song",
+      "original_text": "Listening to our favorite song",
+      "words": [
+        {
+          "word": "Listening",
+          "start": 194.496,
+          "end": 195.256,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Listening"
+        },
+        {
+          "word": "to",
+          "start": 195.256,
+          "end": 195.957,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "to"
+        },
+        {
+          "word": "our",
+          "start": 195.957,
+          "end": 196.417,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "our"
+        },
+        {
+          "word": "favorite",
+          "start": 196.417,
+          "end": 196.976,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "favorite"
+        },
+        {
+          "word": "song",
+          "start": 196.976,
+          "end": 197.357,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "song"
+        },
+        {
+          "word": "When",
+          "start": 197.137,
+          "end": 198.017,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "When"
+        }
+      ]
+    },
+    {
+      "start": 197.397,
+      "end": 200.876,
+      "text": "When I saw you in that dress",
+      "original_text": "When I saw you in that dress",
+      "words": [
+        {
+          "word": "I",
+          "start": 198.017,
+          "end": 198.357,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "I"
+        },
+        {
+          "word": "saw",
+          "start": 198.357,
+          "end": 198.837,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "saw"
+        },
+        {
+          "word": "you",
+          "start": 198.837,
+          "end": 199.256,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "you"
+        },
+        {
+          "word": "in",
+          "start": 199.256,
+          "end": 199.917,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "in"
+        },
+        {
+          "word": "that",
+          "start": 199.917,
+          "end": 200.196,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "that"
+        },
+        {
+          "word": "dress",
+          "start": 200.196,
+          "end": 200.876,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "dress"
+        }
+      ]
+    },
+    {
+      "start": 200.876,
+      "end": 203.216,
+      "text": "Looking so beautiful",
+      "original_text": "Looking so beautiful",
+      "words": [
+        {
+          "word": "Looking",
+          "start": 201.177,
+          "end": 201.637,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Looking"
+        },
+        {
+          "word": "so",
+          "start": 201.637,
+          "end": 202.036,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "so"
+        },
+        {
+          "word": "beautiful",
+          "start": 202.036,
+          "end": 203.196,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "beautiful"
+        },
+        {
+          "word": "I",
+          "start": 202.716,
+          "end": 203.976,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "I"
+        }
+      ]
+    },
+    {
+      "start": 203.216,
+      "end": 231.215,
+      "text": "I don deserve this Darling you look perfect tonight Baby I dancing in the dark",
+      "original_text": "I don deserve this Darling you look perfect tonight Baby I dancing in the dark",
+      "words": [
+        {
+          "word": "Don't",
+          "start": 203.976,
+          "end": 204.857,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "don't"
+        },
+        {
+          "word": "deserve",
+          "start": 204.857,
+          "end": 206.276,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "deserve"
+        },
+        {
+          "word": "this",
+          "start": 206.276,
+          "end": 207.216,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "this"
+        },
+        {
+          "word": "Darling",
+          "start": 207.297,
+          "end": 207.857,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Darling"
+        },
+        {
+          "word": "you",
+          "start": 207.857,
+          "end": 208.536,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "you"
+        },
+        {
+          "word": "look",
+          "start": 208.415,
+          "end": 209.135,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "look"
+        },
+        {
+          "word": "perfect",
+          "start": 209.135,
+          "end": 210.975,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "perfect"
+        },
+        {
+          "word": "tonight",
+          "start": 210.975,
+          "end": 211.715,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "tonight"
+        },
+        {
+          "word": "Baby,",
+          "start": 217.635,
+          "end": 226.255,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Baby,"
+        },
+        {
+          "word": "I'm",
+          "start": 226.255,
+          "end": 228.355,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "I'm"
+        },
+        {
+          "word": "dancing",
+          "start": 228.355,
+          "end": 229.355,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "dancing"
+        },
+        {
+          "word": "in",
+          "start": 229.355,
+          "end": 230.195,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "in"
+        },
+        {
+          "word": "the",
+          "start": 230.195,
+          "end": 230.515,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "the"
+        },
+        {
+          "word": "dark",
+          "start": 230.515,
+          "end": 231.075,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "dark"
+        }
+      ]
+    },
+    {
+      "start": 231.215,
+      "end": 235.055,
+      "text": "With you between my arms",
+      "original_text": "With you between my arms",
+      "words": [
+        {
+          "word": "With",
+          "start": 232.175,
+          "end": 232.515,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "With"
+        },
+        {
+          "word": "you",
+          "start": 232.515,
+          "end": 232.995,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "you"
+        },
+        {
+          "word": "between",
+          "start": 232.995,
+          "end": 233.835,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "between"
+        },
+        {
+          "word": "my",
+          "start": 233.835,
+          "end": 234.475,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "my"
+        },
+        {
+          "word": "arms",
+          "start": 234.475,
+          "end": 234.875,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "arms"
+        }
+      ]
+    },
+    {
+      "start": 235.055,
+      "end": 238.955,
+      "text": "Barefoot on the cross",
+      "original_text": "Barefoot on the cross",
+      "words": [
+        {
+          "word": "Barefoot",
+          "start": 236.155,
+          "end": 237.195,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Barefoot"
+        },
+        {
+          "word": "on",
+          "start": 237.195,
+          "end": 237.735,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "on"
+        },
+        {
+          "word": "the",
+          "start": 237.735,
+          "end": 238.095,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "the"
+        },
+        {
+          "word": "cross",
+          "start": 238.095,
+          "end": 238.955,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "cross"
+        }
+      ]
+    },
+    {
+      "start": 238.955,
+      "end": 242.875,
+      "text": "Listening to our favorite song",
+      "original_text": "Listening to our favorite song",
+      "words": [
+        {
+          "word": "Listening",
+          "start": 239.835,
+          "end": 240.455,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Listening"
+        },
+        {
+          "word": "to",
+          "start": 240.455,
+          "end": 241.255,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "to"
+        },
+        {
+          "word": "our",
+          "start": 241.255,
+          "end": 241.835,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "our"
+        },
+        {
+          "word": "favorite",
+          "start": 241.835,
+          "end": 242.455,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "favorite"
+        },
+        {
+          "word": "song",
+          "start": 242.455,
+          "end": 242.835,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "song"
+        },
+        {
+          "word": "I",
+          "start": 242.375,
+          "end": 243.435,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "I"
+        }
+      ]
+    },
+    {
+      "start": 242.875,
+      "end": 246.135,
+      "text": "I have faith in what I see",
+      "original_text": "I have faith in what I see",
+      "words": [
+        {
+          "word": "Have",
+          "start": 243.435,
+          "end": 243.735,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "have"
+        },
+        {
+          "word": "faith",
+          "start": 243.735,
+          "end": 244.495,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "faith"
+        },
+        {
+          "word": "in",
+          "start": 244.495,
+          "end": 244.715,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "in"
+        },
+        {
+          "word": "what",
+          "start": 244.715,
+          "end": 245.155,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "what"
+        },
+        {
+          "word": "I",
+          "start": 245.155,
+          "end": 245.535,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "I"
+        },
+        {
+          "word": "see",
+          "start": 245.535,
+          "end": 246.015,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "see"
+        },
+        {
+          "word": "Now",
+          "start": 245.715,
+          "end": 246.955,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Now"
+        }
+      ]
+    },
+    {
+      "start": 246.135,
+      "end": 252.595,
+      "text": "Now I know I have met an angel in person",
+      "original_text": "Now I know I have met an angel in person",
+      "words": [
+        {
+          "word": "I",
+          "start": 246.955,
+          "end": 247.215,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "I"
+        },
+        {
+          "word": "know",
+          "start": 247.215,
+          "end": 247.515,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "know"
+        },
+        {
+          "word": "I",
+          "start": 247.515,
+          "end": 248.055,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "I"
+        },
+        {
+          "word": "have",
+          "start": 248.055,
+          "end": 248.475,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "have"
+        },
+        {
+          "word": "met",
+          "start": 248.475,
+          "end": 248.935,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "met"
+        },
+        {
+          "word": "an",
+          "start": 248.935,
+          "end": 249.555,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "an"
+        },
+        {
+          "word": "angel",
+          "start": 249.555,
+          "end": 250.555,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "angel"
+        },
+        {
+          "word": "in",
+          "start": 250.555,
+          "end": 251.295,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "in"
+        },
+        {
+          "word": "person",
+          "start": 251.295,
+          "end": 252.455,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "person"
+        },
+        {
+          "word": "And",
+          "start": 252.255,
+          "end": 253.195,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "And"
+        }
+      ]
+    },
+    {
+      "start": 252.595,
+      "end": 256.175,
+      "text": "And she looks perfect",
+      "original_text": "And she looks perfect",
+      "words": [
+        {
+          "word": "She",
+          "start": 253.195,
+          "end": 253.815,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "she"
+        },
+        {
+          "word": "looks",
+          "start": 253.815,
+          "end": 254.775,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "looks"
+        },
+        {
+          "word": "perfect",
+          "start": 254.775,
+          "end": 256.155,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "perfect"
+        },
+        {
+          "word": "I",
+          "start": 255.675,
+          "end": 256.895,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "I"
+        }
+      ]
+    },
+    {
+      "start": 256.175,
+      "end": 260.475,
+      "text": "I don't deserve this",
+      "original_text": "I don't deserve this",
+      "words": [
+        {
+          "word": "Don't",
+          "start": 256.895,
+          "end": 257.975,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "don't"
+        },
+        {
+          "word": "deserve",
+          "start": 257.975,
+          "end": 259.995,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "deserve"
+        },
+        {
+          "word": "this",
+          "start": 259.995,
+          "end": 260.435,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "this"
+        },
+        {
+          "word": "You",
+          "start": 259.975,
+          "end": 261.335,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "You"
+        }
+      ]
+    },
+    {
+      "start": 260.475,
+      "end": 264.855,
+      "text": "You look perfect tonight",
+      "original_text": "You look perfect tonight",
+      "words": [
+        {
+          "word": "Look",
+          "start": 261.335,
+          "end": 262.695,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "look"
+        },
+        {
+          "word": "perfect",
+          "start": 262.695,
+          "end": 263.835,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "perfect"
+        },
+        {
+          "word": "tonight",
+          "start": 263.835,
+          "end": 264.775,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "tonight"
+        },
+        {
+          "word": "Thank",
+          "start": 264.855,
+          "end": 265.435,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "Thank"
+        }
+      ]
+    },
+    {
+      "start": 264.855,
+      "end": 279.855,
+      "text": "Thank you.",
+      "original_text": "Thank you.",
+      "words": [
+        {
+          "word": "You.",
+          "start": 265.435,
+          "end": 276.995,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "you."
+        }
+      ]
+    }
+  ],
+  "alignment_status": "completed",
+  "aligned_words_count": 284,
+  "total_words_count": 284,
+  "vocal_separation_used": false,
+  "separation_status": "skipped",
+  "engine_used": "groq",
+  "fallback_used": false,
+  "fallback_reason": null,
+  "warnings": [],
+  "music_detected": null,
+  "known_lyrics_used": false,
+  "analysis_id": "28f69b68-deea-4031-9e90-d0eeae933ddb"
+}

@@ -1,0 +1,720 @@
+{
+  "status": "completed",
+  "filename": "Naatu Naatu [8K] Video Song  RRR  NTR,Ram Charan  MM Keeravaani  SS Rajamouli.mp3",
+  "language": "te",
+  "detected_language_name": "Telugu",
+  "duration": 274.44,
+  "transcript": "Naat saalsa, naat phlamenko, mirvraada Teeyu naattu? Verri naattu? Naatu naatu naatu pachchi miranpalaaga pichcha naatu Naatu naatu vichchu kaddhilaaga viri naatu  Naattu naattu naattu kapotalaaga tikanaattu  Aakkun aakkun aakkun  Kolodaanchelo Kolodaanchelo Konni konni konni",
+  "original_transcript": "నాట్ సాల్సా, నాట్ ఫ్లమేంకో, మిర్వ్రాదా టీయు నాట్టు? వెర్రి నాట్టు? నాటు నాటు నాటు పచ్చి మిరంపలాగా పిచ్చ నాటు నాటు నాటు విచ్చు కద్ధిలాగా విరి నాటు నాట్టు నాట్టు నాట్టు కపోతలాగా తికనాట్టు ఆక్కున్ ఆక్కున్ ఆక్కున్ కొలోడాంచేలో కొలోడాంచేలో కొన్ని కొన్ని కొన్ని",
+  "transliterated": true,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 2.4,
+      "text": "Naat saalsa, naat phlamenko, mirvraada",
+      "original_text": "నాట్ సాల్సా, నాట్ ఫ్లమేంకో, మిర్వ్రాదా",
+      "words": [
+        {
+          "word": "Naat",
+          "start": 0.0,
+          "end": 0.74,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నాట్"
+        },
+        {
+          "word": "saalsa,",
+          "start": 0.74,
+          "end": 1.28,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "సాల్సా,"
+        },
+        {
+          "word": "naat",
+          "start": 1.28,
+          "end": 1.44,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నాట్"
+        },
+        {
+          "word": "phlamenko,",
+          "start": 1.44,
+          "end": 1.98,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ఫ్లమేంకో,"
+        },
+        {
+          "word": "mirvraada",
+          "start": 1.98,
+          "end": 2.36,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మిర్వ్రాదా"
+        }
+      ]
+    },
+    {
+      "start": 2.4,
+      "end": 6.02,
+      "text": "Teeyu naattu?",
+      "original_text": "టీయు నాట్టు?",
+      "words": [
+        {
+          "word": "Teeyu",
+          "start": 3.76,
+          "end": 3.96,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "టీయు"
+        },
+        {
+          "word": "naattu?",
+          "start": 3.96,
+          "end": 6.0,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నాట్టు?"
+        }
+      ]
+    },
+    {
+      "start": 7.12,
+      "end": 8.48,
+      "text": "Verri naattu?",
+      "original_text": "వెర్రి నాట్టు?",
+      "words": [
+        {
+          "word": "Verri",
+          "start": 7.7,
+          "end": 8.04,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "వెర్రి"
+        },
+        {
+          "word": "naattu?",
+          "start": 8.04,
+          "end": 8.5,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నాట్టు?"
+        }
+      ]
+    },
+    {
+      "start": 30.0,
+      "end": 41.34,
+      "text": "Naatu naatu naatu pachchi miranpalaaga pichcha naatu",
+      "original_text": "నాటు నాటు నాటు పచ్చి మిరంపలాగా పిచ్చ నాటు",
+      "words": [
+        {
+          "word": "Naatu",
+          "start": 30.0,
+          "end": 30.32,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నాటు"
+        },
+        {
+          "word": "naatu",
+          "start": 30.32,
+          "end": 30.52,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నాటు"
+        },
+        {
+          "word": "naatu",
+          "start": 30.52,
+          "end": 30.84,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నాటు"
+        },
+        {
+          "word": "pachchi",
+          "start": 30.84,
+          "end": 39.18,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "పచ్చి"
+        },
+        {
+          "word": "miranpalaaga",
+          "start": 39.18,
+          "end": 39.92,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మిరంపలాగా"
+        },
+        {
+          "word": "pichcha",
+          "start": 39.92,
+          "end": 40.28,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "పిచ్చ"
+        },
+        {
+          "word": "naatu",
+          "start": 40.28,
+          "end": 41.08,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నాటు"
+        }
+      ]
+    },
+    {
+      "start": 41.34,
+      "end": 45.96,
+      "text": "Naatu naatu vichchu kaddhilaaga viri naatu",
+      "original_text": "నాటు నాటు విచ్చు కద్ధిలాగా విరి నాటు",
+      "words": [
+        {
+          "word": "Naatu",
+          "start": 41.78,
+          "end": 42.48,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నాటు"
+        },
+        {
+          "word": "naatu",
+          "start": 42.48,
+          "end": 42.94,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నాటు"
+        },
+        {
+          "word": "vichchu",
+          "start": 42.94,
+          "end": 43.68,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "విచ్చు"
+        },
+        {
+          "word": "kaddhilaaga",
+          "start": 43.68,
+          "end": 44.42,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "కద్ధిలాగా"
+        },
+        {
+          "word": "viri",
+          "start": 44.42,
+          "end": 44.8,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "విరి"
+        },
+        {
+          "word": "naatu",
+          "start": 44.8,
+          "end": 45.62,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నాటు"
+        }
+      ]
+    },
+    {
+      "start": 60.0,
+      "end": 93.589,
+      "text": "",
+      "original_text": "",
+      "words": [
+        {
+          "word": "Paartindi",
+          "start": 60.0,
+          "end": 67.32,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "పార్తింది"
+        },
+        {
+          "word": "paartindi",
+          "start": 67.32,
+          "end": 67.34,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "పార్తింది"
+        },
+        {
+          "word": "pundala",
+          "start": 63.609,
+          "end": 78.989,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "పుండల"
+        },
+        {
+          "word": "diripoyela",
+          "start": 78.989,
+          "end": 79.969,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "దిరిపోయేలా"
+        },
+        {
+          "word": "dhandana",
+          "start": 79.969,
+          "end": 80.489,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ధండన"
+        },
+        {
+          "word": "taramoginattu",
+          "start": 80.489,
+          "end": 81.529,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "తరమోగినట్టు"
+        },
+        {
+          "word": "naattu",
+          "start": 93.589,
+          "end": 98.749,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నాట్టు"
+        }
+      ]
+    },
+    {
+      "start": 93.589,
+      "end": 115.589,
+      "text": "Naattu naattu naattu kapotalaaga tikanaattu",
+      "original_text": "నాట్టు నాట్టు నాట్టు కపోతలాగా తికనాట్టు",
+      "words": [
+        {
+          "word": "Naattu",
+          "start": 98.749,
+          "end": 99.169,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నాట్టు"
+        },
+        {
+          "word": "naattu",
+          "start": 99.169,
+          "end": 99.869,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నాట్టు"
+        },
+        {
+          "word": "kapotalaaga",
+          "start": 99.869,
+          "end": 114.109,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "కపోతలాగా"
+        },
+        {
+          "word": "tikanaattu",
+          "start": 114.109,
+          "end": 115.369,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "తికనాట్టు"
+        }
+      ]
+    },
+    {
+      "start": 123.589,
+      "end": 153.018,
+      "text": "",
+      "original_text": "",
+      "words": [
+        {
+          "word": "Hel",
+          "start": 123.589,
+          "end": 126.929,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "హేల్"
+        },
+        {
+          "word": "koomita",
+          "start": 126.929,
+          "end": 133.769,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "కూమిత"
+        },
+        {
+          "word": "tarilela",
+          "start": 133.769,
+          "end": 134.589,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "తరిలేల"
+        },
+        {
+          "word": "vottilo",
+          "start": 134.589,
+          "end": 135.309,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "వొట్టిలో"
+        },
+        {
+          "word": "niragatamanta",
+          "start": 135.309,
+          "end": 136.089,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నిరగతమంత"
+        },
+        {
+          "word": "rangkalesi",
+          "start": 136.089,
+          "end": 136.869,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "రంగ్కలేసి"
+        },
+        {
+          "word": "siyagirela",
+          "start": 136.658,
+          "end": 137.518,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "సియగిరేలా"
+        },
+        {
+          "word": "ese",
+          "start": 137.518,
+          "end": 137.978,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ఏసే"
+        },
+        {
+          "word": "royakaayaki",
+          "start": 137.978,
+          "end": 138.938,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "రోయకాయకి"
+        },
+        {
+          "word": "naatu",
+          "start": 138.938,
+          "end": 139.378,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నాటు"
+        },
+        {
+          "word": "naatu",
+          "start": 139.378,
+          "end": 139.658,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నాటు"
+        },
+        {
+          "word": "naatu",
+          "start": 139.658,
+          "end": 140.098,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నాటు"
+        },
+        {
+          "word": "are",
+          "start": 140.258,
+          "end": 146.078,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "అరే"
+        },
+        {
+          "word": "dummu",
+          "start": 146.078,
+          "end": 146.478,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "దుమ్ము"
+        },
+        {
+          "word": "dulupela",
+          "start": 146.478,
+          "end": 147.438,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "దులుపేలా"
+        },
+        {
+          "word": "lopalunna",
+          "start": 147.438,
+          "end": 148.158,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "లోపలున్న"
+        },
+        {
+          "word": "penamanta",
+          "start": 148.158,
+          "end": 148.938,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "పెనమంతా"
+        },
+        {
+          "word": "dumuku",
+          "start": 148.938,
+          "end": 149.298,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "దుముకు"
+        },
+        {
+          "word": "dumuku",
+          "start": 149.298,
+          "end": 149.618,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "డుముకు"
+        },
+        {
+          "word": "laadela",
+          "start": 149.618,
+          "end": 150.258,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "లాడేలా"
+        },
+        {
+          "word": "dookero",
+          "start": 150.258,
+          "end": 151.018,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "దూకేరో"
+        },
+        {
+          "word": "saraachari",
+          "start": 151.018,
+          "end": 151.698,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "సరాచరి"
+        },
+        {
+          "word": "naatu",
+          "start": 151.698,
+          "end": 152.118,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నాటు"
+        },
+        {
+          "word": "naatu",
+          "start": 152.118,
+          "end": 152.418,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నాటు"
+        },
+        {
+          "word": "naatu",
+          "start": 152.418,
+          "end": 152.918,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "నాటు"
+        }
+      ]
+    },
+    {
+      "start": 170.258,
+      "end": 200.238,
+      "text": "Aakkun aakkun aakkun",
+      "original_text": "ఆక్కున్ ఆక్కున్ ఆక్కున్",
+      "words": [
+        {
+          "word": "Aakkun",
+          "start": 170.258,
+          "end": 171.518,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ఆక్కున్"
+        },
+        {
+          "word": "aakkun",
+          "start": 171.518,
+          "end": 172.938,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ఆక్కున్"
+        },
+        {
+          "word": "aakkun",
+          "start": 172.938,
+          "end": 174.418,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ఆక్కున్"
+        },
+        {
+          "word": "maanni",
+          "start": 200.238,
+          "end": 202.538,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మాన్ని"
+        }
+      ]
+    },
+    {
+      "start": 200.238,
+      "end": 203.907,
+      "text": "",
+      "original_text": "",
+      "words": [
+        {
+          "word": "Milli",
+          "start": 202.538,
+          "end": 203.018,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మిల్లి"
+        },
+        {
+          "word": "chinni",
+          "start": 203.018,
+          "end": 203.038,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "చిన్ని"
+        },
+        {
+          "word": "maanni",
+          "start": 203.038,
+          "end": 203.058,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మాన్ని"
+        },
+        {
+          "word": "milli",
+          "start": 203.058,
+          "end": 203.418,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మిల్లి"
+        },
+        {
+          "word": "milli",
+          "start": 203.418,
+          "end": 203.438,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "మిల్లి"
+        },
+        {
+          "word": "mukku",
+          "start": 200.827,
+          "end": 202.587,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "ముక్కు"
+        },
+        {
+          "word": "saali",
+          "start": 202.587,
+          "end": 203.767,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "సాలి"
+        }
+      ]
+    },
+    {
+      "start": 230.827,
+      "end": 232.827,
+      "text": "Kolodaanchelo",
+      "original_text": "కొలోడాంచేలో",
+      "words": [
+        {
+          "word": "Kolodaanchelo",
+          "start": 230.827,
+          "end": 232.027,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "కొలోడాంచేలో"
+        }
+      ]
+    },
+    {
+      "start": 250.827,
+      "end": 252.827,
+      "text": "Kolodaanchelo",
+      "original_text": "కొలోడాంచేలో",
+      "words": [
+        {
+          "word": "Kolodaanchelo",
+          "start": 250.747,
+          "end": 252.027,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "కొలోడాంచేలో"
+        }
+      ]
+    },
+    {
+      "start": 260.827,
+      "end": 274.407,
+      "text": "Konni konni konni",
+      "original_text": "కొన్ని కొన్ని కొన్ని",
+      "words": [
+        {
+          "word": "Konni",
+          "start": 260.827,
+          "end": 266.307,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "కొన్ని"
+        },
+        {
+          "word": "konni",
+          "start": 266.307,
+          "end": 266.327,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "కొన్ని"
+        },
+        {
+          "word": "konni",
+          "start": 266.327,
+          "end": 268.247,
+          "probability": 0.95,
+          "low_confidence": false,
+          "original_word": "కొన్ని"
+        }
+      ]
+    }
+  ],
+  "alignment_status": "completed",
+  "aligned_words_count": 74,
+  "total_words_count": 74,
+  "vocal_separation_used": false,
+  "separation_status": "skipped",
+  "engine_used": "groq",
+  "fallback_used": false,
+  "fallback_reason": null,
+  "warnings": [],
+  "music_detected": null,
+  "known_lyrics_used": false,
+  "analysis_id": "d457cb10-2bc8-470e-9708-84a2c27fbeb8"
+}

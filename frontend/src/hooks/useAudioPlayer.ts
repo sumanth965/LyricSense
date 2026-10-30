@@ -42,8 +42,16 @@ export function useAudioPlayer() {
   const [duration, setDuration] = useState<number>(0)
   const [volume, setVolume] = useState<number>(0.85)
   const [isMuted, setIsMuted] = useState<boolean>(false)
+  const [playbackRate, setPlaybackRateState] = useState<number>(1.0)
+  const [loopRange, setLoopRangeState] = useState<{ start: number; end: number; enabled: boolean } | null>(null)
+  const loopRangeRef = useRef<{ start: number; end: number; enabled: boolean } | null>(null)
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [error, setError] = useState<string | null>(null)
+
+  // Keep ref in sync for event listeners
+  useEffect(() => {
+    loopRangeRef.current = loopRange
+  }, [loopRange])
 
   // Initialize and clean up HTMLAudioElement
   useEffect(() => {
@@ -51,7 +59,17 @@ export function useAudioPlayer() {
     audioRef.current = audio
 
     const onTimeUpdate = () => {
-      setCurrentTime(audio.currentTime)
+      const cur = audio.currentTime
+      setCurrentTime(cur)
+
+      // Section/Line Looping support for Practice Mode
+      const activeLoop = loopRangeRef.current
+      if (activeLoop && activeLoop.enabled && activeLoop.end > activeLoop.start) {
+        if (cur >= activeLoop.end || cur < activeLoop.start) {
+          audio.currentTime = activeLoop.start
+          setCurrentTime(activeLoop.start)
+        }
+      }
     }
 
     const onSeekEvent = () => {
@@ -66,6 +84,13 @@ export function useAudioPlayer() {
     }
 
     const onEnded = () => {
+      const activeLoop = loopRangeRef.current
+      if (activeLoop && activeLoop.enabled) {
+        audio.currentTime = activeLoop.start
+        setCurrentTime(activeLoop.start)
+        audio.play().catch(() => setIsPlaying(false))
+        return
+      }
       setIsPlaying(false)
       // Preserve currentTime so the final words remain synchronized and highlighted at song end
       if (audio.duration && isFinite(audio.duration)) {
@@ -101,12 +126,13 @@ export function useAudioPlayer() {
     }
   }, [])
 
-  // Sync volume & mute changes
+  // Sync volume, mute & playbackRate changes
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.volume = isMuted ? 0 : volume
+      audioRef.current.playbackRate = playbackRate
     }
-  }, [volume, isMuted])
+  }, [volume, isMuted, playbackRate])
 
   // Unload current audio file
   const unloadAudio = useCallback(() => {
@@ -122,9 +148,12 @@ export function useAudioPlayer() {
     setIsPlaying(false)
     setCurrentTime(0)
     setDuration(0)
+    setLoopRangeState(null)
+    loopRangeRef.current = null
     setError(null)
     setIsLoading(false)
   }, [])
+
 
   // Validate & load local audio file
   const loadAudio = useCallback(
@@ -286,6 +315,53 @@ export function useAudioPlayer() {
     }
   }, [])
 
+  const setPlaybackRate = useCallback((rate: number) => {
+    const clamped = Math.max(0.25, Math.min(rate, 2.0))
+    setPlaybackRateState(clamped)
+    if (audioRef.current) {
+      audioRef.current.playbackRate = clamped
+    }
+  }, [])
+
+  const setLoopRange = useCallback((start: number, end: number, enabled: boolean = true) => {
+    const validStart = Math.max(0, start)
+    const validEnd = Math.max(validStart + 0.2, end)
+    const newRange = { start: validStart, end: validEnd, enabled }
+    setLoopRangeState(newRange)
+    loopRangeRef.current = newRange
+    if (audioRef.current && enabled) {
+      if (audioRef.current.currentTime < validStart || audioRef.current.currentTime >= validEnd) {
+        audioRef.current.currentTime = validStart
+        setCurrentTime(validStart)
+      }
+    }
+  }, [])
+
+  const clearLoopRange = useCallback(() => {
+    setLoopRangeState(null)
+    loopRangeRef.current = null
+  }, [])
+
+  const loadAudioFromUrl = useCallback(
+    async (url: string, filename: string, mimeType = 'audio/mpeg') => {
+      try {
+        setIsLoading(true)
+        setError(null)
+        const resp = await fetch(url)
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`)
+        const blob = await resp.blob()
+        const file = new File([blob], filename, { type: mimeType })
+        return await loadAudio(file)
+      } catch (err) {
+        console.warn('Failed to load audio from url:', err)
+        setError('Failed to fetch audio track from URL. Please check the link or upload a local file.')
+        setIsLoading(false)
+        return false
+      }
+    },
+    [loadAudio],
+  )
+
   return {
     audioRef,
     metadata,
@@ -294,9 +370,15 @@ export function useAudioPlayer() {
     duration,
     volume,
     isMuted,
+    playbackRate,
+    setPlaybackRate,
+    loopRange,
+    setLoopRange,
+    clearLoopRange,
     isLoading,
     error,
     loadAudio,
+    loadAudioFromUrl,
     unloadAudio,
     play,
     pause,

@@ -1,0 +1,68 @@
+import type { SongCatalogItem } from '../types'
+
+export const SAMPLE_SONG_LYRICS = `In the silence of the night echoes of memories whispers of your laughter now just echoes in my home promises we made`
+
+export const CATALOG_SONGS: SongCatalogItem[] = [
+  {
+    id: 'rec_1',
+    title: 'Tu Hai Kahan',
+    artist: 'Arijit Singh',
+    language: 'Hindi',
+    genre: 'Acoustic Pop',
+    duration: '04:18',
+    isRecommended: true,
+    coverColor: '#2D170C',
+  },
+  {
+    id: 'rec_2',
+    title: 'Breathless',
+    artist: 'Shankar Mahadevan',
+    language: 'Hindi',
+    genre: 'Classical Fusion',
+    duration: '03:45',
+    isRecommended: true,
+    coverColor: '#391E10',
+  },
+  {
+    id: 'rec_3',
+    title: 'Manasu',
+    artist: 'Vishnu Kannada',
+    language: 'Kannada',
+    genre: 'Melody',
+    duration: '03:12',
+    isRecommended: true,
+    coverColor: '#422313',
+  },
+  {
+    id: 'top_1',
+    title: 'Let It Be (Studio Demo)',
+    artist: 'The Beatles',
+    language: 'English',
+    genre: 'Classic Rock',
+    duration: '00:24',
+    isTopPractice: true,
+    coverColor: '#1F110A',
+    demoAudioUrl: '/demo/sample_song.mp3',
+    demoLyrics: SAMPLE_SONG_LYRICS,
+  },
+  {
+    id: 'top_2',
+    title: 'Perfect',
+    artist: 'Ed Sheeran',
+    language: 'English',
+    genre: 'Acoustic Ballad',
+    duration: '04:23',
+    isTopPractice: true,
+    coverColor: '#261309',
+  },
+  {
+    id: 'top_3',
+    title: 'Naatu Naatu',
+    artist: 'RRR',
+    language: 'Telugu / Hindi',
+    genre: 'High Energy Folk',
+    duration: '03:34',
+    isTopPractice: true,
+    coverColor: '#4A2817',
+  },
+]

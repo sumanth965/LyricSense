@@ -1,10 +1,32 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import type { Theme, ViewState } from './types'
-import Navbar from './components/Navbar'
+import type {
+  LineScoreItem,
+  NavigationTab,
+  PracticeMode,
+  ScoreResponse,
+  SongCatalogItem,
+  Theme,
+} from './types'
+import { useAudioPlayer } from './hooks/useAudioPlayer'
+import { useLyricsTranscription } from './hooks/useLyricsTranscription'
+import AppHeader from './components/AppHeader'
 import HeroSection from './components/HeroSection'
+import ExploreView from './components/ExploreView'
+import AddSongView from './components/AddSongView'
+import SmartSetupView from './components/SmartSetupView'
+import LyricsStudioView from './components/LyricsStudioView'
+import ModeSelectorModal from './components/ModeSelectorModal'
+import SingAlongStudioView from './components/SingAlongStudioView'
+import PracticeModeView from './components/PracticeModeView'
+import ReadModeView from './components/ReadModeView'
+import KaraokeModeView from './components/KaraokeModeView'
+import PerformanceResultsView from './components/PerformanceResultsView'
+import ProgressDashboardView from './components/ProgressDashboardView'
+import SettingsModal from './components/SettingsModal'
 import HowItWorksDialog from './components/HowItWorksDialog'
-import AudioWorkspace from './components/AudioWorkspace'
+import EdgeWaveDecorations from './components/EdgeWaveDecorations'
+import { SAMPLE_SONG_LYRICS } from './lib/songCatalog'
 
 export default function App() {
   const [theme, setTheme] = useState<Theme>(() => {
@@ -12,20 +34,15 @@ export default function App() {
       const saved = localStorage.getItem('lyricsense-theme')
       return saved === 'dark' ? 'dark' : 'light'
     } catch {
-      return 'light'
+      return 'dark'
     }
   })
-
-  const [currentView, setCurrentView] = useState<ViewState>('home')
-  const [howItWorksOpen, setHowItWorksOpen] = useState(false)
 
   // Synchronize theme attribute on document root
   useEffect(() => {
     try {
       localStorage.setItem('lyricsense-theme', theme)
-    } catch {
-      // LocalStorage might be restricted
-    }
+    } catch {}
 
     const root = document.documentElement
     root.setAttribute('data-theme', theme)
@@ -42,69 +59,463 @@ export default function App() {
     setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))
   }
 
+  // Navigation tab state: 'explore' is the initial discovery experience
+  const [currentTab, setCurrentTab] = useState<NavigationTab | 'home'>('explore')
+  const [showSetupStep, setShowSetupStep] = useState<boolean>(false)
+  const [lyricsInput, setLyricsInput] = useState<string>('')
+
+  // Active Modes & Modals
+  const [activePracticeMode, setActivePracticeMode] = useState<PracticeMode | null>(null)
+  const [isModeSelectorOpen, setIsModeSelectorOpen] = useState<boolean>(false)
+  const [isSettingsOpen, setIsSettingsOpen] = useState<boolean>(false)
+  const [isHowItWorksOpen, setIsHowItWorksOpen] = useState<boolean>(false)
+
+  // Scoring results state
+  const [latestScoreResult, setLatestScoreResult] = useState<ScoreResponse | null>(null)
+  const [showResultsView, setShowResultsView] = useState<boolean>(false)
+
+  // Audio player hook
+  const {
+    metadata,
+    isPlaying,
+    currentTime,
+    duration,
+    volume,
+    isMuted,
+    playbackRate,
+    loopRange,
+    error: audioError,
+    loadAudio,
+    loadAudioFromUrl,
+    unloadAudio,
+    play,
+    pause,
+    togglePlay,
+    seek,
+    seekBy,
+    setVolume,
+    toggleMute,
+    setPlaybackRate,
+    setLoopRange,
+    clearLoopRange,
+    clearError: clearAudioError,
+  } = useAudioPlayer()
+
+  // Neural transcription & alignment hook
+  const {
+    stage: transcriptionStage,
+    result: transcriptionResult,
+    error: transcriptionError,
+    isTranscribing,
+    backendHealth,
+    transcribe,
+    updateWord,
+    cancel: cancelTranscription,
+    clear: clearTranscription,
+  } = useLyricsTranscription()
+
+  // Track selection from Explore view
+  const handleSelectTrackFromExplore = async (track: SongCatalogItem) => {
+    clearTranscription()
+    if (track.demoAudioUrl && track.demoLyrics) {
+      setLyricsInput(track.demoLyrics)
+      await loadAudioFromUrl(track.demoAudioUrl, `${track.title.toLowerCase().replace(/\s+/g, '_')}.mp3`)
+      setShowSetupStep(true)
+      setCurrentTab('add-song')
+    } else {
+      // Guide user to upload audio file for this song recommendation
+      setLyricsInput('')
+      setShowSetupStep(false)
+      setCurrentTab('add-song')
+    }
+  }
+
+  // Quick 1-click demo button
+  const handleQuickLoadDemo = async () => {
+    clearTranscription()
+    setLyricsInput(SAMPLE_SONG_LYRICS)
+    const success = await loadAudioFromUrl('/demo/sample_song.mp3', 'sample_song.mp3')
+    if (success) {
+      setShowSetupStep(true)
+      setCurrentTab('add-song')
+    }
+  }
+
+  // Handle local file upload
+  const handleFileSelected = (file: File) => {
+    clearTranscription()
+    setLyricsInput('') // Fresh audio upload should run real speech recognition
+    loadAudio(file)
+    setShowSetupStep(false)
+  }
+
+  const handleRemoveTrack = () => {
+    clearTranscription()
+    unloadAudio()
+    setShowSetupStep(false)
+    setLyricsInput('')
+  }
+
+  // Execute actual analysis
+  const handleRunAnalysis = (
+    lang?: string,
+    vocalSep?: boolean,
+    cloud?: boolean,
+    sepMode?: 'auto' | 'on' | 'off',
+    lyrics?: string,
+  ) => {
+    if (metadata?.file) {
+      transcribe(
+        metadata.file,
+        lang,
+        vocalSep,
+        cloud ?? true,
+        sepMode || 'off',
+        lyrics || lyricsInput || undefined,
+      )
+    }
+  }
+
+  // When transcription finishes successfully, automatically transition into Lyrics Studio!
+  useEffect(() => {
+    if (transcriptionStage === 'completed' || transcriptionStage === 'completed_with_warnings') {
+      setCurrentTab('studio')
+      setShowSetupStep(false)
+    }
+  }, [transcriptionStage])
+
+  // Drill specific line in Practice Mode
+  const handlePracticeLineFromResults = (line: LineScoreItem) => {
+    setShowResultsView(false)
+    setActivePracticeMode('practice')
+    setLoopRange(line.start, line.end, true)
+    seek(line.start)
+  }
+
   return (
     <div
-      className="min-h-screen relative flex flex-col transition-colors duration-300"
+      className="min-h-screen relative flex flex-col transition-colors duration-300 font-sans"
       style={{
         backgroundColor: theme === 'dark' ? '#391E10' : '#FAF6EE',
         color: theme === 'dark' ? '#FDFCE8' : '#391E10',
       }}
     >
-      <AnimatePresence mode="wait">
-        {currentView === 'home' ? (
-          <motion.div
-            key="home"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="flex-1 flex flex-col justify-between"
-          >
-            {/* Top Navigation */}
-            <Navbar
-              theme={theme}
-              onToggleTheme={toggleTheme}
-              onGetStarted={() => setCurrentView('workspace')}
-              onOpenHowItWorks={() => setHowItWorksOpen(true)}
-              onNavigateSection={(_section) => setHowItWorksOpen(true)}
-            />
+      {/* Decorative ambient audio ribbons */}
+      <EdgeWaveDecorations theme={theme} />
 
-            {/* Cinematic Hero with Microphone Scene */}
-            <main className="flex-1 flex items-center">
+      {/* Persistent Application Navigation */}
+      <AppHeader
+        currentTab={currentTab}
+        onSelectTab={(tab) => {
+          setShowResultsView(false)
+          setActivePracticeMode(null)
+          if (tab === 'practice-modes') {
+            setIsModeSelectorOpen(true)
+          } else {
+            setCurrentTab(tab)
+          }
+        }}
+        hasActiveTrack={Boolean(metadata)}
+        hasTranscription={Boolean(transcriptionResult)}
+        onToggleTheme={toggleTheme}
+        onOpenSettings={() => setIsSettingsOpen(true)}
+        onOpenHowItWorks={() => setIsHowItWorksOpen(true)}
+        theme={theme}
+      />
+
+      {/* Main Studio Viewport */}
+      <main className="flex-1 relative z-10 flex flex-col">
+        <AnimatePresence mode="wait">
+          {showResultsView && latestScoreResult ? (
+            /* Box 7: Performance Results Screen */
+            <motion.div
+              key="results-screen"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.25 }}
+            >
+              <PerformanceResultsView
+                score={latestScoreResult}
+                trackName={metadata?.name}
+                audioDuration={duration}
+                onPracticeLine={handlePracticeLineFromResults}
+                onTryAgain={() => {
+                  setShowResultsView(false)
+                  setActivePracticeMode('sing-along')
+                }}
+                onReturnToStudio={() => {
+                  setShowResultsView(false)
+                  setCurrentTab('studio')
+                }}
+                theme={theme}
+              />
+            </motion.div>
+          ) : activePracticeMode === 'practice' ? (
+            /* Box 5 -> Practice Mode View */
+            <motion.div
+              key="practice-screen"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.25 }}
+            >
+              <PracticeModeView
+                transcription={transcriptionResult}
+                currentTime={currentTime}
+                duration={duration}
+                isPlaying={isPlaying}
+                playbackRate={playbackRate}
+                loopRange={loopRange}
+                onTogglePlay={togglePlay}
+                onSeek={seek}
+                onSetPlaybackRate={setPlaybackRate}
+                onSetLoopRange={setLoopRange}
+                onClearLoopRange={clearLoopRange}
+                onExitPractice={() => {
+                  clearLoopRange()
+                  setActivePracticeMode(null)
+                  setCurrentTab('studio')
+                }}
+                theme={theme}
+              />
+            </motion.div>
+          ) : activePracticeMode === 'read' ? (
+            /* Box 5 -> Read Mode View (Stage Teleprompter) */
+            <motion.div
+              key="read-screen"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+            >
+              <ReadModeView
+                transcription={transcriptionResult}
+                currentTime={currentTime}
+                duration={duration}
+                isPlaying={isPlaying}
+                onTogglePlay={togglePlay}
+                onSeek={seek}
+                onExitReadMode={() => {
+                  setActivePracticeMode(null)
+                  setCurrentTab('studio')
+                }}
+                theme={theme}
+              />
+            </motion.div>
+          ) : activePracticeMode === 'karaoke' ? (
+            /* Box 5 -> Karaoke Mode View */
+            <motion.div
+              key="karaoke-screen"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+            >
+              <KaraokeModeView
+                transcription={transcriptionResult}
+                currentTime={currentTime}
+                duration={duration}
+                isPlaying={isPlaying}
+                onTogglePlay={togglePlay}
+                onSeek={seek}
+                onExitKaraoke={() => {
+                  setActivePracticeMode(null)
+                  setCurrentTab('studio')
+                }}
+                onSwitchToSingAlong={() => {
+                  setActivePracticeMode('sing-along')
+                }}
+                theme={theme}
+              />
+            </motion.div>
+          ) : currentTab === 'home' ? (
+            /* Home / Hero Section */
+            <motion.div
+              key="home-screen"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="flex-1 flex items-center"
+            >
               <HeroSection
                 theme={theme}
-                onGetStarted={() => setCurrentView('workspace')}
-                onOpenHowItWorks={() => setHowItWorksOpen(true)}
+                onGetStarted={() => setCurrentTab('explore')}
+                onOpenHowItWorks={() => setIsHowItWorksOpen(true)}
               />
-            </main>
-          </motion.div>
-        ) : (
-          <motion.div
-            key="workspace"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="min-h-screen"
-          >
-            {/* Recreated Audio Workspace Reference View */}
-            <AudioWorkspace
-              onBackToHome={() => setCurrentView('home')}
-              theme={theme}
-              onToggleTheme={toggleTheme}
-              onOpenHowItWorks={() => setHowItWorksOpen(true)}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </motion.div>
+          ) : currentTab === 'explore' ? (
+            /* Box 1: Explore & Song Discovery */
+            <motion.div
+              key="explore-screen"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.25 }}
+            >
+              <ExploreView
+                onSelectTrack={handleSelectTrackFromExplore}
+                onGoToUpload={() => {
+                  setShowSetupStep(false)
+                  setCurrentTab('add-song')
+                }}
+                onQuickLoadDemo={handleQuickLoadDemo}
+                theme={theme}
+              />
+            </motion.div>
+          ) : currentTab === 'add-song' ? (
+            /* Box 2 / Box 3: Add a Song & Smart Setup */
+            <motion.div
+              key="add-song-screen"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.25 }}
+            >
+              {!showSetupStep ? (
+                <AddSongView
+                  metadata={metadata}
+                  lyricsInput={lyricsInput}
+                  onLyricsInputChange={setLyricsInput}
+                  onFileSelected={handleFileSelected}
+                  onRemoveTrack={handleRemoveTrack}
+                  onContinueToSetup={() => setShowSetupStep(true)}
+                  onOpenLibrary={() => setCurrentTab('explore')}
+                  error={audioError}
+                  onClearError={clearAudioError}
+                  theme={theme}
+                />
+              ) : (
+                <SmartSetupView
+                  metadata={metadata}
+                  lyricsInput={lyricsInput}
+                  isTranscribing={isTranscribing}
+                  stage={transcriptionStage}
+                  error={transcriptionError}
+                  backendHealth={backendHealth}
+                  onAnalyze={handleRunAnalysis}
+                  onCancel={cancelTranscription}
+                  onBackToAddSong={() => setShowSetupStep(false)}
+                  theme={theme}
+                />
+              )}
+            </motion.div>
+          ) : currentTab === 'studio' ? (
+            /* Box 4: Interactive Lyrics Player (Lyrics Studio) */
+            <motion.div
+              key="studio-screen"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.25 }}
+            >
+              {metadata && !transcriptionResult && !isTranscribing ? (
+                /* If audio is loaded but not yet analyzed, show Smart Setup directly */
+                <SmartSetupView
+                  metadata={metadata}
+                  lyricsInput={lyricsInput}
+                  isTranscribing={isTranscribing}
+                  stage={transcriptionStage}
+                  error={transcriptionError}
+                  backendHealth={backendHealth}
+                  onAnalyze={handleRunAnalysis}
+                  onCancel={cancelTranscription}
+                  onBackToAddSong={() => setCurrentTab('add-song')}
+                  theme={theme}
+                />
+              ) : (
+                <LyricsStudioView
+                  metadata={metadata}
+                  transcription={transcriptionResult}
+                  currentTime={currentTime}
+                  duration={duration}
+                  isPlaying={isPlaying}
+                  volume={volume}
+                  isMuted={isMuted}
+                  playbackRate={playbackRate}
+                  onTogglePlay={togglePlay}
+                  onSeek={seek}
+                  onSeekBy={seekBy}
+                  onSetVolume={setVolume}
+                  onToggleMute={toggleMute}
+                  onSetPlaybackRate={setPlaybackRate}
+                  onUpdateWord={updateWord}
+                  onOpenModeSelector={() => setIsModeSelectorOpen(true)}
+                  onStartSingAlong={() => setActivePracticeMode('sing-along')}
+                  onStartPractice={() => setActivePracticeMode('practice')}
+                  theme={theme}
+                />
+              )}
+            </motion.div>
+          ) : (
+            /* Box 8: Track Progress & Session History */
+            <motion.div
+              key="progress-screen"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.25 }}
+            >
+              <ProgressDashboardView
+                onStartNewSession={() => setCurrentTab('explore')}
+                theme={theme}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </main>
 
-      {/* Accessible How It Works Modal (Available from both Home and Workspace) */}
+      {/* Dedicated Box 6: Sing-Along Studio View (Live recording & real-time teleprompter) */}
+      {activePracticeMode === 'sing-along' && (
+        <SingAlongStudioView
+          analysisId={transcriptionResult?.analysis_id || 'preview_session'}
+          trackName={metadata?.name}
+          audioDuration={duration}
+          segments={transcriptionResult?.segments || []}
+          currentTime={currentTime}
+          isPlaying={isPlaying}
+          onPlay={play}
+          onPause={pause}
+          onSeek={seek}
+          onFinishScore={(result) => {
+            setActivePracticeMode(null)
+            setLatestScoreResult(result)
+            setShowResultsView(true)
+          }}
+          onClose={() => {
+            setActivePracticeMode(null)
+          }}
+          theme={theme}
+        />
+      )}
+
+      {/* Box 5: Choose Your Mode Modal */}
+      <ModeSelectorModal
+        isOpen={isModeSelectorOpen}
+        onClose={() => setIsModeSelectorOpen(false)}
+        onSelectMode={(mode) => {
+          setActivePracticeMode(mode)
+        }}
+        theme={theme}
+      />
+
+      {/* Diagnostics & Settings Modal */}
+      <SettingsModal
+        isOpen={isSettingsOpen}
+        onClose={() => setIsSettingsOpen(false)}
+        backendHealth={backendHealth}
+        theme={theme}
+        onToggleTheme={toggleTheme}
+      />
+
+      {/* How It Works Dialog */}
       <HowItWorksDialog
-        isOpen={howItWorksOpen}
-        onClose={() => setHowItWorksOpen(false)}
+        isOpen={isHowItWorksOpen}
+        onClose={() => setIsHowItWorksOpen(false)}
         onGetStarted={() => {
-          setHowItWorksOpen(false)
-          setCurrentView('workspace')
+          setIsHowItWorksOpen(false)
+          setCurrentTab('explore')
         }}
         theme={theme}
       />

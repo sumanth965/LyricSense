@@ -73,6 +73,8 @@ export interface BackendHealth {
   ffmpeg_available: boolean
   alignment_available: boolean
   vocal_separation_available?: boolean
+  demucs_available?: boolean
+  whisperx_available?: boolean
   groq_available?: boolean
   cloud_transcription_enabled?: boolean
   groq_model?: string
@@ -125,3 +127,51 @@ export type ProcessingStage =
   | 'completed'
   | 'completed_with_warnings'
   | 'failed'
+
+export type NavigationTab =
+  | 'explore'
+  | 'add-song'
+  | 'studio'
+  | 'practice-modes'
+  | 'progress'
+  | 'settings'
+
+export type PracticeMode = 'sing-along' | 'practice' | 'read' | 'karaoke'
+
+export interface LoopRange {
+  start: number
+  end: number
+  enabled: boolean
+}
+
+export interface PracticeSessionRecord {
+  id: string
+  timestamp: number
+  dateFormatted: string
+  trackName: string
+  duration: number
+  overallScore: number
+  grade: string
+  pitchScore: number
+  timingScore: number
+  presenceScore: number
+  keyShift: number
+  mode: PracticeMode
+  lines?: LineScoreItem[]
+  warnings?: string[]
+}
+
+export interface SongCatalogItem {
+  id: string
+  title: string
+  artist: string
+  language: string
+  genre?: string
+  duration?: string
+  isRecommended?: boolean
+  isTopPractice?: boolean
+  coverColor?: string
+  demoAudioUrl?: string
+  demoLyrics?: string
+}
+
